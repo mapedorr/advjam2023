@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3 uid="uid://uvk0ts0vv8t"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/tests/room_tests.gd" id="1_utxea"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_g0goh"]
+[ext_resource type="Texture2D" uid="uid://rq84liqiuafu" path="res://popochiu/rooms/tests/props/bg/advjam2023-concept-b.png" id="3_ymeyx"]
+[ext_resource type="Shader" path="res://popochiu/shaders/crt.gdshader" id="4_wmsp4"]
+[ext_resource type="Shader" path="res://popochiu/shaders/NTSCBasic.gdshader" id="5_15f8o"]
+[ext_resource type="Shader" path="res://popochiu/shaders/Glitch.gdshader" id="5_njqtc"]
+[ext_resource type="Shader" path="res://popochiu/shaders/TV.gdshader" id="6_1lqee"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ntcu"]
+shader = ExtResource("4_wmsp4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yp4bu"]
+shader = ExtResource("5_15f8o")
+shader_parameter/_bleeding = 0.0
+shader_parameter/_fringing = 0.274
+shader_parameter/_scanline = 0.152
+shader_parameter/linearColorSpace = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ciuy3"]
+shader = ExtResource("6_1lqee")
+shader_parameter/vertJerkOpt = 0.0
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.0
+shader_parameter/rgbOffsetOpt = 0.3
+shader_parameter/horzFuzzOpt = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s8ay3"]
+shader = ExtResource("5_njqtc")
+shader_parameter/_ScanLineJitter = 0.25
+shader_parameter/_VerticalJump = 0.01
+shader_parameter/_HorizontalShake = 0.0
+shader_parameter/_ColorDrift = 0.02
+
+[node name="RoomTests" type="Node2D"]
+script = ExtResource("1_utxea")
+script_name = "Tests"
+metadata/_edit_vertical_guides_ = [80.0, 880.0]
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" parent="Props" instance=ExtResource("2_g0goh")]
+position = Vector2(480, 270)
+texture = ExtResource("3_ymeyx")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 15
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="CanvasLayer"]
+visible = false
+scale = Vector2(1.2015, 1.19298)
+copy_mode = 2
+rect = Rect2(0, 0, 799, 456)
+
+[node name="Shader" type="ColorRect" parent="CanvasLayer/BackBufferCopy"]
+material = SubResource("ShaderMaterial_3ntcu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NTSCBasic" type="BackBufferCopy" parent="CanvasLayer"]
+position = Vector2(80, 8)
+copy_mode = 2
+rect = Rect2(0, 0, 799, 456)
+
+[node name="Shader" type="ColorRect" parent="CanvasLayer/NTSCBasic"]
+material = SubResource("ShaderMaterial_yp4bu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TV" type="BackBufferCopy" parent="CanvasLayer"]
+position = Vector2(80, 8)
+copy_mode = 2
+rect = Rect2(0, 0, 799, 456)
+
+[node name="Shader" type="ColorRect" parent="CanvasLayer/TV"]
+material = SubResource("ShaderMaterial_ciuy3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="LensDistortion" type="BackBufferCopy" parent="CanvasLayer"]
+position = Vector2(80, 8)
+copy_mode = 2
+rect = Rect2(0, 0, 799, 456)
+
+[node name="Shader" type="ColorRect" parent="CanvasLayer/LensDistortion"]
+material = SubResource("ShaderMaterial_s8ay3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
