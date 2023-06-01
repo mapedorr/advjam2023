@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://ctagm7ws022cy" path="res://popochiu/rooms/tests/props/bg/test_bg.png" id="3_ayp4r"]
 [ext_resource type="Shader" path="res://popochiu/shaders/crt.gdshader" id="4_wmsp4"]
 [ext_resource type="Shader" path="res://popochiu/shaders/ntsc_basic.gdshader" id="5_wasin"]
-[ext_resource type="Shader" path="res://popochiu/shaders/_tv.gdshader" id="6_05131"]
-[ext_resource type="Shader" path="res://popochiu/shaders/_glitch.gdshader" id="7_cyaav"]
+[ext_resource type="Shader" path="res://popochiu/shaders/tv.gdshader" id="6_ps7ed"]
+[ext_resource type="Shader" path="res://popochiu/shaders/glitch.gdshader" id="7_obr73"]
 [ext_resource type="Shader" path="res://popochiu/shaders/lens_distortion.gdshader" id="8_47fsw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ntcu"]
@@ -20,7 +20,7 @@ shader_parameter/_scanline = 0.152
 shader_parameter/linearColorSpace = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ciuy3"]
-shader = ExtResource("6_05131")
+shader = ExtResource("6_ps7ed")
 shader_parameter/vertJerkOpt = 0.0
 shader_parameter/vertMovementOpt = 0.0
 shader_parameter/bottomStaticOpt = 0.0
@@ -30,7 +30,7 @@ shader_parameter/rgbOffsetOpt = 0.3
 shader_parameter/horzFuzzOpt = 0.15
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s8ay3"]
-shader = ExtResource("7_cyaav")
+shader = ExtResource("7_obr73")
 shader_parameter/_ScanLineJitter = 0.25
 shader_parameter/_VerticalJump = 0.01
 shader_parameter/_HorizontalShake = 0.0
