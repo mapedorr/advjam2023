@@ -144,13 +144,14 @@ func stop(cue_name: String, fade_duration := 0.0) -> void:
 				)
 			else:
 				stream_player.stop()
+				stream_player.finished.emit()
 			
 			if stream_player is AudioStreamPlayer2D and _active[cue_name].loop:
 				# When stopped (.stop()) an audio in loop, for some reason
 				# 'finished' is not emitted.
 				stream_player.finished.emit()
-		else:
-			_active.erase(cue_name)
+			else:
+				_active.erase(cue_name)
 
 
 func get_cue_playback_position(cue_name: String) -> float:
@@ -217,7 +218,8 @@ func _play(
 	
 	player.bus = cue.bus
 	player.play(from_position)
-	player.finished.connect(_make_available.bind(player, cue_name, 0))
+	if not player.finished.is_connected(_make_available):
+		player.finished.connect(_make_available.bind(player, cue_name, 0))
 	
 	if _active.has(cue_name):
 		_active[cue_name].players.append(player)
@@ -244,14 +246,15 @@ func _make_available(
 	else:
 		_reparent($Active, $Positional, stream_player.get_index())
 	
-	var players: Array = _active[cue_name].players
-	for idx in players.size():
-		if players[idx].get_instance_id() == stream_player.get_instance_id():
-			players.remove_at(idx)
-			break
-	
-	if players.is_empty():
-		_active.erase(cue_name)
+	if _active.has(cue_name):
+		var players: Array = _active[cue_name].players
+		for idx in players.size():
+			if players[idx].get_instance_id() == stream_player.get_instance_id():
+				players.remove_at(idx)
+				break
+		
+		if players.is_empty():
+			_active.erase(cue_name)
 	
 	if not stream_player.finished.is_connected(_make_available):
 		stream_player.finished.connect(_make_available)
