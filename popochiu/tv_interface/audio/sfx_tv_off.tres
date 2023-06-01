@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://ctwpcje0c8vav"]
+
+[ext_resource type="AudioStream" uid="uid://dqeghaacbsymy" path="res://popochiu/tv_interface/audio/sfx_tv_off.ogg" id="1_gqbfv"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_tf8u0"]
+
+[resource]
+resource_name = "sfx_tv_off"
+script = ExtResource("2_tf8u0")
+audio = ExtResource("1_gqbfv")
+loop = false
+is_2d = false
+pitch = 0.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"
