@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ck0wuscihqyux"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/jurassic/room_jurassic_state.gd" id="1_hx1b3"]
+
+[resource]
+resource_name = "Jurassic"
+script = ExtResource("1_hx1b3")
+script_name = "Jurassic"
+scene = "res://popochiu/rooms/jurassic/room_jurassic.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

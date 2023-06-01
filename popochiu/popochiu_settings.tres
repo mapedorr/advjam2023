@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="PopochiuSettings" load_steps=2 format=3 uid="uid://byt18wklckjek"]
+[gd_resource type="Resource" script_class="PopochiuSettings" load_steps=4 format=3 uid="uid://byt18wklckjek"]
 
 [ext_resource type="Script" path="res://addons/popochiu/engine/objects/popochiu_settings.gd" id="1_s1nn4"]
+[ext_resource type="PackedScene" uid="uid://blff1h5ew4i61" path="res://popochiu/tv_interface/tv_interface.tscn" id="1_sc6gf"]
+[ext_resource type="PackedScene" uid="uid://dhsfbycfke0cu" path="res://popochiu/channel_change/channel_change.tscn" id="3_y06j3"]
 
 [resource]
 script = ExtResource("1_s1nn4")
+graphic_interface = ExtResource("1_sc6gf")
+transition_layer = ExtResource("3_y06j3")
 skip_cutscene_time = 0.2
 text_speeds = [0.1, 0.01, 0.0]
 default_text_speed = 0

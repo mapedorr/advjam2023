@@ -260,7 +260,9 @@ func goto_room(
 	
 	_use_transition_on_room_change = use_transition
 	if use_transition:
-		$TransitionLayer.play_transition($TransitionLayer.FADE_IN)
+#		$TransitionLayer.play_transition($TransitionLayer.FADE_IN)
+		$TransitionLayer.play_room_change_start()
+		
 		await $TransitionLayer.transition_finished
 	
 	if is_instance_valid(C.player) and Engine.get_process_frames() > 0:
@@ -380,7 +382,9 @@ func room_readied(room: PopochiuRoom) -> void:
 		)
 	
 	if _use_transition_on_room_change:
-		$TransitionLayer.play_transition($TransitionLayer.FADE_OUT)
+#		$TransitionLayer.play_transition($TransitionLayer.FADE_OUT)
+		$TransitionLayer.play_room_change_end()
+		
 		await $TransitionLayer.transition_finished
 		await wait(0.3)
 	else:
