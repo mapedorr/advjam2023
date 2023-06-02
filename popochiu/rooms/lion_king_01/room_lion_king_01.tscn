@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://cv8kch4cryjyf"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/lion_king_01/room_lion_king_01.gd" id="1_p4ofe"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_bwbrx"]
+[ext_resource type="Texture2D" uid="uid://cimkubs7r2dt8" path="res://popochiu/rooms/_shared/sprites/lion_king_bg.png" id="4_8cxkt"]
+[ext_resource type="PackedScene" uid="uid://cy5kjnl3uyxvw" path="res://popochiu/characters/rafiki/character_rafiki.tscn" id="4_hj5en"]
+[ext_resource type="Script" path="res://popochiu/characters/rafiki/character_rafiki.gd" id="5_8ccgy"]
+[ext_resource type="PackedScene" uid="uid://coln5rl0xpmik" path="res://popochiu/characters/coco/character_coco.tscn" id="6_dlsat"]
+[ext_resource type="Script" path="res://popochiu/characters/coco/character_coco.gd" id="7_n8aj5"]
+[ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="8_riyvs"]
+[ext_resource type="Script" path="res://popochiu/characters/simba/character_simba.gd" id="9_g4ih6"]
+[ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="10_7vfq5"]
+[ext_resource type="Script" path="res://popochiu/characters/popochiu_king/character_popochiu_king.gd" id="11_gp33e"]
+
+[node name="RoomLionKing01" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_p4ofe")
+script_name = "LionKing01"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" parent="Props" instance=ExtResource("2_bwbrx")]
+position = Vector2(480, 270)
+texture = ExtResource("4_8cxkt")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+baseline = -270
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterRafiki *" type="Area2D" parent="Characters" instance=ExtResource("4_hj5en")]
+position = Vector2(224, 320)
+script = ExtResource("5_8ccgy")
+script_name = "Rafiki"
+description = "Rafiki"
+cursor = 8
+
+[node name="CharacterSimba *" type="Area2D" parent="Characters" instance=ExtResource("8_riyvs")]
+position = Vector2(496, 176)
+script = ExtResource("9_g4ih6")
+script_name = "Simba"
+description = "Simba"
+cursor = 8
+
+[node name="CharacterCoco *" type="Area2D" parent="Characters" instance=ExtResource("6_dlsat")]
+position = Vector2(376, 136)
+script = ExtResource("7_n8aj5")
+script_name = "Coco"
+description = "Coco"
+cursor = 8
+
+[node name="CharacterPopochiuKing *" type="Area2D" parent="Characters" instance=ExtResource("10_7vfq5")]
+position = Vector2(568, 272)
+script = ExtResource("11_gp33e")
+script_name = "PopochiuKing"
+description = "Popochiu King"
+cursor = 8

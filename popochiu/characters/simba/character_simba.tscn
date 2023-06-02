@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgm51kysqejc7"]
+
+[ext_resource type="Script" path="res://popochiu/characters/simba/character_simba.gd" id="1_xla1d"]
+[ext_resource type="Texture2D" uid="uid://be2ip1204u6cm" path="res://popochiu/characters/simba/sprites/simba_01.png" id="2_slpst"]
+[ext_resource type="Texture2D" uid="uid://b2df3cv2bhavp" path="res://popochiu/characters/simba/sprites/simba_02.png" id="3_x8pmn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r73ej"]
+atlas = ExtResource("2_slpst")
+region = Rect2(0, 0, 139, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oj25"]
+atlas = ExtResource("3_x8pmn")
+region = Rect2(0, 0, 87, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3oloo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r73ej")
+}],
+"loop": true,
+"name": &"01",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oj25")
+}],
+"loop": true,
+"name": &"02",
+"speed": 5.0
+}]
+
+[node name="CharacterSimba" type="Area2D"]
+script = ExtResource("1_xla1d")
+script_name = "Simba"
+description = "Simba"
+cursor = 8
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, -48, 24, -56, 56, -48, 72, -32, 64, -8, -8, 48, -64, 56, -56, 8)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="DialogPos" type="Marker2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_3oloo")
+animation = &"02"

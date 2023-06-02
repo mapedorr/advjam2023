@@ -24,8 +24,10 @@ script = ExtResource("1_b5oh0")
 [node name="VFX" type="Node2D" parent="."]
 
 [node name="_REF_" type="TextureRect" parent="VFX"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("2_hkb6p")
 
 [node name="Grain" type="TextureRect" parent="VFX"]
@@ -34,6 +36,7 @@ offset_left = 94.0
 offset_top = 33.0
 offset_right = 708.0
 offset_bottom = 481.0
+mouse_filter = 2
 texture = ExtResource("4_ij18h")
 
 [node name="Shader" type="ColorRect" parent="VFX"]
@@ -42,6 +45,7 @@ offset_left = 94.0
 offset_top = 33.0
 offset_right = 708.0
 offset_bottom = 481.0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="."]
 offset_left = 486.0
