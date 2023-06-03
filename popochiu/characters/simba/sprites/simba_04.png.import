@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd08l8a83twmr"
-path="res://.godot/imported/jurassic_bg.png-5dfe74394b7c73f5c544c3237ac2739d.ctex"
+uid="uid://2vk7v322dchh"
+path="res://.godot/imported/simba_04.png-3070918a61a0a08d0e916228c42ac506.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://popochiu/rooms/jurassic/props/bg/jurassic_bg.png"
-dest_files=["res://.godot/imported/jurassic_bg.png-5dfe74394b7c73f5c544c3237ac2739d.ctex"]
+source_file="res://popochiu/characters/simba/sprites/simba_04.png"
+dest_files=["res://.godot/imported/simba_04.png-3070918a61a0a08d0e916228c42ac506.ctex"]
 
 [params]
 

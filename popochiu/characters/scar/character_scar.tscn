@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1cobvmqtvm8q"]
+
+[ext_resource type="Script" path="res://popochiu/characters/scar/character_scar.gd" id="1_qvw4i"]
+[ext_resource type="Texture2D" uid="uid://cqukss8o6vjhg" path="res://popochiu/characters/scar/sprites/scar_04.png" id="2_xuvp7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lq6v"]
+atlas = ExtResource("2_xuvp7")
+region = Rect2(0, 0, 256, 269)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wep1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lq6v")
+}],
+"loop": true,
+"name": &"04",
+"speed": 5.0
+}]
+
+[node name="CharacterScar" type="Area2D"]
+script = ExtResource("1_qvw4i")
+can_move = false
+script_name = "Scar"
+description = "Scar"
+clickable = false
+cursor = 8
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="DialogPos" type="Marker2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wep1t")
+animation = &"04"

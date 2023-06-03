@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8ovjsrqfgubh"]
+
+[ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic_14h.ttf" id="1_5mnjc"]
+
+[node name="DialogOption" type="Button"]
+theme_override_fonts/font = ExtResource("1_5mnjc")
+theme_override_font_sizes/font_size = 16
+text = "Option A"

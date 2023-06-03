@@ -10,8 +10,6 @@ enum Branch {
 }
 
 var branch_name := '' : get = get_branch_name
-var lion_king_seq := 1
-var lion_king_branch := 0
 var channels := {
 	lion_king = {
 		scene = 'LionKing',
@@ -27,14 +25,19 @@ var channels := {
 		code = '147',
 	},
 	jurassic_park = {
-		scene = 'Jurassic',
+		scene = 'JurassicPark',
 		code = '456',
+		story = true,
 	},
 	matrix = {
 		scene = 'Matrix',
 		code = '258',
 	},
 }
+var lion_king_seq := 1
+var lion_king_branch := 0
+var jurassic_park_seq := 1
+var jurassic_park_branch := 0
 
 var _channels_to_visit := []
 var _channel_idx := 0

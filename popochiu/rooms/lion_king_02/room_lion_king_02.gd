@@ -20,8 +20,19 @@ func _on_room_entered() -> void:
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
-	# You can use await E.queue([]) to excecute a queue of instructions
-	pass
+	match Globals.lion_king_branch:
+		Globals.Branch.COCO:
+			await C.Coco.say('...')
+			await C.Rafiki.say('The coconut thank you all!')
+			await C.Coco.say('...')
+			await C.Rafiki.say('He will inherit the throne with honor')
+			await C.Rafiki.say('( All animals bawl in euphoria )')
+			
+		Globals.Branch.SIMBA:
+			await C.Rafiki.say('( All animals bawl in euphoria )')
+	
+	Globals.lion_king_seq += 1
+	Globals.change_channel()
 
 
 # What happens before Popochiu unloads the room.

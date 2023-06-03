@@ -18,7 +18,7 @@ func _enable_continue(_c: PopochiuCharacter, m: String) -> void:
 	var tween := get_tree().create_tween()
 	tween.tween_property(
 		$MainContainer/LblTemp, "visible_ratio",
-		1.0, 2.0
+		1.0, 1.0
 	).from(0.0)
 	
 	btn_continue.show()
@@ -32,7 +32,7 @@ func _on_btn_continue_pressed() -> void:
 	var tween := get_tree().create_tween()
 	tween.tween_property(
 		$MainContainer/LblTemp, "visible_ratio",
-		0.0, 0.3
+		0.0, 0.1
 	).from(1.0)
 	
 	btn_continue.hide()

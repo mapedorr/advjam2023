@@ -1,44 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://blff1h5ew4i61"]
+[gd_scene load_steps=6 format=3 uid="uid://blff1h5ew4i61"]
 
-[ext_resource type="Shader" path="res://popochiu/shaders/crt.gdshader" id="1_h3ryt"]
 [ext_resource type="Script" path="res://popochiu/tv_interface/tv_interface.gd" id="1_ib485"]
 [ext_resource type="Texture2D" uid="uid://bbu0kr43f0mc2" path="res://popochiu/tv_interface/sprites/tv_frame.png" id="1_wrljh"]
-[ext_resource type="Shader" path="res://popochiu/shaders/ntsc_basic.gdshader" id="3_gjtgj"]
-[ext_resource type="Shader" path="res://popochiu/shaders/tv.gdshader" id="4_ncrep"]
-[ext_resource type="Shader" path="res://popochiu/shaders/glitch.gdshader" id="5_or767"]
-[ext_resource type="Shader" path="res://popochiu/shaders/lens_distortion.gdshader" id="6_m2dwg"]
+[ext_resource type="PackedScene" uid="uid://36pnd0m8pp5n" path="res://popochiu/tv_interface/dialog_menu/dialog_menu.tscn" id="4_p310v"]
 [ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic_14h.ttf" id="8_3cdhn"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0voif"]
-shader = ExtResource("1_h3ryt")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_swvgu"]
-shader = ExtResource("3_gjtgj")
-shader_parameter/_bleeding = 0.0
-shader_parameter/_fringing = 0.274
-shader_parameter/_scanline = 0.152
-shader_parameter/linearColorSpace = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_03ut5"]
-shader = ExtResource("4_ncrep")
-shader_parameter/vertJerkOpt = 0.0
-shader_parameter/vertMovementOpt = 0.0
-shader_parameter/bottomStaticOpt = 0.0
-shader_parameter/bottomStaticStrenth = 0.7
-shader_parameter/scalinesOpt = 0.0
-shader_parameter/rgbOffsetOpt = 0.3
-shader_parameter/horzFuzzOpt = 0.15
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xse3l"]
-shader = ExtResource("5_or767")
-shader_parameter/_ScanLineJitter = 0.25
-shader_parameter/_VerticalJump = 0.01
-shader_parameter/_HorizontalShake = 0.0
-shader_parameter/_ColorDrift = 0.02
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2sjc"]
-shader = ExtResource("6_m2dwg")
-shader_parameter/strength = 0.018
 
 [sub_resource type="LabelSettings" id="LabelSettings_p1m2a"]
 outline_size = 12
@@ -50,95 +15,6 @@ shadow_offset = Vector2(0, 4)
 [node name="TVInterface" type="CanvasLayer"]
 layer = 15
 script = ExtResource("1_ib485")
-
-[node name="VFX" type="Node2D" parent="."]
-position = Vector2(0, -1)
-
-[node name="CRT" type="BackBufferCopy" parent="VFX"]
-visible = false
-copy_mode = 2
-rect = Rect2(0, 0, 799, 456)
-
-[node name="Shader" type="ColorRect" parent="VFX/CRT"]
-material = SubResource("ShaderMaterial_0voif")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = 32.0
-offset_right = -191.0
-offset_bottom = 32.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="NTSCBasic" type="BackBufferCopy" parent="VFX"]
-copy_mode = 2
-rect = Rect2(0, 0, 799, 456)
-
-[node name="Shader" type="ColorRect" parent="VFX/NTSCBasic"]
-material = SubResource("ShaderMaterial_swvgu")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 120.0
-offset_top = 33.0
-offset_right = -119.0
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="TV" type="BackBufferCopy" parent="VFX"]
-copy_mode = 2
-rect = Rect2(0, 0, 799, 456)
-
-[node name="Shader" type="ColorRect" parent="VFX/TV"]
-material = SubResource("ShaderMaterial_03ut5")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 120.0
-offset_top = 33.0
-offset_right = -119.0
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Glitch" type="BackBufferCopy" parent="VFX"]
-copy_mode = 2
-rect = Rect2(0, 0, 799, 456)
-
-[node name="Shader" type="ColorRect" parent="VFX/Glitch"]
-material = SubResource("ShaderMaterial_xse3l")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 120.0
-offset_top = 33.0
-offset_right = -119.0
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="LensDistortion" type="BackBufferCopy" parent="VFX"]
-copy_mode = 2
-rect = Rect2(0, 0, 799, 456)
-
-[node name="Shader" type="ColorRect" parent="VFX/LensDistortion"]
-material = SubResource("ShaderMaterial_k2sjc")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 120.0
-offset_top = 33.0
-offset_right = -119.0
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="MainContainer" type="Control" parent="."]
 layout_mode = 3
@@ -200,6 +76,18 @@ text = "???"
 label_settings = SubResource("LabelSettings_p1m2a")
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="DialogMenu" parent="MainContainer" instance=ExtResource("4_p310v")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = -331.0
+offset_top = -109.0
+offset_right = 175.0
+offset_bottom = -109.0
+grow_vertical = 0
 
 [connection signal="toggled" from="MainContainer/BtnPower" to="." method="_on_btn_power_toggled"]
 [connection signal="pressed" from="MainContainer/BtnChangeChannel" to="." method="_on_btn_change_channel_pressed"]

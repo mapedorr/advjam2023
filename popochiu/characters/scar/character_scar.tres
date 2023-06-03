@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://y5s4lfgx22eo"]
+
+[ext_resource type="Script" path="res://popochiu/characters/scar/character_scar_state.gd" id="1_56it5"]
+
+[resource]
+resource_name = "Scar"
+script = ExtResource("1_56it5")
+script_name = "Scar"
+scene = "res://popochiu/characters/scar/character_scar.tscn"

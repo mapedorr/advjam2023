@@ -1,16 +1,48 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhsfbycfke0cu"]
+[gd_scene load_steps=17 format=3 uid="uid://dhsfbycfke0cu"]
 
 [ext_resource type="Script" path="res://popochiu/channel_change/channel_change.gd" id="1_b5oh0"]
 [ext_resource type="Texture2D" uid="uid://bbu0kr43f0mc2" path="res://popochiu/tv_interface/sprites/tv_frame.png" id="2_hkb6p"]
 [ext_resource type="Texture2D" uid="uid://dmjuhkdcuhx3c" path="res://popochiu/channel_change/sprites/grain.jpg" id="4_ij18h"]
 [ext_resource type="Shader" path="res://popochiu/shaders/simple_grain.gdshader" id="4_mov1v"]
 [ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic_14h.ttf" id="5_833en"]
+[ext_resource type="Shader" path="res://popochiu/shaders/ntsc_basic.gdshader" id="5_r00tt"]
+[ext_resource type="Shader" path="res://popochiu/shaders/tv.gdshader" id="6_f4r4a"]
+[ext_resource type="Shader" path="res://popochiu/shaders/glitch.gdshader" id="7_3qulh"]
+[ext_resource type="Shader" path="res://popochiu/shaders/lens_distortion.gdshader" id="8_3ky25"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lqa1"]
+shader = ExtResource("5_r00tt")
+shader_parameter/_bleeding = 0.0
+shader_parameter/_fringing = 0.274
+shader_parameter/_scanline = 0.152
+shader_parameter/linearColorSpace = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sqf3c"]
+shader = ExtResource("6_f4r4a")
+shader_parameter/vertJerkOpt = 0.0
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.0
+shader_parameter/rgbOffsetOpt = 0.3
+shader_parameter/horzFuzzOpt = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uswct"]
+shader = ExtResource("7_3qulh")
+shader_parameter/_ScanLineJitter = 0.25
+shader_parameter/_VerticalJump = 0.01
+shader_parameter/_HorizontalShake = 0.0
+shader_parameter/_ColorDrift = 0.02
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xcdrl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ovkie"]
 shader = ExtResource("4_mov1v")
 shader_parameter/amount = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lssuk"]
+shader = ExtResource("8_3ky25")
+shader_parameter/strength = 0.018
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiybc"]
 content_margin_left = 4.0
@@ -21,7 +53,10 @@ bg_color = Color(0, 0, 0, 0.623529)
 layer = 9
 script = ExtResource("1_b5oh0")
 
-[node name="VFX" type="Node2D" parent="."]
+[node name="VFX" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
 
 [node name="_REF_" type="TextureRect" parent="VFX"]
 visible = false
@@ -30,21 +65,81 @@ offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("2_hkb6p")
 
+[node name="NTSCBasic" type="ColorRect" parent="VFX"]
+visible = false
+material = SubResource("ShaderMaterial_8lqa1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = 33.0
+offset_right = 708.0
+offset_bottom = 485.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TV" type="ColorRect" parent="VFX"]
+visible = false
+material = SubResource("ShaderMaterial_sqf3c")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = 33.0
+offset_right = 708.0
+offset_bottom = 485.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Glitch" type="ColorRect" parent="VFX"]
+visible = false
+material = SubResource("ShaderMaterial_uswct")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = 33.0
+offset_right = 708.0
+offset_bottom = 485.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="Grain" type="TextureRect" parent="VFX"]
 material = SubResource("ShaderMaterial_xcdrl")
 offset_left = 94.0
 offset_top = 33.0
 offset_right = 708.0
-offset_bottom = 481.0
+offset_bottom = 485.0
 mouse_filter = 2
 texture = ExtResource("4_ij18h")
 
-[node name="Shader" type="ColorRect" parent="VFX"]
+[node name="SimpleGrain" type="ColorRect" parent="VFX"]
 material = SubResource("ShaderMaterial_ovkie")
 offset_left = 94.0
 offset_top = 33.0
 offset_right = 708.0
-offset_bottom = 481.0
+offset_bottom = 485.0
+mouse_filter = 2
+
+[node name="LensDistortion" type="ColorRect" parent="VFX"]
+visible = false
+material = SubResource("ShaderMaterial_lssuk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = 33.0
+offset_right = 708.0
+offset_bottom = 485.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="."]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgm51kysqejc7"]
+[gd_scene load_steps=11 format=3 uid="uid://cgm51kysqejc7"]
 
 [ext_resource type="Script" path="res://popochiu/characters/simba/character_simba.gd" id="1_xla1d"]
 [ext_resource type="Texture2D" uid="uid://be2ip1204u6cm" path="res://popochiu/characters/simba/sprites/simba_01.png" id="2_slpst"]
 [ext_resource type="Texture2D" uid="uid://b2df3cv2bhavp" path="res://popochiu/characters/simba/sprites/simba_02.png" id="3_x8pmn"]
 [ext_resource type="Texture2D" uid="uid://1k46o57cinm1" path="res://popochiu/characters/simba/sprites/simba_03.png" id="4_qvlxr"]
+[ext_resource type="Texture2D" uid="uid://2vk7v322dchh" path="res://popochiu/characters/simba/sprites/simba_04.png" id="5_00snk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r73ej"]
 atlas = ExtResource("2_slpst")
@@ -16,6 +17,10 @@ region = Rect2(0, 0, 87, 94)
 [sub_resource type="AtlasTexture" id="AtlasTexture_lpi61"]
 atlas = ExtResource("4_qvlxr")
 region = Rect2(0, 0, 75, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7vyo"]
+atlas = ExtResource("5_00snk")
+region = Rect2(0, 0, 190, 132)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3oloo"]
 animations = [{
@@ -42,16 +47,26 @@ animations = [{
 "loop": true,
 "name": &"03",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7vyo")
+}],
+"loop": true,
+"name": &"04",
+"speed": 5.0
 }]
 
 [node name="CharacterSimba" type="Area2D"]
 script = ExtResource("1_xla1d")
+can_move = false
 script_name = "Simba"
 description = "Simba"
+clickable = false
 cursor = 8
+always_on_top = true
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-16, -48, 24, -56, 56, -48, 72, -32, 64, -8, -8, 48, -64, 56, -56, 8)
 
 [node name="BaselineHelper" type="Line2D" parent="."]
 points = PackedVector2Array(-10000, 0, 10000, 0)
@@ -73,4 +88,4 @@ color = Color(0, 1, 1, 1)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_3oloo")
-animation = &"03"
+animation = &"01"

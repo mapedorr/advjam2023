@@ -47,12 +47,14 @@ animations = [{
 [node name="CharacterRafiki" type="Area2D"]
 y_sort_enabled = true
 script = ExtResource("1_8sksx")
+can_move = false
 script_name = "Rafiki"
 description = "Rafiki"
+clickable = false
 cursor = 8
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-40, -80, 32, -96, 104, -144, 104, -40, 96, 136, -16, 144, -112, 24)
+visible = false
 
 [node name="BaselineHelper" type="Line2D" parent="."]
 points = PackedVector2Array(-10000, 0, 10000, 0)

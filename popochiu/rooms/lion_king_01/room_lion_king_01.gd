@@ -22,8 +22,17 @@ func _on_room_entered() -> void:
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
-	# You can use await E.queue([]) to excecute a queue of instructions
-	pass
+	var response: PopochiuDialogOption = await D.show_inline_dialog([
+		'The coconut', 'Simba', 'The Popochiu'
+	])
+	
+	match response.id:
+		'0':
+			Globals.progress_movie(Globals.Branch.COCO)
+		'1':
+			Globals.progress_movie(Globals.Branch.SIMBA)
+		'2':
+			Globals.progress_movie(Globals.Branch.POPOCHIU_KING)
 
 
 # What happens before Popochiu unloads the room.

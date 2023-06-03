@@ -1,9 +1,9 @@
 @tool
 extends PopochiuRoom
 
-const Data := preload('room_jurassic_state.gd')
+const Data := preload('room_jurassic_park_01_state.gd')
 
-var state: Data = load('res://popochiu/rooms/jurassic/room_jurassic.tres')
+var state: Data = load('res://popochiu/rooms/jurassic_park_01/room_jurassic_park_01.tres')
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ GODOT ░░░░

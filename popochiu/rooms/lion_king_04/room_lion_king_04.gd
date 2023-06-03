@@ -1,9 +1,9 @@
 @tool
 extends PopochiuRoom
 
-const Data := preload('room_lion_king_03_state.gd')
+const Data := preload('room_lion_king_04_state.gd')
 
-var state: Data = load('res://popochiu/rooms/lion_king_03/room_lion_king_03.tres')
+var state: Data = load('res://popochiu/rooms/lion_king_04/room_lion_king_04.tres')
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ GODOT ░░░░
@@ -14,47 +14,27 @@ var state: Data = load('res://popochiu/rooms/lion_king_03/room_lion_king_03.tres
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	C.Rafiki.disable()
-	
-	match Globals.lion_king_branch:
-		Globals.Branch.COCO:
-			C.Mufasa.disable()
-			C.Rafiki.enable()
-			get_prop('Kingdom').disable()
+	pass
 
 
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
 	match Globals.lion_king_branch:
-		Globals.Branch.COCO:
-			await C.Coco.say('...')
-			await C.Rafiki.say('What did you say?')
-			
-			var response: PopochiuDialogOption = await D.show_inline_dialog([
-				'You are the chosen one',
-				'Mufasa has abused small animals',
-				'Kill the King, if you really love me'
-			])
-			
-			match response.id:
-				'0':
-					C.Rafiki.say('The planet of the micos')
-				'1':
-					C.Rafiki.say('The elections')
-				'2':
-					C.Rafiki.say('The missadventures of Rafiki and the coconut')
 		Globals.Branch.SIMBA:
+#			await C.Mufasa.say('But the King is dead')
+#			await C.Mufasa.say("And if it weren't for you,")
+#			await C.Mufasa.say("he'd still be alive")
+#			await C.Mufasa.say("...")
+			await C.Mufasa.say("What will your mother think?")
+			await C.Simba.say("What am I gonna do?")
+			await C.Simba.say("Run away, Simba.")
+
 			var response: PopochiuDialogOption = await D.show_inline_dialog([
-				'Everything the light touches is our kingdom.',
-				'Your mom is so hot!',
-				'Wanna hear a joke, boy?'
+				'Obey Scar',
+				'Try to kill Scar',
+				'Propose a deal to Scar'
 			])
-			
-			await C.Mufasa.say(response.text)
-			
-			Globals.lion_king_seq += 1
-			Globals.change_channel()
 
 
 # What happens before Popochiu unloads the room.
