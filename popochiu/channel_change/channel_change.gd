@@ -21,7 +21,10 @@ func play_room_change_start() -> void:
 
 
 func play_room_change_end() -> void:
-	$Label.text = 'CH - %s' % R.current.state.channel
+	for ch in Globals.channels:
+		if R.current.script_name.find(ch) > -1:
+			$Label.text = 'CH - %s' % Globals.channels[ch].code
+			break
 	$Label.show()
 	
 	A.sfx_tv_static_lp.stop()

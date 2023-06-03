@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://djj86f0ablpkt"]
+
+[ext_resource type="Script" path="res://popochiu/characters/popochiu_king/character_popochiu_king.gd" id="1_0pcvi"]
+[ext_resource type="Texture2D" uid="uid://dwaanluxv5qss" path="res://popochiu/characters/popochiu_king/sprites/popochiu_king_01.png" id="2_v2mik"]
+[ext_resource type="Texture2D" uid="uid://b0rn7buv8clp1" path="res://popochiu/characters/popochiu_king/sprites/popochiu_king_02.png" id="3_qjr1f"]
+[ext_resource type="Texture2D" uid="uid://dr7cm3fxtoffv" path="res://popochiu/characters/popochiu_king/sprites/popochiu_king_03.png" id="4_16ump"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1yb3"]
+atlas = ExtResource("2_v2mik")
+region = Rect2(0, 0, 117, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6n4j"]
+atlas = ExtResource("3_qjr1f")
+region = Rect2(0, 0, 103, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t3ml"]
+atlas = ExtResource("4_16ump")
+region = Rect2(0, 0, 243, 146)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08l0q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1yb3")
+}],
+"loop": true,
+"name": &"01",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6n4j")
+}],
+"loop": true,
+"name": &"02",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t3ml")
+}],
+"loop": true,
+"name": &"03",
+"speed": 5.0
+}]
+
+[node name="CharacterPopochiuKing" type="Area2D"]
+y_sort_enabled = true
+script = ExtResource("1_0pcvi")
+script_name = "PopochiuKing"
+description = "Popochiu King"
+cursor = 8
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-24, -32, 0, -56, 40, -48, 56, 8, 24, 48, -24, 48, -56, -16)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="DialogPos" type="Marker2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_08l0q")
+animation = &"03"

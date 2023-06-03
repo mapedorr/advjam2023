@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ddjqh8ifiwjvc"]
+
+[ext_resource type="Script" path="res://popochiu/characters/mufasa/character_mufasa_state.gd" id="1_ct3a6"]
+
+[resource]
+resource_name = "Mufasa"
+script = ExtResource("1_ct3a6")
+script_name = "Mufasa"
+scene = "res://popochiu/characters/mufasa/character_mufasa.tscn"

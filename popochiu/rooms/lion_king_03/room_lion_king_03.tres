@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ckg5fvoqyyd07"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/lion_king_03/room_lion_king_03_state.gd" id="1_ovd5u"]
+
+[resource]
+resource_name = "LionKing03"
+script = ExtResource("1_ovd5u")
+script_name = "LionKing03"
+scene = "res://popochiu/rooms/lion_king_03/room_lion_king_03.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

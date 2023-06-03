@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://blff1h5ew4i61"]
+[gd_scene load_steps=15 format=3 uid="uid://blff1h5ew4i61"]
 
 [ext_resource type="Shader" path="res://popochiu/shaders/crt.gdshader" id="1_h3ryt"]
 [ext_resource type="Script" path="res://popochiu/tv_interface/tv_interface.gd" id="1_ib485"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" path="res://popochiu/shaders/tv.gdshader" id="4_ncrep"]
 [ext_resource type="Shader" path="res://popochiu/shaders/glitch.gdshader" id="5_or767"]
 [ext_resource type="Shader" path="res://popochiu/shaders/lens_distortion.gdshader" id="6_m2dwg"]
+[ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic_14h.ttf" id="8_3cdhn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0voif"]
 shader = ExtResource("1_h3ryt")
@@ -38,6 +39,13 @@ shader_parameter/_ColorDrift = 0.02
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k2sjc"]
 shader = ExtResource("6_m2dwg")
 shader_parameter/strength = 0.018
+
+[sub_resource type="LabelSettings" id="LabelSettings_p1m2a"]
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 4)
 
 [node name="TVInterface" type="CanvasLayer"]
 layer = 15
@@ -139,12 +147,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Frame" type="TextureRect" parent="MainContainer"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("1_wrljh")
+
+[node name="BtnPower" type="Button" parent="MainContainer"]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 68.0
+offset_right = 873.0
+offset_bottom = 140.0
+toggle_mode = true
+text = "Power"
 
 [node name="BtnChangeChannel" type="Button" parent="MainContainer"]
 layout_mode = 0
@@ -154,4 +173,34 @@ offset_right = 873.0
 offset_bottom = 224.0
 text = "Change channel"
 
+[node name="BtnContinue" type="TextureButton" parent="MainContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LblTemp" type="Label" parent="MainContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = -136.0
+offset_right = 174.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("8_3cdhn")
+text = "???"
+label_settings = SubResource("LabelSettings_p1m2a")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="toggled" from="MainContainer/BtnPower" to="." method="_on_btn_power_toggled"]
 [connection signal="pressed" from="MainContainer/BtnChangeChannel" to="." method="_on_btn_change_channel_pressed"]
+[connection signal="pressed" from="MainContainer/BtnContinue" to="." method="_on_btn_continue_pressed"]

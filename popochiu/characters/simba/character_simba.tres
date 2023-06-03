@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ce3c3kxnq2pa8"]
+
+[ext_resource type="Script" path="res://popochiu/characters/simba/character_simba_state.gd" id="1_mf61h"]
+
+[resource]
+resource_name = "Simba"
+script = ExtResource("1_mf61h")
+script_name = "Simba"
+scene = "res://popochiu/characters/simba/character_simba.tscn"

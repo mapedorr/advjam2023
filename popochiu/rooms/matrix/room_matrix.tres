@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://nrfdb1nvkxsd"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/matrix/room_matrix_state.gd" id="1_1co15"]
+
+[resource]
+resource_name = "Matrix"
+script = ExtResource("1_1co15")
+script_name = "Matrix"
+scene = "res://popochiu/rooms/matrix/room_matrix.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

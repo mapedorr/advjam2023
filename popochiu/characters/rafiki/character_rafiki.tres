@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bhvhsa8hcxhqd"]
+
+[ext_resource type="Script" path="res://popochiu/characters/rafiki/character_rafiki_state.gd" id="1_ofehy"]
+
+[resource]
+resource_name = "Rafiki"
+script = ExtResource("1_ofehy")
+script_name = "Rafiki"
+scene = "res://popochiu/characters/rafiki/character_rafiki.tscn"
