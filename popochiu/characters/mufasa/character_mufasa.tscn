@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvs2u8nqu83lc"]
+
+[ext_resource type="Script" path="res://popochiu/characters/mufasa/character_mufasa.gd" id="1_8718e"]
+[ext_resource type="Texture2D" uid="uid://brnnckl7j60xb" path="res://popochiu/characters/mufasa/sprites/mufasa_03.png" id="2_arrnm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkfxm"]
+atlas = ExtResource("2_arrnm")
+region = Rect2(0, 0, 196, 335)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wlqx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkfxm")
+}],
+"loop": true,
+"name": &"03",
+"speed": 5.0
+}]
+
+[node name="CharacterMufasa" type="Area2D"]
+script = ExtResource("1_8718e")
+script_name = "Mufasa"
+description = "Mufasa"
+cursor = 8
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="DialogPos" type="Marker2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wlqx4")
+animation = &"03"

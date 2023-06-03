@@ -14,16 +14,7 @@ var state: Data = load('res://popochiu/rooms/lion_king_02/room_lion_king_02.tres
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	match state.branch:
-		Globals.Branch.SIMBA:
-			C.Coco.disable_now()
-			C.PopochiuKing.disable_now()
-		Globals.Branch.COCO:
-			C.Simba.disable_now()
-			C.PopochiuKing.disable_now()
-		Globals.Branch.POPOCHIU_KING:
-			C.Simba.disable_now()
-			C.Coco.disable_now()
+	pass
 
 
 # What happens when the room changing transition finishes. At this point the room

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://364wdtvh078r"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/terminator_2/room_terminator_2_state.gd" id="1_ldxri"]
+
+[resource]
+resource_name = "Terminator2"
+script = ExtResource("1_ldxri")
+script_name = "Terminator2"
+scene = "res://popochiu/rooms/terminator_2/room_terminator_2.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

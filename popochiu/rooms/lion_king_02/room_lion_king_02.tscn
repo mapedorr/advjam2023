@@ -1,29 +1,24 @@
-[gd_scene load_steps=13 format=3 uid="uid://co3w5js0wurl6"]
+[gd_scene load_steps=8 format=3 uid="uid://co3w5js0wurl6"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_02/room_lion_king_02.gd" id="1_2v2lc"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_apntl"]
-[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="3_o7pj3"]
 [ext_resource type="Texture2D" uid="uid://cimkubs7r2dt8" path="res://popochiu/rooms/_shared/sprites/lion_king_bg.png" id="4_c62c5"]
 [ext_resource type="PackedScene" uid="uid://cy5kjnl3uyxvw" path="res://popochiu/characters/rafiki/character_rafiki.tscn" id="5_w5wj8"]
-[ext_resource type="Script" path="res://popochiu/characters/rafiki/character_rafiki.gd" id="6_fnc67"]
 [ext_resource type="PackedScene" uid="uid://coln5rl0xpmik" path="res://popochiu/characters/coco/character_coco.tscn" id="7_4y16o"]
-[ext_resource type="Script" path="res://popochiu/characters/coco/character_coco.gd" id="8_mx157"]
 [ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="9_rvsqy"]
-[ext_resource type="Script" path="res://popochiu/characters/simba/character_simba.gd" id="10_ml7lt"]
 [ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="11_loh37"]
-[ext_resource type="Script" path="res://popochiu/characters/popochiu_king/character_popochiu_king.gd" id="12_cujrw"]
 
 [node name="RoomLionKing02" type="Node2D"]
 script = ExtResource("1_2v2lc")
 script_name = "LionKing02"
+has_player = false
 
 [node name="WalkableAreas" type="Node2D" parent="."]
 
 [node name="Props" type="Node2D" parent="."]
 
-[node name="Background" type="Area2D" parent="Props" instance=ExtResource("2_apntl")]
+[node name="Background" parent="Props" instance=ExtResource("2_apntl")]
 position = Vector2(480, 270)
-script = ExtResource("3_o7pj3")
 texture = ExtResource("4_c62c5")
 script_name = "Background"
 description = "Background"
@@ -39,30 +34,14 @@ cursor = 1
 
 [node name="Characters" type="Node2D" parent="."]
 
-[node name="CharacterRafiki *" type="Area2D" parent="Characters" instance=ExtResource("5_w5wj8")]
+[node name="CharacterRafiki *" parent="Characters" instance=ExtResource("5_w5wj8")]
 position = Vector2(368, 272)
-script = ExtResource("6_fnc67")
-script_name = "Rafiki"
-description = "Rafiki"
-cursor = 8
 
-[node name="CharacterSimba *" type="Area2D" parent="Characters" instance=ExtResource("9_rvsqy")]
+[node name="CharacterSimba *" parent="Characters" instance=ExtResource("9_rvsqy")]
 position = Vector2(280, 112)
-script = ExtResource("10_ml7lt")
-script_name = "Simba"
-description = "Simba"
-cursor = 8
 
-[node name="CharacterCoco *" type="Area2D" parent="Characters" instance=ExtResource("7_4y16o")]
+[node name="CharacterCoco *" parent="Characters" instance=ExtResource("7_4y16o")]
 position = Vector2(280, 104)
-script = ExtResource("8_mx157")
-script_name = "Coco"
-description = "Coco"
-cursor = 8
 
-[node name="CharacterPopochiuKing *" type="Area2D" parent="Characters" instance=ExtResource("11_loh37")]
+[node name="CharacterPopochiuKing *" parent="Characters" instance=ExtResource("11_loh37")]
 position = Vector2(280, 104)
-script = ExtResource("12_cujrw")
-script_name = "PopochiuKing"
-description = "Popochiu King"
-cursor = 8

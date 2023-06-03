@@ -156,6 +156,15 @@ offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("1_wrljh")
 
+[node name="BtnPower" type="Button" parent="MainContainer"]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 68.0
+offset_right = 873.0
+offset_bottom = 140.0
+toggle_mode = true
+text = "Power"
+
 [node name="BtnChangeChannel" type="Button" parent="MainContainer"]
 layout_mode = 0
 offset_left = 735.0
@@ -192,5 +201,6 @@ label_settings = SubResource("LabelSettings_p1m2a")
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[connection signal="toggled" from="MainContainer/BtnPower" to="." method="_on_btn_power_toggled"]
 [connection signal="pressed" from="MainContainer/BtnChangeChannel" to="." method="_on_btn_change_channel_pressed"]
 [connection signal="pressed" from="MainContainer/BtnContinue" to="." method="_on_btn_continue_pressed"]

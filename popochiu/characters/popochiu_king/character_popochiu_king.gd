@@ -12,16 +12,15 @@ var state: Data = load('res://popochiu/characters/popochiu_king/character_popoch
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ VIRTUAL ░░░░
 # When the room in which this node is located finishes being added to the tree
 func _on_room_set() -> void:
-	pass
+	enable()
+	
+	if Globals.lion_king_branch == Globals.Branch.NONE: return
+	if Globals.branch_name != script_name: disable()
 
 
 # When the node is clicked
 func _on_click() -> void:
-	match R.current.script_name:
-		'LionKing01':
-			Globals.set_room_branch(R.LionKing02, Globals.Branch.POPOCHIU_KING)
-		'LionKing02':
-			say("Vivan los popochius!!!")
+	Globals.progress_movie(Globals.Branch.POPOCHIU_KING)
 
 
 # When the node is right clicked

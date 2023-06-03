@@ -157,7 +157,7 @@ func _create() -> void:
 	)
 	
 	# Establecer como la escena principal
-	if _set_as_main_check.pressed:
+	if _set_as_main_check.button_pressed:
 		_main_dock.set_main_scene(room_resource.scene)
 		row.is_main = true # Para que se vea el corazón
 	
