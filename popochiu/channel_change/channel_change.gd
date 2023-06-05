@@ -18,11 +18,17 @@ func _ready() -> void:
 	_toggle_channel_vfx(false)
 	_toggle_change_vfx(false)
 	
+	G.turned_on.connect(_toggle_channel_vfx.bind(true))
+	G.turned_off.connect(_toggle_channel_vfx.bind(false), CONNECT_REFERENCE_COUNTED)
+	G.turned_off.connect(_toggle_change_vfx.bind(false), CONNECT_REFERENCE_COUNTED)
+	
 	$Label.hide()
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░
 func play_room_change_start() -> void:
+	Globals.channel_change_started.emit()
+	
 	$Label.hide()
 	_toggle_channel_vfx(false)
 	_toggle_change_vfx(true)
@@ -49,11 +55,13 @@ func play_room_change_end() -> void:
 	_toggle_change_vfx(false)
 	
 	transition_finished.emit()
+	Globals.channel_change_finished.emit()
 	A.sfx_tv_lp.play()
 	
 	await get_tree().create_timer(1.5).timeout
 	
-	$Label.hide()
+	if $Label.visible:
+		$Label.hide()
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PRIVATE ░░░░

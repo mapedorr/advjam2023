@@ -26,9 +26,9 @@ func _on_room_transition_finished() -> void:
 #			await C.Mufasa.say("And if it weren't for you,")
 #			await C.Mufasa.say("he'd still be alive")
 #			await C.Mufasa.say("...")
-			await C.Mufasa.say("What will your mother think?")
+			await C.Scar.say("What will your mother think?")
 			await C.Simba.say("What am I gonna do?")
-			await C.Simba.say("Run away, Simba.")
+			await C.Scar.say("Run away, Simba.")
 
 			var response: PopochiuDialogOption = await D.show_inline_dialog([
 				'Obey Scar',

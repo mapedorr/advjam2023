@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ugsk5vf01m6m"]
+[gd_scene load_steps=9 format=3 uid="uid://ugsk5vf01m6m"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_04/room_lion_king_04.gd" id="1_nv0ro"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_v7y6l"]
 [ext_resource type="Texture2D" uid="uid://cimkubs7r2dt8" path="res://popochiu/rooms/_shared/sprites/lion_king_bg.png" id="4_vkm36"]
 [ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="5_nopok"]
+[ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="7_6igxc"]
 [ext_resource type="PackedScene" uid="uid://cvs2u8nqu83lc" path="res://popochiu/characters/mufasa/character_mufasa.tscn" id="7_i8hm0"]
+[ext_resource type="Script" path="res://popochiu/characters/narrator/character_narrator.gd" id="8_5n7o0"]
 [ext_resource type="PackedScene" uid="uid://c1cobvmqtvm8q" path="res://popochiu/characters/scar/character_scar.tscn" id="9_q856p"]
 
 [node name="RoomLionKing04" type="Node2D"]
@@ -39,3 +41,10 @@ position = Vector2(322, 270)
 
 [node name="CharacterScar *" parent="Characters" instance=ExtResource("9_q856p")]
 position = Vector2(573, 276)
+
+[node name="CharacterNarrator *" type="Area2D" parent="Characters" instance=ExtResource("7_6igxc")]
+position = Vector2(480, 270)
+script = ExtResource("8_5n7o0")
+script_name = "Narrator"
+description = "Narrator"
+cursor = 8

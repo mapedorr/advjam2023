@@ -5,6 +5,9 @@ signal option_selected(opt)
 signal dialog_options_requested(options)
 signal dialog_finished(dlg)
 signal inline_dialog_requested(options)
+signal option_change_requested
+signal option_selection_requested
+signal dialog_closed
 
 const PopochiuDialogOption :=\
 preload('res://addons/popochiu/engine/objects/dialog/popochiu_dialog_option.gd')

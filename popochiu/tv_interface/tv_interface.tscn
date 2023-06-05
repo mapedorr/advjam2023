@@ -1,9 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://blff1h5ew4i61"]
+[gd_scene load_steps=16 format=3 uid="uid://blff1h5ew4i61"]
 
 [ext_resource type="Script" path="res://popochiu/tv_interface/tv_interface.gd" id="1_ib485"]
 [ext_resource type="Texture2D" uid="uid://bbu0kr43f0mc2" path="res://popochiu/tv_interface/sprites/tv_frame.png" id="1_wrljh"]
+[ext_resource type="Texture2D" uid="uid://cedk6vwta2bjw" path="res://popochiu/tv_interface/sprites/btn_power.png" id="3_3q7x8"]
+[ext_resource type="Texture2D" uid="uid://bgaakce1qaiy6" path="res://popochiu/tv_interface/sprites/btn_channel.png" id="3_qujcl"]
 [ext_resource type="PackedScene" uid="uid://36pnd0m8pp5n" path="res://popochiu/tv_interface/dialog_menu/dialog_menu.tscn" id="4_p310v"]
+[ext_resource type="Texture2D" uid="uid://rbhr5ssxwmnv" path="res://popochiu/tv_interface/sprites/btn_channel_indicator.png" id="4_rjq82"]
+[ext_resource type="Texture2D" uid="uid://bwq0ayd5g8mj5" path="res://popochiu/tv_interface/sprites/btn_knob.png" id="5_sg7kw"]
+[ext_resource type="Texture2D" uid="uid://8vjyqdvsbdrw" path="res://popochiu/tv_interface/sprites/btn_knob_indicator.png" id="6_oluwl"]
+[ext_resource type="Texture2D" uid="uid://yxlj0vq2bb3s" path="res://popochiu/tv_interface/sprites/btn_select.png" id="7_k7os0"]
 [ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic_14h.ttf" id="8_3cdhn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3xxl"]
+atlas = ExtResource("3_3q7x8")
+region = Rect2(0, 0, 24, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q54x8"]
+atlas = ExtResource("3_3q7x8")
+region = Rect2(24, 0, 24, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66baw"]
+atlas = ExtResource("7_k7os0")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q3p3"]
+atlas = ExtResource("7_k7os0")
+region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="LabelSettings" id="LabelSettings_p1m2a"]
 outline_size = 12
@@ -15,6 +37,7 @@ shadow_offset = Vector2(0, 4)
 [node name="TVInterface" type="CanvasLayer"]
 layer = 15
 script = ExtResource("1_ib485")
+metadata/_edit_horizontal_guides_ = [404.0]
 
 [node name="MainContainer" type="Control" parent="."]
 layout_mode = 3
@@ -32,33 +55,84 @@ offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("1_wrljh")
 
-[node name="BtnPower" type="Button" parent="MainContainer"]
+[node name="BtnPower" type="TextureButton" parent="MainContainer" groups=["tv_button"]]
 layout_mode = 0
-offset_left = 735.0
-offset_top = 68.0
-offset_right = 873.0
-offset_bottom = 140.0
+offset_left = 814.0
+offset_top = 356.0
+offset_right = 838.0
+offset_bottom = 369.0
 toggle_mode = true
-text = "Power"
+texture_normal = SubResource("AtlasTexture_j3xxl")
+texture_pressed = SubResource("AtlasTexture_q54x8")
+texture_disabled = SubResource("AtlasTexture_q54x8")
 
-[node name="BtnChangeChannel" type="Button" parent="MainContainer"]
-layout_mode = 0
-offset_left = 735.0
-offset_top = 152.0
-offset_right = 873.0
-offset_bottom = 224.0
-text = "Change channel"
-
-[node name="BtnContinue" type="TextureButton" parent="MainContainer"]
-unique_name_in_owner = true
+[node name="BtnChannel" type="TextureButton" parent="MainContainer" groups=["tv_button"]]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -175.0
+offset_top = -271.0
+offset_right = -91.0
+offset_bottom = -187.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("3_qujcl")
 
-[node name="LblTemp" type="Label" parent="MainContainer"]
+[node name="BtnChannelIndicator" type="TextureRect" parent="MainContainer/BtnChannel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 22.0
+offset_top = 14.0
+offset_right = 62.0
+offset_bottom = 62.0
+pivot_offset = Vector2(20, 28)
+texture = ExtResource("4_rjq82")
+
+[node name="BtnChoice" type="TextureButton" parent="MainContainer" groups=["tv_button"]]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -149.0
+offset_right = -188.0
+offset_bottom = -125.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_sg7kw")
+
+[node name="BtnChoiceIndicator" type="TextureRect" parent="MainContainer/BtnChoice"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_right = 19.0
+offset_bottom = 19.0
+pivot_offset = Vector2(7, 12)
+texture = ExtResource("6_oluwl")
+
+[node name="BtnSelect" type="TextureButton" parent="MainContainer" groups=["tv_button"]]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -117.0
+offset_right = -188.0
+offset_bottom = -93.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_66baw")
+texture_pressed = SubResource("AtlasTexture_4q3p3")
+
+[node name="DialogMenuTitle" type="Label" parent="MainContainer"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -71,6 +145,7 @@ offset_right = 174.0
 offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("8_3cdhn")
 text = "???"
 label_settings = SubResource("LabelSettings_p1m2a")
@@ -89,6 +164,36 @@ offset_right = 175.0
 offset_bottom = -109.0
 grow_vertical = 0
 
+[node name="LblTemp" type="Label" parent="MainContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = -136.0
+offset_right = 174.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("8_3cdhn")
+text = "---"
+label_settings = SubResource("LabelSettings_p1m2a")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BtnContinue" type="TextureButton" parent="MainContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="toggled" from="MainContainer/BtnPower" to="." method="_on_btn_power_toggled"]
-[connection signal="pressed" from="MainContainer/BtnChangeChannel" to="." method="_on_btn_change_channel_pressed"]
+[connection signal="pressed" from="MainContainer/BtnChannel" to="." method="_on_btn_channel_pressed"]
+[connection signal="pressed" from="MainContainer/BtnChoice" to="." method="_on_btn_choice_pressed"]
+[connection signal="pressed" from="MainContainer/BtnSelect" to="." method="_on_btn_select_pressed"]
 [connection signal="pressed" from="MainContainer/BtnContinue" to="." method="_on_btn_continue_pressed"]
