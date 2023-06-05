@@ -41,6 +41,10 @@ func _on_btn_continue_pressed() -> void:
 
 func _on_btn_power_toggled(button_pressed: bool) -> void:
 	if button_pressed:
+		A.sfx_tv_on.play()
+		A.sfx_tv_lp.play()
 		Globals.change_channel(true)
 	else:
+		A.sfx_tv_lp.stop()
+		A.sfx_tv_off.play()
 		E.goto_room('MainMenu', false)

@@ -60,6 +60,7 @@ mouse_filter = 2
 
 [node name="_REF_" type="TextureRect" parent="VFX"]
 visible = false
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
@@ -112,6 +113,7 @@ mouse_filter = 2
 
 [node name="Grain" type="TextureRect" parent="VFX"]
 material = SubResource("ShaderMaterial_xcdrl")
+layout_mode = 0
 offset_left = 94.0
 offset_top = 33.0
 offset_right = 708.0
@@ -121,6 +123,7 @@ texture = ExtResource("4_ij18h")
 
 [node name="SimpleGrain" type="ColorRect" parent="VFX"]
 material = SubResource("ShaderMaterial_ovkie")
+layout_mode = 0
 offset_left = 94.0
 offset_top = 33.0
 offset_right = 708.0

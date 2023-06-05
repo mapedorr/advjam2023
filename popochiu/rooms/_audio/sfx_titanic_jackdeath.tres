@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://ck3qcf4p8qqsn"]
+
+[ext_resource type="AudioStream" uid="uid://boji7i1b8ugwi" path="res://popochiu/rooms/_audio/sfx_titanic_jackdeath.ogg" id="1_72783"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_iw0df"]
+
+[resource]
+resource_name = "sfx_titanic_jackdeath"
+script = ExtResource("2_iw0df")
+audio = ExtResource("1_72783")
+loop = false
+is_2d = false
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"
