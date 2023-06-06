@@ -14,7 +14,7 @@ var state: Data = load('res://popochiu/rooms/jurassic_park_01/room_jurassic_park
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	pass
+	A.mx_jurassicpark_sc01.play()
 
 
 # What happens when the room changing transition finishes. At this point the room
@@ -28,7 +28,7 @@ func _on_room_transition_finished() -> void:
 # At this point, the screen is black, processing is disabled and all characters
 # have been removed from the $Characters node.
 func _on_room_exited() -> void:
-	pass
+	A.mx_jurassicpark_sc01.stop()
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░
