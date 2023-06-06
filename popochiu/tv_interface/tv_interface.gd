@@ -1,9 +1,10 @@
 extends CanvasLayer
 
-@onready var btn_continue: TextureButton = %BtnContinue
+@onready var btn_power: TextureButton = %BtnPower
 @onready var btn_channel_indicator: TextureRect = %BtnChannelIndicator
 @onready var btn_choice_indicator: TextureRect = %BtnChoiceIndicator
 @onready var dialog_menu_title: Label = %DialogMenuTitle
+@onready var btn_continue: TextureButton = %BtnContinue
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ GODOT ░░░░
@@ -14,6 +15,7 @@ func _ready() -> void:
 	
 	C.character_spoke.connect(_enable_continue)
 	G.title_setted.connect(_set_dialog_menu_title)
+	G.change_channel_requested.connect(_on_btn_channel_pressed)
 	Globals.channel_change_started.connect(_toggle_buttons.bind(true))
 	Globals.channel_change_finished.connect(_toggle_buttons.bind(false))
 	
@@ -27,21 +29,22 @@ func _enable_continue(c: PopochiuCharacter, m: String) -> void:
 	else:
 		$MainContainer/LblTemp.text = '%s: %s' % [c.description, m]
 	
-	var tween := get_tree().create_tween()
-	tween.tween_property(
-		$MainContainer/LblTemp, "visible_ratio",
-		1.0, 1.0
-	).from(0.0)
+#	var tween := get_tree().create_tween()
+#	tween.tween_property(
+#		$MainContainer/LblTemp, "visible_ratio",
+#		1.0, 1.0
+#	).from(0.0)
 	
 	btn_continue.show()
 
 
 func _on_btn_continue_pressed() -> void:
-	var tween := get_tree().create_tween()
-	tween.tween_property(
-		$MainContainer/LblTemp, "visible_ratio",
-		0.0, 0.1
-	).from(1.0)
+#	var tween := get_tree().create_tween()
+#	tween.tween_property(
+#		$MainContainer/LblTemp, "visible_ratio",
+#		0.0, 0.1
+#	).from(1.0)
+	$MainContainer/LblTemp.text = ""
 	
 	btn_continue.hide()
 	G.continue_clicked.emit()
@@ -62,15 +65,19 @@ func _on_btn_power_toggled(button_pressed: bool) -> void:
 
 
 func _on_btn_channel_pressed() -> void:
-	if not $MainContainer/BtnPower.button_pressed: return
+	if not btn_power.button_pressed: return
 	
-	btn_channel_indicator.rotation_degrees += 45
+	_turn_channel_knob()
 	D.dialog_closed.emit()
 	Globals.change_channel()
 
 
+func _turn_channel_knob() -> void:
+	btn_channel_indicator.rotation_degrees += 45
+
+
 func _on_btn_choice_pressed() -> void:
-	if not $MainContainer/BtnPower.button_pressed: return
+	if not btn_power.button_pressed: return
 	
 	btn_choice_indicator.rotation_degrees += 90
 	D.option_change_requested.emit()

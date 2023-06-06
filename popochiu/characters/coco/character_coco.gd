@@ -39,7 +39,7 @@ func _on_item_used(item: PopochiuInventoryItem) -> void:
 
 # Use it to play the idle animation for the character
 func _play_idle() -> void:
-	$AnimatedSprite2D.play((R.current.script_name as String).to_snake_case().split('_')[2])
+	$AnimatedSprite2D.play('%02d' % Globals.lion_king_seq)
 
 
 # Use it to play the walk animation for the character

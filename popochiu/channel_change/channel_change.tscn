@@ -50,7 +50,7 @@ content_margin_right = 4.0
 bg_color = Color(0, 0, 0, 0.623529)
 
 [node name="ChannelChange" type="CanvasLayer"]
-layer = 9
+layer = 10
 script = ExtResource("1_b5oh0")
 
 [node name="VFX" type="Control" parent="."]

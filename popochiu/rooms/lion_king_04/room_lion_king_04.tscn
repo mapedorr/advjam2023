@@ -1,16 +1,85 @@
-[gd_scene load_steps=8 format=3 uid="uid://ugsk5vf01m6m"]
+[gd_scene load_steps=14 format=3 uid="uid://ugsk5vf01m6m"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_04/room_lion_king_04.gd" id="1_nv0ro"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_v7y6l"]
 [ext_resource type="Texture2D" uid="uid://cimkubs7r2dt8" path="res://popochiu/rooms/_shared/sprites/lion_king_bg.png" id="4_vkm36"]
+[ext_resource type="Texture2D" uid="uid://dbrpmjbbo74o1" path="res://popochiu/rooms/lion_king_04/props/coco_ending_a/coco_ending_a.png" id="5_6i42s"]
 [ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="5_nopok"]
+[ext_resource type="Texture2D" uid="uid://b2e8m8pcklnvq" path="res://popochiu/rooms/lion_king_04/props/coco_ending_b/coco_ending_b.png" id="6_qvanh"]
+[ext_resource type="Texture2D" uid="uid://dbankj8c4wnuk" path="res://popochiu/rooms/lion_king_04/props/coco_ending_c/coco_ending_c.png" id="7_2cnhr"]
 [ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="7_6igxc"]
 [ext_resource type="PackedScene" uid="uid://cvs2u8nqu83lc" path="res://popochiu/characters/mufasa/character_mufasa.tscn" id="7_i8hm0"]
 [ext_resource type="PackedScene" uid="uid://c1cobvmqtvm8q" path="res://popochiu/characters/scar/character_scar.tscn" id="9_q856p"]
 
+[sub_resource type="Animation" id="Animation_r04ba"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/CharacterSimba:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(311, 342)]
+}
+
+[sub_resource type="Animation" id="Animation_ooapk"]
+resource_name = "simba_leaves"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/CharacterSimba:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(311, 342), Vector2(311, 342), Vector2(26, 342)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/CharacterSimba")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"face_left"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/CharacterScar")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["04b"],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0xyvi"]
+_data = {
+"RESET": SubResource("Animation_r04ba"),
+"simba_leaves": SubResource("Animation_ooapk")
+}
+
 [node name="RoomLionKing04" type="Node2D"]
 script = ExtResource("1_nv0ro")
 script_name = "LionKing04"
+has_player = false
 
 [node name="WalkableAreas" type="Node2D" parent="."]
 
@@ -24,6 +93,33 @@ description = "Bg"
 clickable = false
 cursor = 1
 
+[node name="CocoEndingA" parent="Props" instance=ExtResource("2_v7y6l")]
+visible = false
+position = Vector2(398, 241)
+texture = ExtResource("5_6i42s")
+script_name = "CocoEndingA"
+description = "Coco Ending A"
+clickable = false
+cursor = 1
+
+[node name="CocoEndingB" parent="Props" instance=ExtResource("2_v7y6l")]
+visible = false
+position = Vector2(362, 291)
+texture = ExtResource("6_qvanh")
+script_name = "CocoEndingB"
+description = "Coco Ending B"
+clickable = false
+cursor = 1
+
+[node name="CocoEndingC" parent="Props" instance=ExtResource("2_v7y6l")]
+visible = false
+position = Vector2(394, 254)
+texture = ExtResource("7_2cnhr")
+script_name = "CocoEndingC"
+description = "Coco Ending C"
+clickable = false
+cursor = 1
+
 [node name="Hotspots" type="Node2D" parent="."]
 
 [node name="Regions" type="Node2D" parent="."]
@@ -33,13 +129,21 @@ cursor = 1
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="CharacterSimba *" parent="Characters" instance=ExtResource("5_nopok")]
+visible = false
 position = Vector2(311, 342)
 
 [node name="CharacterMufasa *" parent="Characters" instance=ExtResource("7_i8hm0")]
+visible = false
 position = Vector2(322, 270)
 
 [node name="CharacterScar *" parent="Characters" instance=ExtResource("9_q856p")]
+visible = false
 position = Vector2(573, 276)
 
 [node name="CharacterNarrator *" parent="Characters" instance=ExtResource("7_6igxc")]
 position = Vector2(480, 270)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0xyvi")
+}

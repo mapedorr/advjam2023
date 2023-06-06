@@ -37,7 +37,7 @@ func _on_room_transition_finished() -> void:
 			await C.Narrator.say('( All animals bawl in euphoria )')
 	
 	Globals.lion_king_seq += 1
-	Globals.change_channel()
+	G.change_channel_requested.emit()
 
 
 # What happens before Popochiu unloads the room.
