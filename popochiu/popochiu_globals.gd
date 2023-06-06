@@ -65,7 +65,6 @@ func progress_movie(branch: int) -> void:
 			
 			set_room_branch(R.get('LionKing%02d' % lion_king_seq), branch)
 
-
 func get_branch_name() -> String:
 	return str(Branch.keys()[lion_king_branch]).to_pascal_case()
 

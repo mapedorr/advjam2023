@@ -74,10 +74,15 @@ func _on_btn_choice_pressed() -> void:
 	
 	btn_choice_indicator.rotation_degrees += 90
 	D.option_change_requested.emit()
+#	TODO: hacer que sea un número random
+	A.sfx_tv_switch_01.play()
 
 
 func _on_btn_select_pressed() -> void:
+	
 	D.option_selection_requested.emit()
+#	TODO: hacer que sea un número random y un sonido de selección
+	A.sfx_tv_switch_03.play()
 
 
 func _set_dialog_menu_title(title := '') -> void:

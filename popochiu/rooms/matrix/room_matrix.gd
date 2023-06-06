@@ -14,14 +14,15 @@ var state: Data = load('res://popochiu/rooms/matrix/room_matrix.tres')
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
+	await get_tree().create_timer(.2).timeout
 	A.sfx_matrix_pill.play()
 
 
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
-	# You can use await E.queue([]) to excecute a queue of instructions
 	pass
+	# You can use await E.queue([]) to excecute a queue of instructions
 
 
 # What happens before Popochiu unloads the room.
