@@ -1,8 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8ovjsrqfgubh"]
+[gd_scene load_steps=4 format=3 uid="uid://b8ovjsrqfgubh"]
 
 [ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic_14h.ttf" id="1_5mnjc"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gv2i1"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shxnl"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 0, 1)
+
 [node name="DialogOption" type="Button"]
+mouse_filter = 2
 theme_override_fonts/font = ExtResource("1_5mnjc")
 theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_gv2i1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gv2i1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gv2i1")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_gv2i1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_shxnl")
+button_mask = 0
 text = "Option A"

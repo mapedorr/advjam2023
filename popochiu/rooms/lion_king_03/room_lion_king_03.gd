@@ -45,13 +45,16 @@ func _on_room_transition_finished() -> void:
 				'2':
 					C.Rafiki.say('The missadventures of Rafiki and the coconut')
 		Globals.Branch.SIMBA:
+			G.title_setted.emit('And Simba say...')
+			
+			await C.Mufasa.say('Everything the light touches is our kingdom.')
 			var response: PopochiuDialogOption = await D.show_inline_dialog([
-				'Everything the light touches is our kingdom.',
-				'Your mom is so hot!',
-				'Wanna hear a joke, boy?'
+				'Why?',
+				'What about the caves?',
+				"Does that make us landowners then?"
 			])
 			
-			await C.Mufasa.say(response.text)
+			await C.Simba.say(response.text)
 			
 			Globals.lion_king_seq += 1
 			Globals.change_channel()

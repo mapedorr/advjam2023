@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d3t8udf68gijy"]
+
+[ext_resource type="Script" path="res://popochiu/characters/narrator/character_narrator_state.gd" id="1_3ssp6"]
+
+[resource]
+resource_name = "Narrator"
+script = ExtResource("1_3ssp6")
+script_name = "Narrator"
+scene = "res://popochiu/characters/narrator/character_narrator.tscn"

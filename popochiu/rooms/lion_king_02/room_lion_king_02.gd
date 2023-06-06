@@ -14,7 +14,7 @@ var state: Data = load('res://popochiu/rooms/lion_king_02/room_lion_king_02.tres
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	pass
+	$Characters.y_sort_enabled = false
 
 
 # What happens when the room changing transition finishes. At this point the room
@@ -26,10 +26,14 @@ func _on_room_transition_finished() -> void:
 			await C.Rafiki.say('The coconut thank you all!')
 			await C.Coco.say('...')
 			await C.Rafiki.say('He will inherit the throne with honor')
-			await C.Rafiki.say('( All animals bawl in euphoria )')
-			
+			await C.Narrator.say('( All animals bawl in euphoria )')
 		Globals.Branch.SIMBA:
-			await C.Rafiki.say('( All animals bawl in euphoria )')
+			await C.Narrator.say('( All animals bawl in euphoria )')
+		Globals.Branch.POPOCHIU_KING:
+			await C.Rafiki.say('This... thing will inherit the throne')
+			await C.PopochiuKing.say('Hiya all my little friends')
+			await C.PopochiuKing.say("I'm hungry!!!")
+			await C.Narrator.say('( All animals bawl in euphoria )')
 	
 	Globals.lion_king_seq += 1
 	Globals.change_channel()

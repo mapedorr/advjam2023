@@ -1,5 +1,8 @@
 extends Node
 
+signal channel_change_started
+signal channel_change_finished
+
 enum Branch {
 	NONE,
 	SIMBA,
@@ -81,7 +84,6 @@ func change_channel(was_off := false) -> void:
 		_channel_idx = fposmod(_channel_idx + 1, _channels_to_visit.size())
 	
 	var channel_key: String = _channels_to_visit[_channel_idx]
-	
 	var channel: Dictionary = channels[channel_key]
 	var channel_name: String = channel.scene
 	

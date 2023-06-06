@@ -14,6 +14,9 @@ signal history_opened
 signal save_requested(date) # The date in YYYY/MM/DD HH:MM:SS format
 signal load_requested
 signal continue_requested
+signal title_setted(title)
+signal turned_on
+signal turned_off
 
 var is_blocked := false
 

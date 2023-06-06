@@ -14,6 +14,8 @@ var state: Data = load('res://popochiu/rooms/lion_king_01/room_lion_king_01.tres
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
+	$Characters.y_sort_enabled = false
+
 	C.Simba.enable()
 	C.Coco.enable()
 	C.PopochiuKing.enable()
@@ -23,6 +25,8 @@ func _on_room_entered() -> void:
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
+	G.title_setted.emit('Who will inherit the throne?')
+	
 	var response: PopochiuDialogOption = await D.show_inline_dialog([
 		'The coconut', 'Simba', 'The Popochiu'
 	])
