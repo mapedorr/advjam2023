@@ -26,11 +26,12 @@ func _on_room_entered() -> void:
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
-	G.title_setted.emit('Who will inherit the throne?')
-	
-	var response: PopochiuDialogOption = await D.show_inline_dialog([
-		'The coconut', 'Simba', 'The Popochiu'
-	])
+	var response: PopochiuDialogOption = await D.show_inline_dialog(
+		'Who will inherit the throne?',
+		[
+			'The coconut', 'Simba', 'The Popochiu'
+		]
+	)
 	
 	match response.id:
 		'0':

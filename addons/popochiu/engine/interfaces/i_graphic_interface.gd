@@ -17,6 +17,7 @@ signal continue_requested
 signal title_setted(title)
 signal turned_on
 signal turned_off
+signal change_channel_requested
 
 var is_blocked := false
 

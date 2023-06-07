@@ -1,20 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1cobvmqtvm8q"]
+[gd_scene load_steps=6 format=3 uid="uid://c1cobvmqtvm8q"]
 
 [ext_resource type="Script" path="res://popochiu/characters/scar/character_scar.gd" id="1_qvw4i"]
 [ext_resource type="Texture2D" uid="uid://cqukss8o6vjhg" path="res://popochiu/characters/scar/sprites/scar_04.png" id="2_xuvp7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3lq6v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjvpo"]
 atlas = ExtResource("2_xuvp7")
-region = Rect2(0, 0, 256, 269)
+region = Rect2(0, 0, 256, 268)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0aef"]
+atlas = ExtResource("2_xuvp7")
+region = Rect2(0, 268, 256, 268)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wep1t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3lq6v")
+"texture": SubResource("AtlasTexture_yjvpo")
 }],
 "loop": true,
 "name": &"04",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0aef")
+}],
+"loop": true,
+"name": &"04b",
 "speed": 5.0
 }]
 
@@ -31,10 +43,12 @@ visible = false
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 
 [node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(-10000, 0, 10000, 0)
 width = 1.0
 
 [node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
 offset_left = -2.5
@@ -47,6 +61,7 @@ color = Color(0, 1, 1, 1)
 texture_filter = 1
 
 [node name="DialogPos" type="Marker2D" parent="."]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wep1t")

@@ -22,12 +22,13 @@ var prev_dialog: PopochiuDialog = null
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░
 # Shows a list of options (like a dialog tree would do) and returns the
 # PopochiuDialogOption of the selected option
-func show_inline_dialog(opts: Array) -> PopochiuDialogOption:
+func show_inline_dialog(title: String, opts: Array) -> PopochiuDialogOption:
 	active = true
 	
 	if current_dialog:
 		D.option_selected.disconnect(current_dialog._on_option_selected)
 	
+	G.title_setted.emit(title)
 	inline_dialog_requested.emit(opts)
 	
 	var pdo: PopochiuDialogOption = await option_selected

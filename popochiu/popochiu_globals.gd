@@ -11,6 +11,11 @@ enum Branch {
 	DINOSAURS,
 	POPOCHIUS,
 }
+enum Ending {
+	COCO_A,
+	COCO_B,
+	COCO_C,
+}
 
 var branch_name := '' : get = get_branch_name
 var channels := {
@@ -39,6 +44,7 @@ var channels := {
 }
 var lion_king_seq := 1
 var lion_king_branch := 0
+var lion_king_ending := -1
 var jurassic_park_seq := 1
 var jurassic_park_branch := 0
 var current_music : AudioCueMusic = null

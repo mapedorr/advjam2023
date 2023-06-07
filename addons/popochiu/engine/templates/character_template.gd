@@ -55,3 +55,8 @@ func _play_talk() -> void:
 # Use it to play the grab animation for the character
 func _play_grab() -> void:
 	super()
+
+
+# ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░
+func play(anim_name: String) -> void:
+	pass

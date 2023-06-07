@@ -28,36 +28,48 @@ func _on_room_entered() -> void:
 func _on_room_transition_finished() -> void:
 	match Globals.lion_king_branch:
 		Globals.Branch.COCO:
+			await C.Narrator.say("Over time Rafiki became the official translator of the coconut.")
 			await C.Coco.say('...')
 			await C.Rafiki.say('What did you say?')
 			
-			var response: PopochiuDialogOption = await D.show_inline_dialog([
-				'You are the chosen one',
-				'Mufasa has abused small animals',
-				'Kill the King, if you really love me'
-			])
+			var response: PopochiuDialogOption = await D.show_inline_dialog(
+				"What did the coconut say?",
+				[
+					'You are the chosen one',
+					'Mufasa has abused small animals',
+					'Kill the King, if you really love me'
+				]
+			)
 			
 			match response.id:
 				'0':
-					C.Rafiki.say('The planet of the micos')
+					Globals.lion_king_ending = Globals.Ending.COCO_A
+					await C.Rafiki.say('The planet of the micos')
 				'1':
-					C.Rafiki.say('The elections')
+					Globals.lion_king_ending = Globals.Ending.COCO_B
+					await C.Rafiki.say('The elections')
 				'2':
-					C.Rafiki.say('The missadventures of Rafiki and the coconut')
+					Globals.lion_king_ending = Globals.Ending.COCO_C
+					await C.Rafiki.say('The missadventures of Rafiki and the coconut')
+				
+			Globals.lion_king_seq += 1
+			G.change_channel_requested.emit()
 		Globals.Branch.SIMBA:
-			G.title_setted.emit('And Simba say...')
-			
 			await C.Mufasa.say('Everything the light touches is our kingdom.')
-			var response: PopochiuDialogOption = await D.show_inline_dialog([
-				'Why?',
-				'What about the caves?',
-				"Does that make us landowners then?"
-			])
+			
+			var response: PopochiuDialogOption = await D.show_inline_dialog(
+				"And Simba say...",
+				[
+					'Why?',
+					'What about the caves?',
+					"Does that make us landowners then?"
+				]
+			)
 			
 			await C.Simba.say(response.text)
 			
 			Globals.lion_king_seq += 1
-			Globals.change_channel()
+			G.change_channel_requested.emit()
 
 
 # What happens before Popochiu unloads the room.

@@ -14,7 +14,22 @@ var state: Data = load('res://popochiu/rooms/lion_king_04/room_lion_king_04.tres
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	pass
+	$Props.y_sort_enabled = false
+	
+	C.Scar.disable()
+	
+	match Globals.lion_king_branch:
+		Globals.Branch.COCO:
+			# Aquí termina la historia del coco
+			match Globals.lion_king_ending:
+				Globals.Ending.COCO_A:
+					get_prop('CocoEndingA').enable()
+				Globals.Ending.COCO_B:
+					get_prop('CocoEndingB').enable()
+				Globals.Ending.COCO_C:
+					get_prop('CocoEndingC').enable()
+		Globals.Branch.SIMBA:
+			C.Scar.enable()
 
 
 # What happens when the room changing transition finishes. At this point the room
@@ -22,19 +37,33 @@ func _on_room_entered() -> void:
 func _on_room_transition_finished() -> void:
 	match Globals.lion_king_branch:
 		Globals.Branch.SIMBA:
-#			await C.Mufasa.say('But the King is dead')
-#			await C.Mufasa.say("And if it weren't for you,")
-#			await C.Mufasa.say("he'd still be alive")
-#			await C.Mufasa.say("...")
-			await C.Scar.say("What will your mother think?")
 			await C.Simba.say("What am I gonna do?")
 			await C.Scar.say("Run away, Simba.")
 
-			var response: PopochiuDialogOption = await D.show_inline_dialog([
-				'Obey Scar',
-				'Try to kill Scar',
-				'Propose a deal to Scar'
-			])
+			var response: PopochiuDialogOption = await D.show_inline_dialog(
+				"What should Simba do?",
+				[
+					'Obey Scar',
+					'Try to kill Scar',
+					'Propose a deal to Scar'
+				]
+			)
+			
+			match response.id:
+				'0':
+					$AnimationPlayer.play("simba_leaves")
+					await $AnimationPlayer.animation_finished
+					await C.Scar.say("Kill him!")
+				"1":
+					C.Simba.play("04b")
+					await C.Simba.say("You won't tell anyone a shit!")
+				"2":
+					C.Simba.play("04c")
+					await C.Simba.say("Let's make a deal")
+					await C.Simba.say("We say it was an accident and I'll let you inherit the kingdom")
+			
+			Globals.lion_king_seq += 1
+			G.change_channel_requested.emit()
 
 
 # What happens before Popochiu unloads the room.

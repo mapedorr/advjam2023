@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgm51kysqejc7"]
+[gd_scene load_steps=13 format=3 uid="uid://cgm51kysqejc7"]
 
 [ext_resource type="Script" path="res://popochiu/characters/simba/character_simba.gd" id="1_xla1d"]
 [ext_resource type="Texture2D" uid="uid://be2ip1204u6cm" path="res://popochiu/characters/simba/sprites/simba_01.png" id="2_slpst"]
@@ -18,9 +18,17 @@ region = Rect2(0, 0, 87, 94)
 atlas = ExtResource("4_qvlxr")
 region = Rect2(0, 0, 75, 117)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7vyo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcks3"]
 atlas = ExtResource("5_00snk")
-region = Rect2(0, 0, 190, 132)
+region = Rect2(0, 0, 191, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfyt5"]
+atlas = ExtResource("5_00snk")
+region = Rect2(0, 132, 191, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1aqd"]
+atlas = ExtResource("5_00snk")
+region = Rect2(0, 264, 191, 132)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3oloo"]
 animations = [{
@@ -50,10 +58,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p7vyo")
+"texture": SubResource("AtlasTexture_xcks3")
 }],
 "loop": true,
 "name": &"04",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfyt5")
+}],
+"loop": true,
+"name": &"04b",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1aqd")
+}],
+"loop": true,
+"name": &"04c",
 "speed": 5.0
 }]
 
@@ -69,10 +93,12 @@ always_on_top = true
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
 
 [node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(-10000, 0, 10000, 0)
 width = 1.0
 
 [node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
 offset_left = -2.5
@@ -84,8 +110,9 @@ color = Color(0, 1, 1, 1)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="DialogPos" type="Marker2D" parent="."]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_3oloo")
-animation = &"01"
+animation = &"04"
