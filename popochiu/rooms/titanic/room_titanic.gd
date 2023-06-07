@@ -14,6 +14,7 @@ var state: Data = load('res://popochiu/rooms/titanic/room_titanic.tres')
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
+	await get_tree().create_timer(.2).timeout
 	A.sfx_titanic_jackdeath.play()
 
 

@@ -41,6 +41,7 @@ var lion_king_seq := 1
 var lion_king_branch := 0
 var jurassic_park_seq := 1
 var jurassic_park_branch := 0
+var current_music : AudioCueMusic = null
 
 var _channels_to_visit := []
 var _channel_idx := 0
@@ -64,7 +65,6 @@ func progress_movie(branch: int) -> void:
 			lion_king_branch = branch
 			
 			set_room_branch(R.get('LionKing%02d' % lion_king_seq), branch)
-
 
 func get_branch_name() -> String:
 	return str(Branch.keys()[lion_king_branch]).to_pascal_case()

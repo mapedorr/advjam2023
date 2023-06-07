@@ -19,6 +19,7 @@ func _on_room_entered() -> void:
 	C.Simba.enable()
 	C.Coco.enable()
 	C.PopochiuKing.enable()
+	await get_tree().create_timer(.2).timeout
 	A.mx_lionking_sc01.play()
 
 
@@ -36,6 +37,7 @@ func _on_room_transition_finished() -> void:
 			Globals.progress_movie(Globals.Branch.COCO)
 		'1':
 			Globals.progress_movie(Globals.Branch.SIMBA)
+			Globals.current_music = A.mx_lionking_sc01_lion
 		'2':
 			Globals.progress_movie(Globals.Branch.POPOCHIU_KING)
 
@@ -45,6 +47,8 @@ func _on_room_transition_finished() -> void:
 # have been removed from the $Characters node.
 func _on_room_exited() -> void:
 	A.mx_lionking_sc01.stop()
+#	TODO: Hacer que esto sea menos chirri
+	
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░

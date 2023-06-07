@@ -20,5 +20,6 @@ var mx_lionking_sc01: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionk
 var sfx_matrix_pill: AudioCueSound = load("res://popochiu/rooms/_audio/sfx_matrix_pill.tres")
 var sfx_terminator_baby: AudioCueSound = load("res://popochiu/rooms/_audio/sfx_terminator_baby.tres")
 var sfx_titanic_jackdeath: AudioCueSound = load("res://popochiu/rooms/_audio/sfx_titanic_jackdeath.tres")
+var mx_lionking_sc01_lion: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc01_lion.tres")
 # ---- cues
 

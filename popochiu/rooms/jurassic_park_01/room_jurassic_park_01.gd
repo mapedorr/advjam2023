@@ -14,6 +14,7 @@ var state: Data = load('res://popochiu/rooms/jurassic_park_01/room_jurassic_park
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
+	await get_tree().create_timer(.2).timeout
 	A.mx_jurassicpark_sc01.play()
 
 
