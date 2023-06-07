@@ -37,7 +37,7 @@ func _on_room_transition_finished() -> void:
 			Globals.progress_movie(Globals.Branch.COCO)
 		'1':
 			Globals.progress_movie(Globals.Branch.SIMBA)
-			A.mx_lionking_sc01_lion.play()
+			Globals.current_music = A.mx_lionking_sc01_lion
 		'2':
 			Globals.progress_movie(Globals.Branch.POPOCHIU_KING)
 

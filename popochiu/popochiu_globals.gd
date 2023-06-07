@@ -41,6 +41,7 @@ var lion_king_seq := 1
 var lion_king_branch := 0
 var jurassic_park_seq := 1
 var jurassic_park_branch := 0
+var current_music : AudioCueMusic = null
 
 var _channels_to_visit := []
 var _channel_idx := 0

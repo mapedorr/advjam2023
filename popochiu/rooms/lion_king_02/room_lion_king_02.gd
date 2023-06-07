@@ -15,6 +15,7 @@ var state: Data = load('res://popochiu/rooms/lion_king_02/room_lion_king_02.tres
 # tree but it is not visible
 func _on_room_entered() -> void:
 	$Characters.y_sort_enabled = false
+	Globals.current_music.play()
 
 
 # What happens when the room changing transition finishes. At this point the room
@@ -43,7 +44,7 @@ func _on_room_transition_finished() -> void:
 # At this point, the screen is black, processing is disabled and all characters
 # have been removed from the $Characters node.
 func _on_room_exited() -> void:
-	pass
+	Globals.current_music.stop()
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░
