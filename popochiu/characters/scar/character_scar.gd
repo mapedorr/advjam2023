@@ -59,4 +59,4 @@ func _play_grab() -> void:
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░
 func play(anim_name: String) -> void:
-	$AnimatedSprite2D.play(anim_name)
+	pass

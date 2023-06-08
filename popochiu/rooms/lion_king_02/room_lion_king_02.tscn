@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://co3w5js0wurl6"]
+[gd_scene load_steps=12 format=3 uid="uid://co3w5js0wurl6"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_02/room_lion_king_02.gd" id="1_2v2lc"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_apntl"]
 [ext_resource type="Texture2D" uid="uid://cimkubs7r2dt8" path="res://popochiu/rooms/_shared/sprites/lion_king_bg.png" id="4_c62c5"]
-[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="4_vjnop"]
 [ext_resource type="Texture2D" uid="uid://c5ypyrybcdakq" path="res://popochiu/characters/rafiki/sprites/rafiki_02.png" id="5_bmj7g"]
 [ext_resource type="PackedScene" uid="uid://cy5kjnl3uyxvw" path="res://popochiu/characters/rafiki/character_rafiki.tscn" id="5_w5wj8"]
 [ext_resource type="Texture2D" uid="uid://dvseqtj7gv2ig" path="res://popochiu/characters/coco/sprites/coco_02.png" id="6_e0v5l"]
@@ -31,39 +30,35 @@ clickable = false
 baseline = -270
 cursor = 1
 
-[node name="Rafiki" type="Area2D" parent="Props" instance=ExtResource("2_apntl")]
+[node name="Rafiki" parent="Props" instance=ExtResource("2_apntl")]
 position = Vector2(408, 280)
-script = ExtResource("4_vjnop")
 texture = ExtResource("5_bmj7g")
 script_name = "Rafiki"
 description = "Rafiki"
 clickable = false
 cursor = 1
 
-[node name="Coco" type="Area2D" parent="Props" instance=ExtResource("2_apntl")]
+[node name="Coco" parent="Props" instance=ExtResource("2_apntl")]
 visible = false
 position = Vector2(320, 112)
-script = ExtResource("4_vjnop")
 texture = ExtResource("6_e0v5l")
 script_name = "Coco"
 description = "Coco"
 clickable = false
 cursor = 1
 
-[node name="Simba" type="Area2D" parent="Props" instance=ExtResource("2_apntl")]
+[node name="Simba" parent="Props" instance=ExtResource("2_apntl")]
 visible = false
 position = Vector2(321, 115)
-script = ExtResource("4_vjnop")
 texture = ExtResource("7_nl1bk")
 script_name = "Simba"
 description = "Simba"
 clickable = false
 cursor = 1
 
-[node name="Popochiu" type="Area2D" parent="Props" instance=ExtResource("2_apntl")]
+[node name="Popochiu" parent="Props" instance=ExtResource("2_apntl")]
 visible = false
 position = Vector2(320, 104)
-script = ExtResource("4_vjnop")
 texture = ExtResource("8_3eixb")
 script_name = "Popochiu"
 description = "Popochiu"
