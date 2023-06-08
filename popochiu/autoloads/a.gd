@@ -21,5 +21,17 @@ var sfx_matrix_pill: AudioCueSound = load("res://popochiu/rooms/_audio/sfx_matri
 var sfx_terminator_baby: AudioCueSound = load("res://popochiu/rooms/_audio/sfx_terminator_baby.tres")
 var sfx_titanic_jackdeath: AudioCueSound = load("res://popochiu/rooms/_audio/sfx_titanic_jackdeath.tres")
 var mx_lionking_sc01_lion: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc01_lion.tres")
+var mx_lionking_sc03_coco: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc03_coco.tres")
+var mx_lionking_sc03_lion: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc03_lion.tres")
+var mx_lionking_sc03_popochiu: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc03_popochiu.tres")
+var mx_lionking_sc04: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc04.tres")
+var mx_lionking_sc04_coco: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc04_coco.tres")
+var mx_lionking_sc04_popochiu: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc04_popochiu.tres")
+var mx_lionking_sc05a: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc05a.tres")
+var mx_lionking_sc05b: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc05b.tres")
+var mx_lionking_sc06: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc06.tres")
+var mx_lionking_sc06_popochiu: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc06_popochiu.tres")
+var mx_lionking_sc07a: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc07a.tres")
+var mx_lionking_sc07b: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc07b.tres")
 # ---- cues
 

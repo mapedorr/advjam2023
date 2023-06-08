@@ -20,6 +20,7 @@ func _on_room_entered() -> void:
 	
 	match Globals.lion_king_branch:
 		Globals.Branch.COCO:
+			Globals.current_music = A.mx_lionking_sc04_coco
 			# Aquí termina la historia del coco
 			match Globals.lion_king_ending:
 				Globals.Ending.COCO_A:
@@ -28,9 +29,14 @@ func _on_room_entered() -> void:
 					get_prop('CocoEndingB').enable()
 				Globals.Ending.COCO_C:
 					get_prop('CocoEndingC').enable()
+		Globals.Branch.POPOCHIUS:
+			Globals.current_music = A.mx_lionking_sc04_popochiu
 		Globals.Branch.SIMBA:
+			Globals.current_music = A.mx_lionking_sc04
 			C.Scar.enable()
 
+	await get_tree().create_timer(.2).timeout
+	Globals.current_music.play()
 
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
@@ -70,7 +76,7 @@ func _on_room_transition_finished() -> void:
 # At this point, the screen is black, processing is disabled and all characters
 # have been removed from the $Characters node.
 func _on_room_exited() -> void:
-	pass
+	Globals.current_music.stop()
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░
