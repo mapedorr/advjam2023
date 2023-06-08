@@ -1,85 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgm51kysqejc7"]
+[gd_scene load_steps=2 format=3 uid="uid://cgm51kysqejc7"]
 
 [ext_resource type="Script" path="res://popochiu/characters/simba/character_simba.gd" id="1_xla1d"]
-[ext_resource type="Texture2D" uid="uid://be2ip1204u6cm" path="res://popochiu/characters/simba/sprites/simba_01.png" id="2_slpst"]
-[ext_resource type="Texture2D" uid="uid://b2df3cv2bhavp" path="res://popochiu/characters/simba/sprites/simba_02.png" id="3_x8pmn"]
-[ext_resource type="Texture2D" uid="uid://1k46o57cinm1" path="res://popochiu/characters/simba/sprites/simba_03.png" id="4_qvlxr"]
-[ext_resource type="Texture2D" uid="uid://2vk7v322dchh" path="res://popochiu/characters/simba/sprites/simba_04.png" id="5_00snk"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r73ej"]
-atlas = ExtResource("2_slpst")
-region = Rect2(0, 0, 139, 121)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5oj25"]
-atlas = ExtResource("3_x8pmn")
-region = Rect2(0, 0, 87, 94)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lpi61"]
-atlas = ExtResource("4_qvlxr")
-region = Rect2(0, 0, 75, 117)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xcks3"]
-atlas = ExtResource("5_00snk")
-region = Rect2(0, 0, 191, 132)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dfyt5"]
-atlas = ExtResource("5_00snk")
-region = Rect2(0, 132, 191, 132)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j1aqd"]
-atlas = ExtResource("5_00snk")
-region = Rect2(0, 264, 191, 132)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3oloo"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r73ej")
-}],
-"loop": true,
-"name": &"01",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5oj25")
-}],
-"loop": true,
-"name": &"02",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lpi61")
-}],
-"loop": true,
-"name": &"03",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xcks3")
-}],
-"loop": true,
-"name": &"04",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dfyt5")
-}],
-"loop": true,
-"name": &"04b",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j1aqd")
-}],
-"loop": true,
-"name": &"04c",
-"speed": 5.0
-}]
 
 [node name="CharacterSimba" type="Area2D"]
 script = ExtResource("1_xla1d")
@@ -111,8 +32,3 @@ color = Color(0, 1, 1, 1)
 
 [node name="DialogPos" type="Marker2D" parent="."]
 visible = false
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-y_sort_enabled = true
-sprite_frames = SubResource("SpriteFrames_3oloo")
-animation = &"04"

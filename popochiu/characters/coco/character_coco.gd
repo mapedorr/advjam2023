@@ -12,15 +12,12 @@ var state: Data = load('res://popochiu/characters/coco/character_coco.tres')
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ VIRTUAL ░░░░
 # When the room in which this node is located finishes being added to the tree
 func _on_room_set() -> void:
-	enable()
-	
-	if Globals.lion_king_branch == Globals.Branch.NONE: return
-	if Globals.branch_name != script_name: disable()
+	pass
 
 
 # When the node is clicked
 func _on_click() -> void:
-	Globals.progress_movie(Globals.Branch.COCO)
+	pass
 
 
 # When the node is right clicked
@@ -39,7 +36,7 @@ func _on_item_used(item: PopochiuInventoryItem) -> void:
 
 # Use it to play the idle animation for the character
 func _play_idle() -> void:
-	$AnimatedSprite2D.play('%02d' % Globals.lion_king_seq)
+	super()
 
 
 # Use it to play the walk animation for the character

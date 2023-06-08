@@ -12,11 +12,7 @@ var state: Data = load('res://popochiu/characters/simba/character_simba.tres')
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ VIRTUAL ░░░░
 # When the room in which this node is located finishes being added to the tree
 func _on_room_set() -> void:
-	$AnimatedSprite2D.flip_h = false
-	enable()
-	
-	if Globals.lion_king_branch == Globals.Branch.NONE: return
-	if Globals.branch_name != script_name: disable()
+	pass
 
 
 # When the node is clicked
@@ -40,10 +36,7 @@ func _on_item_used(item: PopochiuInventoryItem) -> void:
 
 # Use it to play the idle animation for the character
 func _play_idle() -> void:
-	if _looking_dir == Looking.LEFT:
-		$AnimatedSprite2D.flip_h = true
-	
-	$AnimatedSprite2D.play('%02d' % Globals.lion_king_seq)
+	super()
 
 
 # Use it to play the walk animation for the character
@@ -64,4 +57,4 @@ func _play_grab() -> void:
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░
 func play(anim_name: String) -> void:
-	$AnimatedSprite2D.play(anim_name)
+	pass

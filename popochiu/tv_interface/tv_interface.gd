@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+const ROTATION := 360.0 / 5.0
+
 @onready var btn_power: TextureButton = %BtnPower
 @onready var btn_channel_indicator: TextureRect = %BtnChannelIndicator
 @onready var btn_choice_indicator: TextureRect = %BtnChoiceIndicator
@@ -68,7 +70,7 @@ func _on_btn_channel_pressed() -> void:
 
 
 func _turn_channel_knob() -> void:
-	btn_channel_indicator.rotation_degrees += 45
+	btn_channel_indicator.rotation_degrees += ROTATION
 
 
 func _on_btn_choice_pressed() -> void:

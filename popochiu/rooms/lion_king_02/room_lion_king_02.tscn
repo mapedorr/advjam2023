@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://co3w5js0wurl6"]
+[gd_scene load_steps=12 format=3 uid="uid://co3w5js0wurl6"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_02/room_lion_king_02.gd" id="1_2v2lc"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_apntl"]
 [ext_resource type="Texture2D" uid="uid://cimkubs7r2dt8" path="res://popochiu/rooms/_shared/sprites/lion_king_bg.png" id="4_c62c5"]
+[ext_resource type="Texture2D" uid="uid://c5ypyrybcdakq" path="res://popochiu/characters/rafiki/sprites/rafiki_02.png" id="5_bmj7g"]
 [ext_resource type="PackedScene" uid="uid://cy5kjnl3uyxvw" path="res://popochiu/characters/rafiki/character_rafiki.tscn" id="5_w5wj8"]
+[ext_resource type="Texture2D" uid="uid://dvseqtj7gv2ig" path="res://popochiu/characters/coco/sprites/coco_02.png" id="6_e0v5l"]
 [ext_resource type="PackedScene" uid="uid://coln5rl0xpmik" path="res://popochiu/characters/coco/character_coco.tscn" id="7_4y16o"]
+[ext_resource type="Texture2D" uid="uid://b2df3cv2bhavp" path="res://popochiu/characters/simba/sprites/simba_02.png" id="7_nl1bk"]
+[ext_resource type="Texture2D" uid="uid://b0rn7buv8clp1" path="res://popochiu/characters/popochiu_king/sprites/popochiu_king_02.png" id="8_3eixb"]
 [ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="8_ft7ds"]
-[ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="9_rvsqy"]
 [ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="11_loh37"]
 
 [node name="RoomLionKing02" type="Node2D"]
@@ -27,6 +30,41 @@ clickable = false
 baseline = -270
 cursor = 1
 
+[node name="Rafiki" parent="Props" instance=ExtResource("2_apntl")]
+position = Vector2(408, 280)
+texture = ExtResource("5_bmj7g")
+script_name = "Rafiki"
+description = "Rafiki"
+clickable = false
+cursor = 1
+
+[node name="Coco" parent="Props" instance=ExtResource("2_apntl")]
+visible = false
+position = Vector2(320, 112)
+texture = ExtResource("6_e0v5l")
+script_name = "Coco"
+description = "Coco"
+clickable = false
+cursor = 1
+
+[node name="Simba" parent="Props" instance=ExtResource("2_apntl")]
+visible = false
+position = Vector2(321, 115)
+texture = ExtResource("7_nl1bk")
+script_name = "Simba"
+description = "Simba"
+clickable = false
+cursor = 1
+
+[node name="Popochiu" parent="Props" instance=ExtResource("2_apntl")]
+visible = false
+position = Vector2(320, 104)
+texture = ExtResource("8_3eixb")
+script_name = "Popochiu"
+description = "Popochiu"
+clickable = false
+cursor = 1
+
 [node name="Hotspots" type="Node2D" parent="."]
 
 [node name="Regions" type="Node2D" parent="."]
@@ -36,16 +74,10 @@ cursor = 1
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="CharacterRafiki *" parent="Characters" instance=ExtResource("5_w5wj8")]
-position = Vector2(368, 272)
-
-[node name="CharacterSimba *" parent="Characters" instance=ExtResource("9_rvsqy")]
-position = Vector2(280, 112)
 
 [node name="CharacterCoco *" parent="Characters" instance=ExtResource("7_4y16o")]
-position = Vector2(280, 104)
 
 [node name="CharacterPopochiuKing *" parent="Characters" instance=ExtResource("11_loh37")]
-position = Vector2(280, 104)
 
 [node name="CharacterNarrator *" parent="Characters" instance=ExtResource("8_ft7ds")]
 position = Vector2(480, 270)

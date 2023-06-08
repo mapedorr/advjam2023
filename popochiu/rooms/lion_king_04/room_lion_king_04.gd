@@ -14,9 +14,10 @@ var state: Data = load('res://popochiu/rooms/lion_king_04/room_lion_king_04.tres
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
+	$Characters.y_sort_enabled = false
 	$Props.y_sort_enabled = false
 	
-	C.Scar.disable()
+#	C.Scar.disable()
 	
 	match Globals.lion_king_branch:
 		Globals.Branch.COCO:
