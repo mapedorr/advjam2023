@@ -12,6 +12,7 @@ const PRTerminator2 := preload('res://popochiu/rooms/terminator_2/room_terminato
 const PRMatrix := preload('res://popochiu/rooms/matrix/room_matrix.gd')
 const PRJurassicPark01 := preload('res://popochiu/rooms/jurassic_park_01/room_jurassic_park_01.gd')
 const PRLionKing04 := preload('res://popochiu/rooms/lion_king_04/room_lion_king_04.gd')
+const PRJurassicPark02 := preload('res://popochiu/rooms/jurassic_park_02/room_jurassic_park_02.gd')
 # ---- classes
 
 # nodes ----
@@ -25,6 +26,7 @@ var Terminator2: PRTerminator2 : get = get_Terminator2
 var Matrix: PRMatrix : get = get_Matrix
 var JurassicPark01: PRJurassicPark01 : get = get_JurassicPark01
 var LionKing04: PRLionKing04 : get = get_LionKing04
+var JurassicPark02: PRJurassicPark02 : get = get_JurassicPark02
 # ---- nodes
 
 # functions ----
@@ -38,5 +40,6 @@ func get_Terminator2() -> PRTerminator2: return super.get_runtime_room('Terminat
 func get_Matrix() -> PRMatrix: return super.get_runtime_room('Matrix')
 func get_JurassicPark01() -> PRJurassicPark01: return super.get_runtime_room('JurassicPark01')
 func get_LionKing04() -> PRLionKing04: return super.get_runtime_room('LionKing04')
+func get_JurassicPark02() -> PRJurassicPark02: return super.get_runtime_room('JurassicPark02')
 # ---- functions
 

@@ -1,23 +1,214 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqeswlg31tw0f"]
+[gd_scene load_steps=17 format=3 uid="uid://dqeswlg31tw0f"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/jurassic_park_01/room_jurassic_park_01.gd" id="1_5scrr"]
+[ext_resource type="Texture2D" uid="uid://b2gwvxs1b8puj" path="res://popochiu/rooms/jurassic_park_01/props/mosquito/Mos_04.png" id="2_bbupt"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_nmqtk"]
-[ext_resource type="Texture2D" uid="uid://o3w0rk7xjjgo" path="res://popochiu/rooms/jurassic_park_01/props/bg/sprites/jurassic_park_bg.png" id="4_uesab"]
+[ext_resource type="Texture2D" uid="uid://bqrjsy6anwjmy" path="res://popochiu/rooms/jurassic_park_01/props/mosquito/Mos_03.png" id="3_ofdex"]
+[ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="4_5d8pl"]
+[ext_resource type="Texture2D" uid="uid://dv5ttixg5j7f1" path="res://popochiu/rooms/jurassic_park_01/props/mosquito/Mos_02.png" id="4_vyc2n"]
+[ext_resource type="Texture2D" uid="uid://osf3o37g2o0y" path="res://popochiu/rooms/jurassic_park_01/props/logo_jurassic/Logo.png" id="5_54rir"]
+[ext_resource type="Texture2D" uid="uid://bm5ylg1l85g5w" path="res://popochiu/rooms/jurassic_park_01/props/mosquito/Mos_01.png" id="5_y2ffd"]
+[ext_resource type="Texture2D" uid="uid://wmrb7obtaivw" path="res://popochiu/rooms/jurassic_park_01/props/bg/sprites/Bg.png" id="7_t46a2"]
+[ext_resource type="Texture2D" uid="uid://dyx8wsm2j8lcp" path="res://popochiu/rooms/jurassic_park_01/props/popochiu/popo_1.png" id="9_31v3p"]
+[ext_resource type="PackedScene" uid="uid://duv07j2mehkxb" path="res://popochiu/characters/grandpa/character_grandpa.tscn" id="10_vgua3"]
+[ext_resource type="Texture2D" uid="uid://cqvlvdj68ohtn" path="res://popochiu/rooms/jurassic_park_01/props/dinosaur/Jurasic-28.png" id="11_25fmn"]
+
+[sub_resource type="Animation" id="Animation_8xwql"]
+resource_name = "01"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo_jurassic:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 2, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo_jurassic:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sv667"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo_jurassic:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo_jurassic:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mosquito:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_bbupt")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mosquito:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(345, 291)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mosquito:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_l8aaf"]
+resource_name = "02"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mosquito:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.6, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_bbupt"), ExtResource("3_ofdex"), ExtResource("4_vyc2n"), ExtResource("5_y2ffd")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mosquito:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.6, 2.4, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(637, 192), Vector2(412, 353), Vector2(325, 173), Vector2(553, 132), Vector2(544, 239)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mosquito:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cwt37"]
+_data = {
+"01": SubResource("Animation_8xwql"),
+"02": SubResource("Animation_l8aaf"),
+"RESET": SubResource("Animation_sv667")
+}
 
 [node name="RoomJurassicPark01" type="Node2D"]
 script = ExtResource("1_5scrr")
 script_name = "JurassicPark01"
 has_player = false
+metadata/_edit_vertical_guides_ = [125.0, 681.0]
+metadata/_edit_horizontal_guides_ = [33.0, 483.0]
 
 [node name="WalkableAreas" type="Node2D" parent="."]
 
 [node name="Props" type="Node2D" parent="."]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Props"]
+libraries = {
+"": SubResource("AnimationLibrary_cwt37")
+}
+
 [node name="Bg" parent="Props" instance=ExtResource("2_nmqtk")]
-position = Vector2(480, 270)
-texture = ExtResource("4_uesab")
+position = Vector2(403, 259)
+texture = ExtResource("7_t46a2")
 script_name = "Bg"
 description = "Bg"
+clickable = false
+cursor = 1
+
+[node name="Logo_jurassic" parent="Props" instance=ExtResource("2_nmqtk")]
+visible = false
+modulate = Color(1, 1, 1, 0.928571)
+position = Vector2(401, 255)
+texture = ExtResource("5_54rir")
+script_name = "Logo_jurassic"
+description = "Logo Jurassic"
+clickable = false
+cursor = 1
+
+[node name="Popochiu" parent="Props" instance=ExtResource("2_nmqtk")]
+visible = false
+position = Vector2(486, 245)
+texture = ExtResource("9_31v3p")
+script_name = "Popochiu"
+description = "Popochiu"
+clickable = false
+cursor = 1
+
+[node name="Dinosaur" parent="Props" instance=ExtResource("2_nmqtk")]
+visible = false
+position = Vector2(482, 221)
+texture = ExtResource("11_25fmn")
+script_name = "Dinosaur"
+description = "Dinosaur"
+clickable = false
+cursor = 1
+
+[node name="Mosquito" parent="Props" instance=ExtResource("2_nmqtk")]
+visible = false
+position = Vector2(345, 291)
+texture = ExtResource("2_bbupt")
+script_name = "Mosquito"
+description = "Mosquito"
 clickable = false
 cursor = 1
 
@@ -28,3 +219,8 @@ cursor = 1
 [node name="Markers" type="Node2D" parent="."]
 
 [node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterNarrator *" parent="Characters" instance=ExtResource("4_5d8pl")]
+
+[node name="CharacterGrandpa *" parent="Characters" instance=ExtResource("10_vgua3")]
+position = Vector2(297, 293)
