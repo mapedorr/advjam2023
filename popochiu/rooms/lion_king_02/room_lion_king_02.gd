@@ -14,11 +14,20 @@ var state: Data = load('res://popochiu/rooms/lion_king_02/room_lion_king_02.tres
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
+	$Props.y_sort_enabled = false
 	$Characters.y_sort_enabled = false
+	
+	match Globals.lion_king_branch:
+		Globals.Branch.COCO:
+			get_prop('Coco').enable()
+		Globals.Branch.SIMBA:
+			get_prop('Simba').enable()
+		Globals.Branch.POPOCHIU_KING:
+			get_prop('Popochiu').enable()
+	
 	Globals.current_music = A.mx_lionking_sc01_lion
 	await get_tree().create_timer(.2).timeout
 	Globals.current_music.play()
-	
 
 
 # What happens when the room changing transition finishes. At this point the room
@@ -47,7 +56,8 @@ func _on_room_transition_finished() -> void:
 # At this point, the screen is black, processing is disabled and all characters
 # have been removed from the $Characters node.
 func _on_room_exited() -> void:
-	Globals.current_music.stop()
+	if Globals.current_music:
+		Globals.current_music.stop()
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░

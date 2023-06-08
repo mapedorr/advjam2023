@@ -1,87 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://coln5rl0xpmik"]
+[gd_scene load_steps=2 format=3 uid="uid://coln5rl0xpmik"]
 
 [ext_resource type="Script" path="res://popochiu/characters/coco/character_coco.gd" id="1_hssem"]
-[ext_resource type="Texture2D" uid="uid://b6y6necmgd1f5" path="res://popochiu/characters/coco/sprites/coco_01.png" id="2_g7b2f"]
-[ext_resource type="Texture2D" uid="uid://dvseqtj7gv2ig" path="res://popochiu/characters/coco/sprites/coco_02.png" id="3_c3ml2"]
-[ext_resource type="Texture2D" uid="uid://di3k1ckjupqsq" path="res://popochiu/characters/coco/sprites/coco_03.png" id="4_53v4q"]
-[ext_resource type="Texture2D" uid="uid://chbnba0x144r" path="res://popochiu/characters/coco/sprites/coco_04_a.png" id="5_k86hb"]
-[ext_resource type="Texture2D" uid="uid://dbkhgq35unqib" path="res://popochiu/characters/coco/sprites/coco_04_b.png" id="6_8xisw"]
-[ext_resource type="Texture2D" uid="uid://hlwwmn7nwbyl" path="res://popochiu/characters/coco/sprites/coco_04_c.png" id="7_gr6dx"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_swkpv"]
-atlas = ExtResource("2_g7b2f")
-region = Rect2(0, 0, 64, 57)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ihsqo"]
-atlas = ExtResource("3_c3ml2")
-region = Rect2(0, 0, 53, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hc6s5"]
-atlas = ExtResource("4_53v4q")
-region = Rect2(0, 0, 72, 77)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j31j1"]
-atlas = ExtResource("5_k86hb")
-region = Rect2(0, 0, 60, 126)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s87xl"]
-atlas = ExtResource("6_8xisw")
-region = Rect2(0, 0, 22, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oieew"]
-atlas = ExtResource("7_gr6dx")
-region = Rect2(0, 0, 73, 62)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pmovs"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_swkpv")
-}],
-"loop": true,
-"name": &"01",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ihsqo")
-}],
-"loop": true,
-"name": &"02",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hc6s5")
-}],
-"loop": true,
-"name": &"03",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j31j1")
-}],
-"loop": true,
-"name": &"04_a",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s87xl")
-}],
-"loop": true,
-"name": &"04_b",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oieew")
-}],
-"loop": true,
-"name": &"04_c",
-"speed": 5.0
-}]
 
 [node name="CharacterCoco" type="Area2D"]
 y_sort_enabled = true
@@ -116,7 +35,3 @@ color = Color(0, 1, 1, 1)
 
 [node name="DialogPos" type="Marker2D" parent="."]
 visible = false
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_pmovs")
-animation = &"04_c"

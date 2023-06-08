@@ -60,7 +60,6 @@ func _ready() -> void:
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░
 func set_room_branch(room: PopochiuRoom, branch: int) -> void:
-	# 
 	E.goto_room(room.script_name, false)
 
 
@@ -77,6 +76,7 @@ func progress_movie(branch: int) -> void:
 			jurassic_park_branch = branch
 			
 			set_room_branch(R.get('JurassicPark%02d' % jurassic_park_seq), branch)
+
 
 func get_branch_name() -> String:
 	return str(Branch.keys()[lion_king_branch]).to_pascal_case()
@@ -103,3 +103,7 @@ func change_channel(was_off := false) -> void:
 		channel_name = '%s%02d' % [channel.scene, get(channel_key + '_seq')]
 	
 	E.goto_room(channel_name, !was_off)
+
+
+func progress_and_change_channel() -> void:
+	pass

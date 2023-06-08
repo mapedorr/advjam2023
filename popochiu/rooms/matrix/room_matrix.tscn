@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://7n8od7tg5ljf"]
+[gd_scene load_steps=4 format=3 uid="uid://7n8od7tg5ljf"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/matrix/room_matrix.gd" id="1_w6il3"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_l35wi"]
-[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="3_sb6ge"]
 [ext_resource type="Texture2D" uid="uid://bbum1xp61u3s8" path="res://popochiu/rooms/matrix/props/bg/matrix_bg.png" id="4_78w5k"]
 
 [node name="RoomMatrix" type="Node2D"]
@@ -14,9 +13,8 @@ has_player = false
 
 [node name="Props" type="Node2D" parent="."]
 
-[node name="Bg" type="Area2D" parent="Props" instance=ExtResource("2_l35wi")]
+[node name="Bg" parent="Props" instance=ExtResource("2_l35wi")]
 position = Vector2(480, 270)
-script = ExtResource("3_sb6ge")
 texture = ExtResource("4_78w5k")
 script_name = "Bg"
 description = "Bg"

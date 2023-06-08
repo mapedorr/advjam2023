@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://do1k681xt48cm"]
+[gd_scene load_steps=2 format=3 uid="uid://hncahv835bvp"]
 
-[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="1"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="1_ythrr"]
 
-[node name="Prop" type="Area2D"]
-script = ExtResource("1")
+[node name="Popochiu" type="Area2D"]
+script = ExtResource("1_ythrr")
+script_name = "Popochiu"
+description = "Popochiu"
+clickable = false
+cursor = 1
 
 [node name="BaselineHelper" type="Line2D" parent="."]
 points = PackedVector2Array(-10000, 0, 10000, 0)

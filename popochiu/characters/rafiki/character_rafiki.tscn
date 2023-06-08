@@ -1,87 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://cy5kjnl3uyxvw"]
+[gd_scene load_steps=2 format=3 uid="uid://cy5kjnl3uyxvw"]
 
 [ext_resource type="Script" path="res://popochiu/characters/rafiki/character_rafiki.gd" id="1_8sksx"]
-[ext_resource type="Texture2D" uid="uid://c31pth4necbou" path="res://popochiu/characters/rafiki/sprites/rafiki_01.png" id="2_w7q8j"]
-[ext_resource type="Texture2D" uid="uid://c5ypyrybcdakq" path="res://popochiu/characters/rafiki/sprites/rafiki_02.png" id="3_bbhdr"]
-[ext_resource type="Texture2D" uid="uid://cm417gcfbglh4" path="res://popochiu/characters/rafiki/sprites/rafiki_03.png" id="4_k6k37"]
-[ext_resource type="Texture2D" uid="uid://bnwxonj3xhxox" path="res://popochiu/characters/rafiki/sprites/rafiki_04_a.png" id="5_1ix53"]
-[ext_resource type="Texture2D" uid="uid://coibt6tq8p5tc" path="res://popochiu/characters/rafiki/sprites/rafiki_04_b.png" id="6_3rn73"]
-[ext_resource type="Texture2D" uid="uid://bxdqw0pchmukj" path="res://popochiu/characters/rafiki/sprites/rafiki_04_c.png" id="7_gp441"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rfn5l"]
-atlas = ExtResource("2_w7q8j")
-region = Rect2(0, 0, 225, 296)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0aphu"]
-atlas = ExtResource("3_bbhdr")
-region = Rect2(0, 0, 223, 337)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rotck"]
-atlas = ExtResource("4_k6k37")
-region = Rect2(0, 0, 244, 277)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dmd81"]
-atlas = ExtResource("5_1ix53")
-region = Rect2(0, 0, 244, 271)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_brewa"]
-atlas = ExtResource("6_3rn73")
-region = Rect2(0, 0, 87, 83)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_54kx7"]
-atlas = ExtResource("7_gp441")
-region = Rect2(0, 0, 280, 273)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5qamm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rfn5l")
-}],
-"loop": true,
-"name": &"01",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0aphu")
-}],
-"loop": true,
-"name": &"02",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rotck")
-}],
-"loop": true,
-"name": &"03",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dmd81")
-}],
-"loop": true,
-"name": &"04",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_brewa")
-}],
-"loop": true,
-"name": &"04_b",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_54kx7")
-}],
-"loop": true,
-"name": &"04_c",
-"speed": 5.0
-}]
 
 [node name="CharacterRafiki" type="Area2D"]
 y_sort_enabled = true
@@ -110,9 +29,7 @@ offset_right = 2.5
 offset_bottom = 2.5
 color = Color(0, 1, 1, 1)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_5qamm")
-animation = &"04"
-
 [node name="DialogPos" type="Marker2D" parent="."]
 visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

@@ -38,7 +38,7 @@ func _on_item_used(item: PopochiuInventoryItem) -> void:
 
 # Use it to play the idle animation for the character
 func _play_idle() -> void:
-	$AnimatedSprite2D.play('%02d' % Globals.lion_king_seq)
+	super()
 
 
 # Use it to play the walk animation for the character

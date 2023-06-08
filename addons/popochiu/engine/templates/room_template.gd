@@ -14,7 +14,8 @@ var state: Data = null
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	pass
+	$Characters.y_sort_enabled = false
+	$Props.y_sort_enabled = false
 
 
 # What happens when the room changing transition finishes. At this point the room
