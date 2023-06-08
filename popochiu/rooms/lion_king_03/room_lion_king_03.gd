@@ -18,9 +18,17 @@ func _on_room_entered() -> void:
 	
 	match Globals.lion_king_branch:
 		Globals.Branch.COCO:
+			Globals.current_music = A.mx_lionking_sc03_coco
 			C.Mufasa.disable()
 			C.Rafiki.enable()
 			get_prop('Kingdom').disable()
+		Globals.Branch.POPOCHIUS:
+			Globals.current_music = A.mx_lionking_sc03_popochiu
+		Globals.Branch.SIMBA:
+			Globals.current_music = A.mx_lionking_sc03_lion
+	
+	await get_tree().create_timer(.2).timeout
+	Globals.current_music.play()
 
 
 # What happens when the room changing transition finishes. At this point the room
@@ -76,7 +84,7 @@ func _on_room_transition_finished() -> void:
 # At this point, the screen is black, processing is disabled and all characters
 # have been removed from the $Characters node.
 func _on_room_exited() -> void:
-	pass
+	Globals.current_music.stop()
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░

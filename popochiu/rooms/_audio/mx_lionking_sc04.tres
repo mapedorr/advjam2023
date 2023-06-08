@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueMusic" load_steps=3 format=3 uid="uid://bqqnaf8cbamwn"]
+
+[ext_resource type="AudioStream" uid="uid://qnckthrl4bdv" path="res://popochiu/rooms/_audio/mx_lionking_sc04.ogg" id="1_oaks1"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_music.gd" id="2_ynnut"]
+
+[resource]
+resource_name = "mx_lionking_sc04"
+script = ExtResource("2_ynnut")
+audio = ExtResource("1_oaks1")
+loop = true
+is_2d = false
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"

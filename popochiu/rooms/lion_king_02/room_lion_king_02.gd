@@ -15,7 +15,10 @@ var state: Data = load('res://popochiu/rooms/lion_king_02/room_lion_king_02.tres
 # tree but it is not visible
 func _on_room_entered() -> void:
 	$Characters.y_sort_enabled = false
+	Globals.current_music = A.mx_lionking_sc01_lion
+	await get_tree().create_timer(.2).timeout
 	Globals.current_music.play()
+	
 
 
 # What happens when the room changing transition finishes. At this point the room
