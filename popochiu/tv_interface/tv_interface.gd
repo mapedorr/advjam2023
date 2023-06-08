@@ -29,21 +29,16 @@ func _enable_continue(c: PopochiuCharacter, m: String) -> void:
 	else:
 		$MainContainer/LblTemp.text = '%s: %s' % [c.description, m]
 	
-#	var tween := get_tree().create_tween()
-#	tween.tween_property(
-#		$MainContainer/LblTemp, "visible_ratio",
-#		1.0, 1.0
-#	).from(0.0)
-	
 	btn_continue.show()
+	
+	if E.auto_continue_after > 0.0:
+		await get_tree().create_timer(E.auto_continue_after).timeout
+		
+		if btn_continue.visible:
+			_on_btn_continue_pressed()
 
 
 func _on_btn_continue_pressed() -> void:
-#	var tween := get_tree().create_tween()
-#	tween.tween_property(
-#		$MainContainer/LblTemp, "visible_ratio",
-#		0.0, 0.1
-#	).from(1.0)
 	$MainContainer/LblTemp.text = ""
 	
 	btn_continue.hide()

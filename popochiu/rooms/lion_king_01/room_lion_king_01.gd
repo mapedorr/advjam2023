@@ -43,6 +43,7 @@ func _on_room_transition_finished() -> void:
 			Globals.progress_movie(Globals.Branch.POPOCHIU_KING)
 
 
+
 # What happens before Popochiu unloads the room.
 # At this point, the screen is black, processing is disabled and all characters
 # have been removed from the $Characters node.

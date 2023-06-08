@@ -71,6 +71,12 @@ func progress_movie(branch: int) -> void:
 			lion_king_branch = branch
 			
 			set_room_branch(R.get('LionKing%02d' % lion_king_seq), branch)
+		
+		Branch.DINOSAURS, Branch.POPOCHIUS:
+			jurassic_park_seq += 1
+			jurassic_park_branch = branch
+			
+			set_room_branch(R.get('JurassicPark%02d' % jurassic_park_seq), branch)
 
 func get_branch_name() -> String:
 	return str(Branch.keys()[lion_king_branch]).to_pascal_case()

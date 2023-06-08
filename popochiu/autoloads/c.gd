@@ -9,6 +9,7 @@ const PCPopochiuKing := preload('res://popochiu/characters/popochiu_king/charact
 const PCMufasa := preload('res://popochiu/characters/mufasa/character_mufasa.gd')
 const PCScar := preload('res://popochiu/characters/scar/character_scar.gd')
 const PCNarrator := preload('res://popochiu/characters/narrator/character_narrator.gd')
+const PCGrandpa := preload('res://popochiu/characters/grandpa/character_grandpa.gd')
 # ---- classes
 
 # nodes ----
@@ -19,6 +20,7 @@ var PopochiuKing: PCPopochiuKing : get = get_PopochiuKing
 var Mufasa: PCMufasa : get = get_Mufasa
 var Scar: PCScar : get = get_Scar
 var Narrator: PCNarrator : get = get_Narrator
+var Grandpa: PCGrandpa : get = get_Grandpa
 # ---- nodes
 
 # functions ----
@@ -29,5 +31,6 @@ func get_PopochiuKing() -> PCPopochiuKing: return super.get_runtime_character('P
 func get_Mufasa() -> PCMufasa: return super.get_runtime_character('Mufasa')
 func get_Scar() -> PCScar: return super.get_runtime_character('Scar')
 func get_Narrator() -> PCNarrator: return super.get_runtime_character('Narrator')
+func get_Grandpa() -> PCGrandpa: return super.get_runtime_character('Grandpa')
 # ---- functions
 
