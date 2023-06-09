@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bc7u2r50ly2sj"]
+[gd_scene load_steps=18 format=3 uid="uid://bc7u2r50ly2sj"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_06/room_lion_king_06.gd" id="1_udnss"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_ki527"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bqudmpn040uum" path="res://popochiu/rooms/lion_king_06/props/popochiu_ending_c/popochiu_ending_c.png" id="7_4uy1u"]
 [ext_resource type="Texture2D" uid="uid://dgmq6ue3svq75" path="res://popochiu/rooms/lion_king_06/props/kingdom/kingdom_06.png" id="7_80yk1"]
 [ext_resource type="Texture2D" uid="uid://b1vq6khepynh" path="res://popochiu/rooms/lion_king_06/props/popochiu_king/popochiu_king_06.png" id="7_u688m"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="9_bkqwb"]
+[ext_resource type="Texture2D" uid="uid://b1l0lru1ueksk" path="res://popochiu/rooms/_shared/sprites/the_popolion.png" id="10_hq2um"]
 [ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="10_qnrb1"]
 [ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="12_ya1re"]
 [ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="14_inff4"]
@@ -244,6 +246,16 @@ position = Vector2(426, 248)
 texture = ExtResource("7_4uy1u")
 script_name = "PopochiuEndingC"
 description = "Popochiu Ending C"
+clickable = false
+cursor = 1
+
+[node name="ThePopolion" type="Area2D" parent="Props" instance=ExtResource("2_ki527")]
+visible = false
+position = Vector2(401, 254)
+script = ExtResource("9_bkqwb")
+texture = ExtResource("10_hq2um")
+script_name = "ThePopolion"
+description = "The Popolion"
 clickable = false
 cursor = 1
 
