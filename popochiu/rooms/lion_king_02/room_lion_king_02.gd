@@ -20,12 +20,14 @@ func _on_room_entered() -> void:
 	match Globals.lion_king_branch:
 		Globals.Branch.COCO:
 			get_prop('Coco').enable()
+			Globals.current_music = A.mx_lionking_sc01_coco
 		Globals.Branch.SIMBA:
+			Globals.current_music = A.mx_lionking_sc01_lion
 			get_prop('Simba').enable()
 		Globals.Branch.POPOCHIU_KING:
 			get_prop('Popochiu').enable()
+			Globals.current_music = A.mx_lionking_sc01_popochiu
 	
-	Globals.current_music = A.mx_lionking_sc01_lion
 	await get_tree().create_timer(.2).timeout
 	Globals.current_music.play()
 
