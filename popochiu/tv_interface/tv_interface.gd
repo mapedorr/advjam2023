@@ -12,6 +12,8 @@ const ROTATION := 360.0 / 5.0
 @onready var rtl_black_speaker: RichTextLabel = %RtlBlackSpeaker
 @onready var reality_black: ColorRect = %RealityBlack
 @onready var rtl_reality_dialog: RichTextLabel = %RtlRealityDialog
+@onready var user_manual_container: LinkButton = %UserManualContainer
+@onready var user_manual_animation_player: AnimationPlayer = %UserManualAnimationPlayer
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ GODOT ░░░░
@@ -28,13 +30,13 @@ func _ready() -> void:
 	Globals.channel_change_started.connect(_toggle_buttons.bind(true))
 	Globals.channel_change_finished.connect(_toggle_buttons.bind(false))
 	Globals.intro_triggered.connect($RealityLayer.show)
-	Globals.intro_finished.connect($RealityLayer.hide)
+	Globals.intro_finished.connect(_on_intro_finished)
 	Globals.reality_said.connect(_show_reality_dialog)
 	
 	btn_continue.hide()
 	black_container.hide()
-	
 	$RealityLayer.hide()
+	user_manual_animation_player.play("RESET")
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PRIVATE ░░░░
@@ -143,3 +145,18 @@ func _show_reality_dialog(msg: String) -> void:
 	
 	btn_continue.show()
 	rtl_reality_dialog.text = "[center]%s[/center]" % msg
+
+
+func _on_intro_finished() -> void:
+	$RealityLayer.hide()
+	await Globals.say_in_reality("How did this work?")
+	
+	user_manual_animation_player.play("first_use", -1, 1.5)
+
+
+func _on_user_manual_container_pressed() -> void:
+	user_manual_animation_player.play("hide")
+
+
+func _on_open_button_pressed() -> void:
+	user_manual_animation_player.play_backwards("hide")
