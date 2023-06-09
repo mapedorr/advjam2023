@@ -1,17 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://blff1h5ew4i61"]
+[gd_scene load_steps=18 format=3 uid="uid://blff1h5ew4i61"]
 
 [ext_resource type="Script" path="res://popochiu/tv_interface/tv_interface.gd" id="1_ib485"]
 [ext_resource type="Texture2D" uid="uid://bbu0kr43f0mc2" path="res://popochiu/tv_interface/sprites/tv_frame.png" id="1_wrljh"]
+[ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic.ttf" id="2_m6hga"]
 [ext_resource type="Texture2D" uid="uid://cedk6vwta2bjw" path="res://popochiu/tv_interface/sprites/btn_power.png" id="3_3q7x8"]
 [ext_resource type="Texture2D" uid="uid://bgaakce1qaiy6" path="res://popochiu/tv_interface/sprites/btn_channel.png" id="3_qujcl"]
-[ext_resource type="FontFile" uid="uid://di6vehs7agao7" path="res://popochiu/tv_interface/fonts/iosevka-slab-medium.ttf" id="4_600pa"]
 [ext_resource type="PackedScene" uid="uid://36pnd0m8pp5n" path="res://popochiu/tv_interface/dialog_menu/dialog_menu.tscn" id="4_p310v"]
 [ext_resource type="Texture2D" uid="uid://rbhr5ssxwmnv" path="res://popochiu/tv_interface/sprites/btn_channel_indicator.png" id="4_rjq82"]
-[ext_resource type="FontFile" uid="uid://dw4kbinp2ho3q" path="res://popochiu/tv_interface/fonts/iosevka-slab-bold.ttf" id="5_kh05c"]
 [ext_resource type="Texture2D" uid="uid://bwq0ayd5g8mj5" path="res://popochiu/tv_interface/sprites/btn_knob.png" id="5_sg7kw"]
 [ext_resource type="Texture2D" uid="uid://8vjyqdvsbdrw" path="res://popochiu/tv_interface/sprites/btn_knob_indicator.png" id="6_oluwl"]
 [ext_resource type="Texture2D" uid="uid://yxlj0vq2bb3s" path="res://popochiu/tv_interface/sprites/btn_select.png" id="7_k7os0"]
-[ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic_14h.ttf" id="8_3cdhn"]
+[ext_resource type="FontFile" uid="uid://bd8w6vepcte81" path="res://popochiu/tv_interface/fonts/memo.ttf" id="11_7vbeo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p1m2a"]
 outline_size = 12
@@ -68,7 +67,7 @@ offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_fonts/font = ExtResource("8_3cdhn")
+theme_override_fonts/font = ExtResource("2_m6hga")
 text = "???"
 label_settings = SubResource("LabelSettings_p1m2a")
 horizontal_alignment = 1
@@ -105,7 +104,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 10
 theme_override_constants/outline_size = 12
-theme_override_fonts/normal_font = ExtResource("8_3cdhn")
+theme_override_fonts/normal_font = ExtResource("2_m6hga")
 bbcode_enabled = true
 text = "---"
 fit_content = true
@@ -129,8 +128,6 @@ theme_override_constants/margin_right = 4
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_fonts/normal_font = ExtResource("4_600pa")
-theme_override_fonts/bold_font = ExtResource("5_kh05c")
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
@@ -226,6 +223,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="RealityLayer" type="CanvasLayer" parent="."]
+layer = 12
+visible = false
+
+[node name="RealityBlack" type="ColorRect" parent="RealityLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RtlRealityDialog" type="RichTextLabel" parent="RealityLayer"]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 185.0
+offset_top = -42.0
+offset_right = -185.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/outline_size = 12
+theme_override_fonts/normal_font = ExtResource("11_7vbeo")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]I'm the one who's watching the screen[/center]"
+fit_content = true
 
 [connection signal="toggled" from="TVLayer/BtnPower" to="." method="_on_btn_power_toggled"]
 [connection signal="pressed" from="TVLayer/BtnChannel" to="." method="_on_btn_channel_pressed"]

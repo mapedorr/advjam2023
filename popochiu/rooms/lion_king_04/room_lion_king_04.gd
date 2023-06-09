@@ -31,10 +31,12 @@ func _on_room_entered() -> void:
 					get_prop('CocoEndingB').enable()
 				Globals.Ending.COCO_C:
 					get_prop('CocoEndingC').enable()
+		
 		Globals.Branch.POPOCHIU_KING:
 			Globals.current_music = A.mx_lionking_sc04_popochiu
 			
 			get_prop('Popochius').enable()
+		
 		Globals.Branch.SIMBA:
 			Globals.current_music = A.mx_lionking_sc04
 			
@@ -66,9 +68,6 @@ func _on_room_transition_finished() -> void:
 					])
 					
 					# TODO: Mostrar el título de la pelícua modificado?
-					
-					Globals.lion_king_seq += 1
-					G.change_channel_requested.emit()
 				Globals.Ending.COCO_B:
 					await E.queue([
 						G.queue_display("And so, little by little, Rafiki eliminated, one by one, all the animals of the kingdom."),
@@ -84,9 +83,6 @@ func _on_room_transition_finished() -> void:
 					])
 					
 					# TODO: Mostrar el título de la pelícua modificado?
-					
-					Globals.lion_king_seq += 1
-					G.change_channel_requested.emit()
 				Globals.Ending.COCO_C:
 					await E.queue([
 						"Rafiki: Buahahahahahahahahah!!!",
@@ -96,9 +92,12 @@ func _on_room_transition_finished() -> void:
 					])
 					
 					# TODO: Mostrar el título de la pelícua modificado?
-					
-					Globals.lion_king_seq += 1
-					G.change_channel_requested.emit()
+			
+			# TODO: ¿Guardar algo para que vuelva a iniciar la historia?
+			Globals.lion_king_seq += 1
+			G.change_channel_requested.emit()
+			
+			return
 		Globals.Branch.SIMBA:
 			await C.Simba.say("What am I gonna do?")
 			await C.Scar.say("Run away, Simba.")
@@ -113,22 +112,51 @@ func _on_room_transition_finished() -> void:
 			)
 			
 			match response.id:
+				# ---------------------------------------------------- Obey scar
 				'0':
 					$AnimationPlayer.play("simba_leaves")
 					await $AnimationPlayer.animation_finished
+					
 					await C.Scar.say("Kill him!")
+					await C.Narrator.say("And with that said, the hyenas went after Simba.")
+				
+				# --------------------------------------------------- Fight scar
 				"1":
-					C.Simba.play("04b")
-					await C.Simba.say("You won't tell anyone a shit!")
+					await C.Simba.say("[shake]You won't tell anyone a shit you stupid \
+hyenas fucker!!![/shake]")
+					
+					get_prop("Simba").current_frame = 1
+					
+					await C.Simba.say("Prepare to die!!!")
+					
+					get_prop("Scar").current_frame = 2
+				
+				# --------------------------------------------------------- Deal
 				"2":
-					C.Simba.play("04c")
-					await C.Simba.say("Let's make a deal")
-					await C.Simba.say("We say it was an accident and I'll let you inherit the kingdom")
-			
-			Globals.lion_king_seq += 1
-			G.change_channel_requested.emit()
+					get_prop("Simba").current_frame = 2
+					
+					await E.queue([
+						"Simba: Let's make a deal.",
+						"Simba: We say it was an accident and I'll let you \
+inherit the kingdom.",
+						"Scar: I'm starting to like you kid.",
+						"Scar: Wait!!! How would I know you won't betray me?",
+						"Simba: Uncle, I'm fucking die if I leave the Pride Lands.",
+						"Simba: Say nothing, and I'll help you to govern the kingdom.",
+					])
+					
+					Globals.lion_king_ending = Globals.Ending.SIMBA_A
 		Globals.Branch.POPOCHIU_KING:
-			pass
+			await E.queue([
+				"....",
+				"Narrator: A horde of Popochius arrived in Pride Lands using \
+all sorts of transportation.",
+				"Narrator: And upon encountering the animals, they began to \
+give them kisses and hugs."
+			])
+	
+	Globals.lion_king_seq += 1
+	G.change_channel_requested.emit()
 
 
 # What happens before Popochiu unloads the room.

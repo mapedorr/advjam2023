@@ -2,6 +2,9 @@ extends Node
 
 signal channel_change_started
 signal channel_change_finished
+signal intro_triggered
+signal intro_finished
+signal reality_said(msg)
 
 enum Branch {
 	NONE,
@@ -15,6 +18,12 @@ enum Ending {
 	COCO_A,
 	COCO_B,
 	COCO_C,
+	SIMBA_A,
+	SIMBA_B,
+	SIMBA_C,
+	POPOCHIU_KING_A,
+	POPOCHIU_KING_B,
+	POPOCHIU_KING_C,
 }
 
 var branch_name := '' : get = get_branch_name
@@ -105,5 +114,11 @@ func change_channel(was_off := false) -> void:
 	E.goto_room(channel_name, !was_off)
 
 
-func progress_and_change_channel() -> void:
-	pass
+func queue_say_in_reality(msg: String) -> Callable:
+	return func () : await say_in_reality(msg)
+
+
+func say_in_reality(msg: String) -> void:
+	reality_said.emit(msg)
+	
+	await G.continue_clicked

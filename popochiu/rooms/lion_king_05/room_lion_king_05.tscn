@@ -1,0 +1,328 @@
+[gd_scene load_steps=21 format=3 uid="uid://wslqe4adc8jd"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/lion_king_05/room_lion_king_05.gd" id="1_osfkh"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_rlbup"]
+[ext_resource type="Texture2D" uid="uid://cimkubs7r2dt8" path="res://popochiu/rooms/_shared/sprites/lion_king_bg.png" id="4_ftead"]
+[ext_resource type="Texture2D" uid="uid://cakg47heetljr" path="res://popochiu/rooms/lion_king_05/props/simba_ending_5a/simba_ending_5a.png" id="5_oira8"]
+[ext_resource type="Texture2D" uid="uid://d323nrvy2vxv7" path="res://popochiu/rooms/lion_king_05/props/timon_and_pumba/timon_and_pumba.png" id="6_ibe2i"]
+[ext_resource type="Texture2D" uid="uid://ct60rukpperkh" path="res://popochiu/rooms/lion_king_05/props/simba_01/simba_01.png" id="7_rx71d"]
+[ext_resource type="Texture2D" uid="uid://d30hdennpnf6n" path="res://popochiu/rooms/lion_king_05/props/simba_02/simba_02.png" id="8_xsfem"]
+[ext_resource type="Texture2D" uid="uid://bqdbw210mo60a" path="res://popochiu/rooms/lion_king_05/props/simba_03/simba_03.png" id="9_w53cw"]
+[ext_resource type="Texture2D" uid="uid://dpqu0jvmv48on" path="res://popochiu/rooms/lion_king_05/props/popochius/popochius_05.png" id="10_5bt8k"]
+[ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="10_sq5ej"]
+[ext_resource type="Script" path="res://popochiu/characters/simba/character_simba.gd" id="11_b3wbr"]
+[ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="12_crqcs"]
+[ext_resource type="Script" path="res://popochiu/characters/narrator/character_narrator.gd" id="13_223q5"]
+[ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="14_dim00"]
+[ext_resource type="Script" path="res://popochiu/characters/popochiu_king/character_popochiu_king.gd" id="15_or62a"]
+[ext_resource type="PackedScene" uid="uid://cvs2u8nqu83lc" path="res://popochiu/characters/mufasa/character_mufasa.tscn" id="16_0rw8p"]
+[ext_resource type="Script" path="res://popochiu/characters/mufasa/character_mufasa.gd" id="17_oyroe"]
+
+[sub_resource type="Animation" id="Animation_jadot"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Props/Simba/TimonAndPumba:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Props/Simba/Simba01:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Props/Simba/Simba02:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Props/Simba/Simba03:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Props/Simba/Simba01:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Props/Simba/Simba02:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Props/Simba/Simba03:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rp500"]
+resource_name = "simba_growth"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Props/Simba/TimonAndPumba:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Props/Simba/Simba01:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Props/Simba/Simba02:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 7.5, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Props/Simba/Simba03:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Props/Simba/Simba01:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Props/Simba/Simba02:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.5, 7.5, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Props/Simba/Simba03:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 7.5, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j4a21"]
+_data = {
+"RESET": SubResource("Animation_jadot"),
+"simba_growth": SubResource("Animation_rp500")
+}
+
+[node name="RoomLionKing05" type="Node2D"]
+script = ExtResource("1_osfkh")
+script_name = "LionKing05"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" parent="Props" instance=ExtResource("2_rlbup")]
+position = Vector2(480, 270)
+texture = ExtResource("4_ftead")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+cursor = 1
+
+[node name="Simba" parent="Props" instance=ExtResource("2_rlbup")]
+visible = false
+position = Vector2(480, 270)
+script_name = "Simba"
+description = "Simba"
+clickable = false
+cursor = 1
+
+[node name="SimbaEnding5a" parent="Props/Simba" instance=ExtResource("2_rlbup")]
+visible = false
+position = Vector2(-73, 30)
+texture = ExtResource("5_oira8")
+script_name = "SimbaEnding5a"
+description = "Simba Ending 5a"
+clickable = false
+cursor = 1
+
+[node name="TimonAndPumba" parent="Props/Simba" instance=ExtResource("2_rlbup")]
+visible = false
+position = Vector2(-81, 0)
+texture = ExtResource("6_ibe2i")
+script_name = "TimonAndPumba"
+description = "Timon And Pumba"
+clickable = false
+cursor = 1
+
+[node name="Simba01" parent="Props/Simba" instance=ExtResource("2_rlbup")]
+visible = false
+position = Vector2(-186, 29)
+texture = ExtResource("7_rx71d")
+script_name = "Simba01"
+description = "Simba 01"
+clickable = false
+cursor = 1
+
+[node name="Simba02" parent="Props/Simba" instance=ExtResource("2_rlbup")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-221, 3)
+texture = ExtResource("8_xsfem")
+script_name = "Simba02"
+description = "Simba 02"
+clickable = false
+cursor = 1
+
+[node name="Simba03" parent="Props/Simba" instance=ExtResource("2_rlbup")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-224, -16)
+texture = ExtResource("9_w53cw")
+script_name = "Simba03"
+description = "Simba 03"
+clickable = false
+cursor = 1
+
+[node name="Popochius" parent="Props" instance=ExtResource("2_rlbup")]
+visible = false
+position = Vector2(403, 265)
+texture = ExtResource("10_5bt8k")
+script_name = "Popochius"
+description = "Popochius"
+clickable = false
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterSimba *" type="Area2D" parent="Characters" instance=ExtResource("10_sq5ej")]
+position = Vector2(480, 270)
+script = ExtResource("11_b3wbr")
+can_move = false
+script_name = "Simba"
+description = "Simba"
+clickable = false
+cursor = 8
+always_on_top = true
+
+[node name="CharacterNarrator *" type="Area2D" parent="Characters" instance=ExtResource("12_crqcs")]
+position = Vector2(480, 270)
+script = ExtResource("13_223q5")
+script_name = "Narrator"
+description = "Narrator"
+cursor = 8
+
+[node name="CharacterPopochiuKing *" type="Area2D" parent="Characters" instance=ExtResource("14_dim00")]
+y_sort_enabled = true
+position = Vector2(480, 270)
+script = ExtResource("15_or62a")
+can_move = false
+script_name = "PopochiuKing"
+description = "Popochiu"
+clickable = false
+cursor = 8
+always_on_top = true
+
+[node name="CharacterMufasa *" type="Area2D" parent="Characters" instance=ExtResource("16_0rw8p")]
+position = Vector2(480, 270)
+script = ExtResource("17_oyroe")
+script_name = "Mufasa"
+description = "Mufasa"
+cursor = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j4a21")
+}

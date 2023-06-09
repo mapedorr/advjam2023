@@ -97,9 +97,6 @@ func _on_room_transition_finished() -> void:
 						"Rafiki: If you really want me to do it as a test of love, then I'll do it.",
 						"Coco: ...",
 					])
-				
-			Globals.lion_king_seq += 1
-			G.change_channel_requested.emit()
 		Globals.Branch.SIMBA:
 			await C.Mufasa.say('Everything the light touches is our kingdom.')
 			
@@ -113,11 +110,25 @@ func _on_room_transition_finished() -> void:
 			)
 			
 			await C.Simba.say(response.text)
-			
-			Globals.lion_king_seq += 1
-			G.change_channel_requested.emit()
 		Globals.Branch.POPOCHIU_KING:
-			pass
+			await E.queue([
+				"Mufasa: Everything the light touches is our kingdom.",
+				"PopochiuKing: I loooooove it.",
+				"Simba: It is super big, isn't it?",
+				"PopochiuKing: Dad Mufasa, do you think I could bring my epatius\
+ to live here with us?",
+				Globals.queue_say_in_reality("What does epatius mean?"),
+				"Simba: What do you mean by epatius?",
+				"PopochiuKing: My little brothers.",
+				"Mufasa: Of course little cute thing...",
+				get_prop("Popochiu").queue_change_frame(1),
+				"...",
+				"PopochiuKing: Oñiiiiiiiiiii!!!",
+				"PopochiuKing: Dad Mufasa says we can all leave here together",
+			])
+	
+	Globals.lion_king_seq += 1
+	G.change_channel_requested.emit()
 
 
 # What happens before Popochiu unloads the room.

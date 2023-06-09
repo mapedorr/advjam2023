@@ -10,12 +10,15 @@ const ROTATION := 360.0 / 5.0
 @onready var btn_continue: TextureButton = %BtnContinue
 @onready var black_container: PanelContainer = %BlackContainer
 @onready var rtl_black_speaker: RichTextLabel = %RtlBlackSpeaker
+@onready var reality_black: ColorRect = %RealityBlack
+@onready var rtl_reality_dialog: RichTextLabel = %RtlRealityDialog
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ GODOT ░░░░
 func _ready() -> void:
-	rtl_dialog.text = ''
-	dialog_menu_title.text = ''
+	rtl_dialog.text = ""
+	rtl_reality_dialog.text = ""
+	dialog_menu_title.text = ""
 	dialog_menu_title.set_meta('ori_y', dialog_menu_title.position.y)
 	
 	C.character_spoke.connect(_show_character_text)
@@ -24,9 +27,14 @@ func _ready() -> void:
 	G.show_box_requested.connect(_show_black_speaker)
 	Globals.channel_change_started.connect(_toggle_buttons.bind(true))
 	Globals.channel_change_finished.connect(_toggle_buttons.bind(false))
+	Globals.intro_triggered.connect($RealityLayer.show)
+	Globals.intro_finished.connect($RealityLayer.hide)
+	Globals.reality_said.connect(_show_reality_dialog)
 	
 	btn_continue.hide()
 	black_container.hide()
+	
+	$RealityLayer.hide()
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PRIVATE ░░░░
@@ -58,6 +66,7 @@ func _on_btn_continue_pressed() -> void:
 	
 	btn_continue.hide()
 	black_container.hide()
+	rtl_reality_dialog.text = ''
 	
 	G.continue_clicked.emit()
 
@@ -125,3 +134,12 @@ func _show_black_speaker(msg: String) -> void:
 	btn_continue.show()
 	black_container.show()
 	rtl_black_speaker.text = '[center]%s[/center]' % msg
+
+
+func _show_reality_dialog(msg: String) -> void:
+	if not $RealityLayer.visible:
+		$RealityLayer.show()
+		reality_black.hide()
+	
+	btn_continue.show()
+	rtl_reality_dialog.text = "[center]%s[/center]" % msg

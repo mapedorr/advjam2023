@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dw4kbinp2ho3q"
-path="res://.godot/imported/iosevka-slab-bold.ttf-39c634116b3456c73abcde788f0f160e.fontdata"
+uid="uid://di5kyjnj81jt6"
+path="res://.godot/imported/iosevka_slab_regular.ttf-6982f2635d4155c753a193f6f5c61cc2.fontdata"
 
 [deps]
 
-source_file="res://popochiu/tv_interface/fonts/iosevka-slab-bold.ttf"
-dest_files=["res://.godot/imported/iosevka-slab-bold.ttf-39c634116b3456c73abcde788f0f160e.fontdata"]
+source_file="res://popochiu/tv_interface/fonts/iosevka_slab_regular.ttf"
+dest_files=["res://.godot/imported/iosevka_slab_regular.ttf-6982f2635d4155c753a193f6f5c61cc2.fontdata"]
 
 [params]
 

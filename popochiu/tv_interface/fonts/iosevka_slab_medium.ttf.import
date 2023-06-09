@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bsot1hsmsofmo"
-path="res://.godot/imported/tape_basic_14h.ttf-b8692afd331ae814c0a536b681a2e61c.fontdata"
+uid="uid://di6vehs7agao7"
+path="res://.godot/imported/iosevka_slab_medium.ttf-4789fb3ab5aa2f5207b4da6d192ab816.fontdata"
 
 [deps]
 
-source_file="res://popochiu/tv_interface/fonts/tape_basic_14h.ttf"
-dest_files=["res://.godot/imported/tape_basic_14h.ttf-b8692afd331ae814c0a536b681a2e61c.fontdata"]
+source_file="res://popochiu/tv_interface/fonts/iosevka_slab_medium.ttf"
+dest_files=["res://.godot/imported/iosevka_slab_medium.ttf-4789fb3ab5aa2f5207b4da6d192ab816.fontdata"]
 
 [params]
 
