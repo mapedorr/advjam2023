@@ -5,7 +5,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ov1lq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4eg5p"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b8q0"]
 
 [node name="DialogMenu" type="PanelContainer"]
 anchors_preset = 15
@@ -20,7 +20,7 @@ option_scene = ExtResource("2_lvfrt")
 [node name="Panel" type="PanelContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_styles/panel = SubResource("StyleBoxFlat_4eg5p")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7b8q0")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
 layout_mode = 2

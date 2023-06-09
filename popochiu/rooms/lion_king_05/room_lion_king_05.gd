@@ -59,7 +59,7 @@ and they are surrounding the enemy.",
 				# TODO: Mostrar el título de la pelícua modificado?
 				
 				# TODO: ¿Guardar algo para que vuelva a iniciar la historia?
-				Globals.lion_king_seq += 1
+				Globals.lion_king_seq += 2 # Para saltarse el acto 6
 				G.change_channel_requested.emit()
 				
 				return

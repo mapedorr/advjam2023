@@ -22,8 +22,7 @@ func _on_room_entered() -> void:
 	match Globals.lion_king_branch:
 		Globals.Branch.SIMBA:
 			
-			['Mufasa', 'Simba', 'Scar'].all(enable_prop)
-		
+			get_prop("Simba").enable()
 		Globals.Branch.POPOCHIU_KING:
 			match Globals.lion_king_ending:
 				Globals.Ending.POPOCHIU_KING_A:
@@ -44,7 +43,27 @@ func _on_room_transition_finished() -> void:
 	
 	match Globals.lion_king_branch:
 		Globals.Branch.SIMBA:
-			pass
+			await G.display("Simba, Nala, Timon, and Pumba returned and \
+confronted Scar and his army of hyenas.")
+			
+			await E.queue([
+				"Narrator: Scar confessed to Simba that he was the one who had killed Mufasa.",
+				"Narrator: Thanks to that, Simba was filled with strength to fight him."
+			])
+			
+			var response: PopochiuDialogOption = await D.show_inline_dialog(
+				"And the one who won the fight was...",
+				[
+					"Scar",
+					"Simba",
+				]
+			)
+			
+			match response.id:
+				'0':
+					Globals.lion_king_ending = Globals.Ending.SIMBA_B
+				'1':
+					Globals.lion_king_ending = Globals.Ending.SIMBA_C
 		Globals.Branch.POPOCHIU_KING:
 			match Globals.lion_king_ending:
 				Globals.Ending.POPOCHIU_KING_A:

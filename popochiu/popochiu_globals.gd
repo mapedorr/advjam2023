@@ -18,9 +18,9 @@ enum Ending {
 	COCO_A,
 	COCO_B,
 	COCO_C,
-	SIMBA_A,
-	SIMBA_B,
-	SIMBA_C,
+	SIMBA_A, # 5a
+	SIMBA_B, # 7a
+	SIMBA_C, # 7b
 	POPOCHIU_KING_A,
 	POPOCHIU_KING_B,
 	POPOCHIU_KING_C,

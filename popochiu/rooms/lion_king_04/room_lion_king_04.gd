@@ -130,7 +130,11 @@ hyenas fucker!!![/shake]")
 					await C.Simba.say("Prepare to die!!!")
 					
 					get_prop("Scar").current_frame = 2
+					
+					await E.wait(2.0)
 				
+					Globals.lion_king_ending = Globals.Ending.SIMBA_B # 7a
+					Globals.lion_king_seq += 2 # Para saltarse los actos 5 y 6
 				# --------------------------------------------------------- Deal
 				"2":
 					get_prop("Simba").current_frame = 2
