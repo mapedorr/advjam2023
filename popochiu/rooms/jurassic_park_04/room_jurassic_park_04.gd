@@ -55,7 +55,7 @@ func _on_room_transition_finished() -> void:
 					
 					G.change_channel_requested.emit()
 		
-		Globals.Branch.DINOSAURS:
+		Globals.Branch.POPOCHIUS:
 			match Globals.jurassic_park_ending:
 				Globals.Ending.POPO_A:
 					_animator.play('Friends')
