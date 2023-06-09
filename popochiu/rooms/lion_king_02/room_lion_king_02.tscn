@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://co3w5js0wurl6"]
+[gd_scene load_steps=13 format=3 uid="uid://co3w5js0wurl6"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_02/room_lion_king_02.gd" id="1_2v2lc"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_apntl"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b2df3cv2bhavp" path="res://popochiu/characters/simba/sprites/simba_02.png" id="7_nl1bk"]
 [ext_resource type="Texture2D" uid="uid://b0rn7buv8clp1" path="res://popochiu/characters/popochiu_king/sprites/popochiu_king_02.png" id="8_3eixb"]
 [ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="8_ft7ds"]
+[ext_resource type="Texture2D" uid="uid://cijbv1befdv0e" path="res://popochiu/rooms/_shared/sprites/the_lion_king.png" id="9_k11k8"]
 [ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="11_loh37"]
 
 [node name="RoomLionKing02" type="Node2D"]
@@ -62,6 +63,15 @@ position = Vector2(320, 104)
 texture = ExtResource("8_3eixb")
 script_name = "Popochiu"
 description = "Popochiu"
+clickable = false
+cursor = 1
+
+[node name="Title" parent="Props" instance=ExtResource("2_apntl")]
+visible = false
+position = Vector2(400, 256)
+texture = ExtResource("9_k11k8")
+script_name = "Title"
+description = "Title"
 clickable = false
 cursor = 1
 

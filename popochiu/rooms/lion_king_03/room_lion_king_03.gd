@@ -14,18 +14,22 @@ var state: Data = load('res://popochiu/rooms/lion_king_03/room_lion_king_03.tres
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	C.Rafiki.disable()
+	$Props.y_sort_enabled = false
 	
 	match Globals.lion_king_branch:
 		Globals.Branch.COCO:
 			Globals.current_music = A.mx_lionking_sc03_coco
-			C.Mufasa.disable()
-			C.Rafiki.enable()
-			get_prop('Kingdom').disable()
-		Globals.Branch.POPOCHIUS:
-			Globals.current_music = A.mx_lionking_sc03_popochiu
+			G.display("")
+			
+			get_prop('Coco').show()
 		Globals.Branch.SIMBA:
 			Globals.current_music = A.mx_lionking_sc03_lion
+			
+			['Kingdom', 'Mufasa', 'Simba'].all(enable_prop)
+		Globals.Branch.POPOCHIU_KING:
+			Globals.current_music = A.mx_lionking_sc03_popochiu
+			
+			['Kingdom', 'Mufasa', 'Popochiu'].all(enable_prop)
 	
 	await get_tree().create_timer(.2).timeout
 	Globals.current_music.play()
@@ -36,7 +40,9 @@ func _on_room_entered() -> void:
 func _on_room_transition_finished() -> void:
 	match Globals.lion_king_branch:
 		Globals.Branch.COCO:
-			await C.Narrator.say("Over time Rafiki became the official translator of the coconut.")
+			await G.display(
+				"Over time Rafiki became the official translator of the coconut"
+			)
 			await C.Coco.say('...')
 			await C.Rafiki.say('What did you say?')
 			
@@ -49,16 +55,48 @@ func _on_room_transition_finished() -> void:
 				]
 			)
 			
+			await C.Coco.say('...')
+			
 			match response.id:
 				'0':
 					Globals.lion_king_ending = Globals.Ending.COCO_A
-					await C.Rafiki.say('The planet of the micos')
+					
+					await E.queue([
+						"Rafiki: Oh really?",
+						"Rafiki: And what that does mean?",
+						"Coco: ...",
+						"Rafiki: So I have to be the king to start a new kingdom",
+						"Coco: ...",
+						"Rafiki: And how I'm gonna do that?",
+						"Coco: ...",
+						"Rafiki[2]: Oh my fucking monkey with a banana hat!!!"
+					])
 				'1':
 					Globals.lion_king_ending = Globals.Ending.COCO_B
-					await C.Rafiki.say('The elections')
+					
+					await E.queue([
+						"Rafiki: But what are you telling me?",
+						"Coco: ...!!!",
+						"Rafiki: Do you have evidence of that?",
+						"Coco: ...",
+						"Rafiki: Show me"
+					])
 				'2':
 					Globals.lion_king_ending = Globals.Ending.COCO_C
-					await C.Rafiki.say('The missadventures of Rafiki and the coconut')
+					
+					await E.queue([
+						"Rafiki: I can't do it.",
+						"Rafiki: Mufasa has trusted me for decades.",
+						"Coco: ...",
+						"Rafiki: Yes, I love you, but what you're asking doesn't make sense.",
+						"Coco: ...",
+						"Rafiki: What!? You can't do that.",
+						"Rafiki: My love for you has nothing to do with him.",
+						"Coco: ...........!!!",
+						"Rafiki: No, no, no! Wait... don't go.",
+						"Rafiki: If you really want me to do it as a test of love, then I'll do it.",
+						"Coco: ...",
+					])
 				
 			Globals.lion_king_seq += 1
 			G.change_channel_requested.emit()
@@ -66,7 +104,7 @@ func _on_room_transition_finished() -> void:
 			await C.Mufasa.say('Everything the light touches is our kingdom.')
 			
 			var response: PopochiuDialogOption = await D.show_inline_dialog(
-				"And Simba say...",
+				"And Simba asked...",
 				[
 					'Why?',
 					'What about the caves?',
@@ -78,6 +116,8 @@ func _on_room_transition_finished() -> void:
 			
 			Globals.lion_king_seq += 1
 			G.change_channel_requested.emit()
+		Globals.Branch.POPOCHIU_KING:
+			pass
 
 
 # What happens before Popochiu unloads the room.

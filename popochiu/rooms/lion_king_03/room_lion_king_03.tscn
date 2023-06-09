@@ -1,12 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6nha0avdpv23"]
+[gd_scene load_steps=15 format=3 uid="uid://b6nha0avdpv23"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_03/room_lion_king_03.gd" id="1_j83lf"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_n2vw8"]
 [ext_resource type="Texture2D" uid="uid://cimkubs7r2dt8" path="res://popochiu/rooms/_shared/sprites/lion_king_bg.png" id="4_kq1op"]
 [ext_resource type="PackedScene" uid="uid://cy5kjnl3uyxvw" path="res://popochiu/characters/rafiki/character_rafiki.tscn" id="5_bd3hb"]
 [ext_resource type="Texture2D" uid="uid://fyg1dn52ibbc" path="res://popochiu/rooms/lion_king_03/props/kingdom/kingdom_03.png" id="5_d0odp"]
+[ext_resource type="Texture2D" uid="uid://brnnckl7j60xb" path="res://popochiu/characters/mufasa/sprites/mufasa_03.png" id="6_8bwwl"]
 [ext_resource type="PackedScene" uid="uid://coln5rl0xpmik" path="res://popochiu/characters/coco/character_coco.tscn" id="6_ua18g"]
+[ext_resource type="Texture2D" uid="uid://dr7cm3fxtoffv" path="res://popochiu/characters/popochiu_king/sprites/popochiu_king_03.png" id="7_lsw23"]
 [ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="8_djcge"]
+[ext_resource type="Texture2D" uid="uid://1k46o57cinm1" path="res://popochiu/characters/simba/sprites/simba_03.png" id="8_vtkjm"]
+[ext_resource type="Texture2D" uid="uid://di3k1ckjupqsq" path="res://popochiu/characters/coco/sprites/coco_03.png" id="9_qg0op"]
 [ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="10_18ysy"]
 [ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="10_pm0vq"]
 [ext_resource type="PackedScene" uid="uid://cvs2u8nqu83lc" path="res://popochiu/characters/mufasa/character_mufasa.tscn" id="12_4yxfe"]
@@ -30,12 +34,50 @@ baseline = -270
 cursor = 1
 
 [node name="Kingdom" parent="Props" instance=ExtResource("2_n2vw8")]
+visible = false
 position = Vector2(400, 256)
 texture = ExtResource("5_d0odp")
 script_name = "Kingdom"
 description = "Kingdom"
 clickable = false
 baseline = -256
+cursor = 1
+
+[node name="Mufasa" parent="Props" instance=ExtResource("2_n2vw8")]
+visible = false
+position = Vector2(291, 280)
+texture = ExtResource("6_8bwwl")
+script_name = "Mufasa"
+description = "Mufasa"
+clickable = false
+cursor = 1
+
+[node name="Popochiu" parent="Props" instance=ExtResource("2_n2vw8")]
+visible = false
+position = Vector2(508, 400)
+texture = ExtResource("7_lsw23")
+frames = 2
+script_name = "Popochiu"
+description = "Popochiu"
+clickable = false
+cursor = 1
+
+[node name="Simba" parent="Props" instance=ExtResource("2_n2vw8")]
+visible = false
+position = Vector2(445, 373)
+texture = ExtResource("8_vtkjm")
+script_name = "Simba"
+description = "Simba"
+clickable = false
+cursor = 1
+
+[node name="Coco" parent="Props" instance=ExtResource("2_n2vw8")]
+visible = false
+position = Vector2(389, 260)
+texture = ExtResource("9_qg0op")
+script_name = "Coco"
+description = "Coco"
+clickable = false
 cursor = 1
 
 [node name="Hotspots" type="Node2D" parent="."]

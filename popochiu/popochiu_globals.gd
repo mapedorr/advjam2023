@@ -24,19 +24,19 @@ var channels := {
 		code = '123',
 		story = true,
 	},
-	titanic = {
-		scene = 'Titanic',
-		code = '789',
-	},
-	terminator_2 = {
-		scene = 'Terminator2',
-		code = '147',
-	},
-	jurassic_park = {
-		scene = 'JurassicPark',
-		code = '456',
-		story = true,
-	},
+#	titanic = {
+#		scene = 'Titanic',
+#		code = '789',
+#	},
+#	terminator_2 = {
+#		scene = 'Terminator2',
+#		code = '147',
+#	},
+#	jurassic_park = {
+#		scene = 'JurassicPark',
+#		code = '456',
+#		story = true,
+#	},
 	matrix = {
 		scene = 'Matrix',
 		code = '258',

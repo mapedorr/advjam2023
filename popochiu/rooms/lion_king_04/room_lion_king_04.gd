@@ -17,12 +17,13 @@ func _on_room_entered() -> void:
 	$Characters.y_sort_enabled = false
 	$Props.y_sort_enabled = false
 	
-#	C.Scar.disable()
-	
 	match Globals.lion_king_branch:
 		Globals.Branch.COCO:
-			Globals.current_music = A.mx_lionking_sc04_coco
 			# Aquí termina la historia del coco
+			Globals.current_music = A.mx_lionking_sc04_coco
+			
+			G.display("")
+			
 			match Globals.lion_king_ending:
 				Globals.Ending.COCO_A:
 					get_prop('CocoEndingA').enable()
@@ -30,11 +31,14 @@ func _on_room_entered() -> void:
 					get_prop('CocoEndingB').enable()
 				Globals.Ending.COCO_C:
 					get_prop('CocoEndingC').enable()
-		Globals.Branch.POPOCHIUS:
+		Globals.Branch.POPOCHIU_KING:
 			Globals.current_music = A.mx_lionking_sc04_popochiu
+			
+			get_prop('Popochius').enable()
 		Globals.Branch.SIMBA:
 			Globals.current_music = A.mx_lionking_sc04
-			C.Scar.enable()
+			
+			['Mufasa', 'Simba', 'Scar'].all(enable_prop)
 
 	await get_tree().create_timer(.2).timeout
 	Globals.current_music.play()
@@ -43,6 +47,58 @@ func _on_room_entered() -> void:
 # is visible.
 func _on_room_transition_finished() -> void:
 	match Globals.lion_king_branch:
+		Globals.Branch.COCO:
+			match Globals.lion_king_ending:
+				Globals.Ending.COCO_A:
+					await G.display("With the help of lemurs, apes, chimpanzees, gorillas, monkeys, baboons, and various collaborators Rafiki became the king of Pride Lands")
+					
+					await E.queue([
+						"Rafiki: All this power feels so good.",
+						"Coco: ...",
+						"Coco: ......",
+						"Rafiki: What should we do that?",
+						"Coco: ...",
+						"Rafiki: But this lands are enough, we don't need more.",
+						"Coco: ...",
+						"Rafiki: Oh... I see...",
+						"Coco: ...",
+						"Rafiki: I will start the preparations... the whole world will be ours.",
+					])
+					
+					# TODO: Mostrar el título de la pelícua modificado?
+					
+					Globals.lion_king_seq += 1
+					G.change_channel_requested.emit()
+				Globals.Ending.COCO_B:
+					await E.queue([
+						G.queue_display("And so, little by little, Rafiki eliminated, one by one, all the animals of the kingdom."),
+						G.queue_display("Rafiki told everyone in the kingdom what Mufasa had done."),
+						G.queue_display("And Mufasa was lynched and expelled from the kingdom along with his entire family."),
+						"Narrator: So, for the very first time in Pride Lands, an election was called to choose a leader through popular vote.",
+						"Rafiki: I'm not sure this was a good idea.",
+						"Coco: ...",
+						"Rafiki: If you say so.",
+						"Coco: ...",
+						"Rafiki: Hahahaha... that would be great, you know?",
+						"Coco: ...",
+					])
+					
+					# TODO: Mostrar el título de la pelícua modificado?
+					
+					Globals.lion_king_seq += 1
+					G.change_channel_requested.emit()
+				Globals.Ending.COCO_C:
+					await E.queue([
+						"Rafiki: Buahahahahahahahahah!!!",
+						"Coco: ...",
+						"Rafiki: Brbrbrbbrbrbrbrrrbrbrbrbrbrbrb",
+						"Coco: ..."
+					])
+					
+					# TODO: Mostrar el título de la pelícua modificado?
+					
+					Globals.lion_king_seq += 1
+					G.change_channel_requested.emit()
 		Globals.Branch.SIMBA:
 			await C.Simba.say("What am I gonna do?")
 			await C.Scar.say("Run away, Simba.")
@@ -71,6 +127,8 @@ func _on_room_transition_finished() -> void:
 			
 			Globals.lion_king_seq += 1
 			G.change_channel_requested.emit()
+		Globals.Branch.POPOCHIU_KING:
+			pass
 
 
 # What happens before Popochiu unloads the room.

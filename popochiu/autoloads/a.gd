@@ -33,5 +33,6 @@ var mx_lionking_sc06: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionk
 var mx_lionking_sc06_popochiu: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc06_popochiu.tres")
 var mx_lionking_sc07a: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc07a.tres")
 var mx_lionking_sc07b: AudioCueMusic = load("res://popochiu/rooms/_audio/mx_lionking_sc07b.tres")
+var sfx_lion_king_boom: AudioCueSound = preload("res://popochiu/rooms/_audio/sfx_lion_king_boom.tres")
 # ---- cues
 

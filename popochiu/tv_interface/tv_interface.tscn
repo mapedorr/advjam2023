@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://blff1h5ew4i61"]
+[gd_scene load_steps=19 format=3 uid="uid://blff1h5ew4i61"]
 
 [ext_resource type="Script" path="res://popochiu/tv_interface/tv_interface.gd" id="1_ib485"]
 [ext_resource type="Texture2D" uid="uid://bbu0kr43f0mc2" path="res://popochiu/tv_interface/sprites/tv_frame.png" id="1_wrljh"]
 [ext_resource type="Texture2D" uid="uid://cedk6vwta2bjw" path="res://popochiu/tv_interface/sprites/btn_power.png" id="3_3q7x8"]
 [ext_resource type="Texture2D" uid="uid://bgaakce1qaiy6" path="res://popochiu/tv_interface/sprites/btn_channel.png" id="3_qujcl"]
+[ext_resource type="FontFile" uid="uid://di6vehs7agao7" path="res://popochiu/tv_interface/fonts/iosevka-slab-medium.ttf" id="4_600pa"]
 [ext_resource type="PackedScene" uid="uid://36pnd0m8pp5n" path="res://popochiu/tv_interface/dialog_menu/dialog_menu.tscn" id="4_p310v"]
 [ext_resource type="Texture2D" uid="uid://rbhr5ssxwmnv" path="res://popochiu/tv_interface/sprites/btn_channel_indicator.png" id="4_rjq82"]
+[ext_resource type="FontFile" uid="uid://dw4kbinp2ho3q" path="res://popochiu/tv_interface/fonts/iosevka-slab-bold.ttf" id="5_kh05c"]
 [ext_resource type="Texture2D" uid="uid://bwq0ayd5g8mj5" path="res://popochiu/tv_interface/sprites/btn_knob.png" id="5_sg7kw"]
 [ext_resource type="Texture2D" uid="uid://8vjyqdvsbdrw" path="res://popochiu/tv_interface/sprites/btn_knob_indicator.png" id="6_oluwl"]
 [ext_resource type="Texture2D" uid="uid://yxlj0vq2bb3s" path="res://popochiu/tv_interface/sprites/btn_select.png" id="7_k7os0"]
@@ -17,6 +19,9 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 12
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmu0v"]
+bg_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3xxl"]
 atlas = ExtResource("3_3q7x8")
@@ -81,7 +86,8 @@ offset_right = 175.0
 offset_bottom = -109.0
 grow_vertical = 0
 
-[node name="LblTemp" type="Label" parent="MainContainer"]
+[node name="RtlDialog" type="RichTextLabel" parent="MainContainer"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -94,11 +100,42 @@ offset_right = 174.0
 offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("8_3cdhn")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/outline_size = 12
+theme_override_fonts/normal_font = ExtResource("8_3cdhn")
+bbcode_enabled = true
 text = "---"
-label_settings = SubResource("LabelSettings_p1m2a")
-horizontal_alignment = 1
-autowrap_mode = 3
+fit_content = true
+
+[node name="BlackContainer" type="PanelContainer" parent="MainContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 123.0
+offset_top = 48.0
+offset_right = 675.0
+offset_bottom = 476.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pmu0v")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/BlackContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="RtlBlackSpeaker" type="RichTextLabel" parent="MainContainer/BlackContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("4_600pa")
+theme_override_fonts/bold_font = ExtResource("5_kh05c")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center]I am the black speaker[/center]"
+fit_content = true
 
 [node name="TVLayer" type="CanvasLayer" parent="."]
 layer = 11
@@ -108,14 +145,6 @@ offset_right = 960.0
 offset_bottom = 540.0
 mouse_filter = 2
 texture = ExtResource("1_wrljh")
-
-[node name="BtnContinue" type="TextureButton" parent="TVLayer"]
-unique_name_in_owner = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="BtnPower" type="TextureButton" parent="TVLayer" groups=["tv_button"]]
 unique_name_in_owner = true
@@ -190,8 +219,16 @@ grow_vertical = 0
 texture_normal = SubResource("AtlasTexture_66baw")
 texture_pressed = SubResource("AtlasTexture_4q3p3")
 
-[connection signal="pressed" from="TVLayer/BtnContinue" to="." method="_on_btn_continue_pressed"]
+[node name="BtnContinue" type="TextureButton" parent="TVLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="toggled" from="TVLayer/BtnPower" to="." method="_on_btn_power_toggled"]
 [connection signal="pressed" from="TVLayer/BtnChannel" to="." method="_on_btn_channel_pressed"]
 [connection signal="pressed" from="TVLayer/BtnChoice" to="." method="_on_btn_choice_pressed"]
 [connection signal="pressed" from="TVLayer/BtnSelect" to="." method="_on_btn_select_pressed"]
+[connection signal="pressed" from="TVLayer/BtnContinue" to="." method="_on_btn_continue_pressed"]

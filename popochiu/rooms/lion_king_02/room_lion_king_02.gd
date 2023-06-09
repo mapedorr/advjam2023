@@ -49,6 +49,14 @@ func _on_room_transition_finished() -> void:
 			await C.Narrator.say('( All animals bawl in euphoria )')
 	
 	Globals.lion_king_seq += 1
+	
+	['Rafiki', 'Coco', 'Simba', 'Popochiu'].all(disable_prop)
+	Globals.current_music.stop()
+	A.sfx_lion_king_boom.play()
+	get_prop('Title').enable()
+	
+	await get_tree().create_timer(3.0).timeout
+	
 	G.change_channel_requested.emit()
 
 

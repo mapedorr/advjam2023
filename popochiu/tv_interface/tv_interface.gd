@@ -5,31 +5,43 @@ const ROTATION := 360.0 / 5.0
 @onready var btn_power: TextureButton = %BtnPower
 @onready var btn_channel_indicator: TextureRect = %BtnChannelIndicator
 @onready var btn_choice_indicator: TextureRect = %BtnChoiceIndicator
+@onready var rtl_dialog: RichTextLabel = %RtlDialog
 @onready var dialog_menu_title: Label = %DialogMenuTitle
 @onready var btn_continue: TextureButton = %BtnContinue
+@onready var black_container: PanelContainer = %BlackContainer
+@onready var rtl_black_speaker: RichTextLabel = %RtlBlackSpeaker
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ GODOT ░░░░
 func _ready() -> void:
-	$MainContainer/LblTemp.text = ''
+	rtl_dialog.text = ''
 	dialog_menu_title.text = ''
 	dialog_menu_title.set_meta('ori_y', dialog_menu_title.position.y)
 	
-	C.character_spoke.connect(_enable_continue)
+	C.character_spoke.connect(_show_character_text)
 	G.title_setted.connect(_set_dialog_menu_title)
 	G.change_channel_requested.connect(_on_btn_channel_pressed)
+	G.show_box_requested.connect(_show_black_speaker)
 	Globals.channel_change_started.connect(_toggle_buttons.bind(true))
 	Globals.channel_change_finished.connect(_toggle_buttons.bind(false))
 	
 	btn_continue.hide()
+	black_container.hide()
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PRIVATE ░░░░
-func _enable_continue(c: PopochiuCharacter, m: String) -> void:
-	if c == C.Narrator:
-		$MainContainer/LblTemp.text = m
-	else:
-		$MainContainer/LblTemp.text = '%s: %s' % [c.description, m]
+func _show_character_text(c: PopochiuCharacter, m: String) -> void:
+	var text := '[center]%s[/center]'
+	
+	match c:
+		C.Narrator:
+			rtl_dialog.text = text % m
+		C.Coco:
+			rtl_dialog.text = text % (
+				'%s: [shake rate=20.0 level=10.0]%s[/shake]' % [c.description, m]
+			)
+		_:
+			rtl_dialog.text = text % ('%s: %s' % [c.description, m])
 	
 	btn_continue.show()
 	
@@ -41,9 +53,12 @@ func _enable_continue(c: PopochiuCharacter, m: String) -> void:
 
 
 func _on_btn_continue_pressed() -> void:
-	$MainContainer/LblTemp.text = ""
+	rtl_dialog.text = ""
+	rtl_black_speaker.text = ''
 	
 	btn_continue.hide()
+	black_container.hide()
+	
 	G.continue_clicked.emit()
 
 
@@ -104,3 +119,9 @@ func _set_dialog_menu_title(title := '') -> void:
 func _toggle_buttons(disable: bool) -> void:
 	for b in get_tree().get_nodes_in_group('tv_button'):
 		(b as BaseButton).disabled = disable
+
+
+func _show_black_speaker(msg: String) -> void:
+	btn_continue.show()
+	black_container.show()
+	rtl_black_speaker.text = '[center]%s[/center]' % msg
