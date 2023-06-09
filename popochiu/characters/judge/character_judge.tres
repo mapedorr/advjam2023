@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dq7wmt15upa22"]
+
+[ext_resource type="Script" path="res://popochiu/characters/judge/character_judge_state.gd" id="1_jawoq"]
+
+[resource]
+resource_name = "Judge"
+script = ExtResource("1_jawoq")
+script_name = "Judge"
+scene = "res://popochiu/characters/judge/character_judge.tscn"

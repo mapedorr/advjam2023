@@ -24,12 +24,9 @@ func _on_room_entered() -> void:
 func _on_room_transition_finished() -> void:
 	_animator.play('01')
 	await  _animator.animation_finished
-	if not is_inside_tree(): return
-	E.queue(['Narrator[3]: A hundred million years ago...'])
 	
 	_animator.play('02')
-	await  _animator.animation_finished
-	if not is_inside_tree(): return
+	await C.Narrator.say('A hundred million years ago...')
 	C.Grandpa.show()
 	
 	var response: PopochiuDialogOption = await D.show_inline_dialog(
@@ -39,18 +36,18 @@ func _on_room_transition_finished() -> void:
 		]
 	)
 	
-	var actor = 'Popochiu' if response.id == '1' else 'Dinosaur'
-	$Props.get_node(actor).show()
-	C.Grandpa.play('01_up')
-	await C.Grandpa.say(response.text)
-	
-	
 	match response.id:
 		'0':
 			Globals.jurassic_park_branch = Globals.Branch.DINOSAURS
+			$Props.get_node('Dinosaur').show()
+			C.Grandpa.play('01_up')
+			await C.Narrator.say('A damned mosquito bit a Dinosaur')
 		'1':
 			Globals.jurassic_park_branch = Globals.Branch.POPOCHIUS
-	
+			$Props.get_node('Popochiu').show()
+			C.Grandpa.play('01_up')
+			await C.Narrator.say('A damned mosquito bit a Popochiu')
+		
 	Globals.jurassic_park_seq += 1
 	G.change_channel_requested.emit()
 

@@ -1,0 +1,351 @@
+[gd_scene load_steps=34 format=3 uid="uid://bxgvch808roox"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/jurassic_park_03/room_jurassic_park_03.gd" id="1_vosj4"]
+[ext_resource type="AnimationLibrary" uid="uid://2klrsnj78rob" path="res://popochiu/rooms/jurassic_park_03/Animations.tres" id="2_3v0nm"]
+[ext_resource type="PackedScene" uid="uid://ce33jyqtjex3m" path="res://popochiu/rooms/jurassic_park_01/props/bg/prop_bg.tscn" id="2_a4dh7"]
+[ext_resource type="Texture2D" uid="uid://wmrb7obtaivw" path="res://popochiu/rooms/jurassic_park_01/props/bg/sprites/Bg.png" id="3_mmjnd"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="4_3mqi5"]
+[ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="4_x3rg1"]
+[ext_resource type="Texture2D" uid="uid://ba3pffeywslii" path="res://popochiu/rooms/jurassic_park_03/props/ian/Ian_01.png" id="6_oyhjk"]
+[ext_resource type="Texture2D" uid="uid://dxgj7d25g4n8b" path="res://popochiu/rooms/jurassic_park_03/props/ian/Ian_02.png" id="7_46htv"]
+[ext_resource type="Texture2D" uid="uid://ys71ruibchrx" path="res://popochiu/rooms/jurassic_park_03/props/ian/Ian_03.png" id="8_tfr26"]
+[ext_resource type="Texture2D" uid="uid://b3h8hdyyq31vo" path="res://popochiu/rooms/jurassic_park_03/props/trex/Jurasic-53.png" id="9_7euvc"]
+[ext_resource type="Texture2D" uid="uid://bxv2v0wwu4o3o" path="res://popochiu/rooms/jurassic_park_03/props/trex/Jurasic-58.png" id="9_knddi"]
+[ext_resource type="Texture2D" uid="uid://d3xwrpgikeecp" path="res://popochiu/rooms/jurassic_park_03/props/rex_arm_1/Jurasic-56.png" id="10_an5m2"]
+[ext_resource type="Texture2D" uid="uid://bbhwvp6ir03ge" path="res://popochiu/rooms/jurassic_park_03/props/trex/Jurasic-55.png" id="10_tmsa1"]
+[ext_resource type="Texture2D" uid="uid://dftbvpg4pswcn" path="res://popochiu/rooms/jurassic_park_03/props/rex_arm_1/Jurasic-57.png" id="11_4gcoj"]
+[ext_resource type="Texture2D" uid="uid://cflhd4vagkgx4" path="res://popochiu/rooms/jurassic_park_03/props/trex/Jurasic-54.png" id="14_8tv0f"]
+[ext_resource type="Texture2D" uid="uid://6rd11q1v86f8" path="res://popochiu/rooms/jurassic_park_03/props/fire/Jurasic-60.png" id="15_5v6jn"]
+[ext_resource type="Texture2D" uid="uid://bqwaymycetrgd" path="res://popochiu/rooms/jurassic_park_03/props/kid/Jurasic-59.png" id="15_lh54w"]
+[ext_resource type="Texture2D" uid="uid://bvhmy2hlfuhh3" path="res://popochiu/rooms/jurassic_park_03/props/judge/Jurasic-61.png" id="17_djllb"]
+[ext_resource type="Texture2D" uid="uid://bx5fuyy7wisq4" path="res://popochiu/rooms/jurassic_park_03/props/computer/Jurasic-62.png" id="18_7mx4q"]
+[ext_resource type="PackedScene" uid="uid://cvscu4pqx7fvs" path="res://popochiu/characters/judge/character_judge.tscn" id="18_xgx65"]
+[ext_resource type="PackedScene" uid="uid://85x6vmlmkexw" path="res://popochiu/characters/attorney/character_attorney.tscn" id="19_sw2jq"]
+[ext_resource type="Texture2D" uid="uid://oglqssegsrv3" path="res://popochiu/rooms/jurassic_park_03/props/elicopter/Jurasic-66.png" id="20_srl1j"]
+[ext_resource type="PackedScene" uid="uid://cijiiixi8ogv3" path="res://popochiu/rooms/jurassic_park_02/props/front/prop_front.tscn" id="21_68egq"]
+[ext_resource type="Texture2D" uid="uid://c3lrebygm22w4" path="res://popochiu/rooms/jurassic_park_02/props/front/front_door.png" id="22_p6fpi"]
+[ext_resource type="PackedScene" uid="uid://xj74jk85wh8d" path="res://popochiu/rooms/jurassic_park_02/props/back/prop_back.tscn" id="23_muqp7"]
+[ext_resource type="Texture2D" uid="uid://dru0yt5u7om62" path="res://popochiu/rooms/jurassic_park_03/props/gif/Jurasic-69.png" id="24_a7ouu"]
+[ext_resource type="Texture2D" uid="uid://bqeoooeoc6ufm" path="res://popochiu/rooms/jurassic_park_02/props/back/back_door.png" id="24_pknpn"]
+[ext_resource type="Texture2D" uid="uid://bcoggj1yv33rt" path="res://popochiu/rooms/jurassic_park_03/props/gif/Jurasic-65.png" id="26_y1yah"]
+[ext_resource type="Texture2D" uid="uid://6ut8n8qe15b5" path="res://popochiu/rooms/jurassic_park_03/props/wimpy/Jurasic-70.png" id="27_10tmc"]
+[ext_resource type="Texture2D" uid="uid://hrvwos2wfunc" path="res://popochiu/rooms/jurassic_park_03/props/kid_on/Jurasic-68.png" id="28_qg5yy"]
+[ext_resource type="Texture2D" uid="uid://dtgyjwckak2x4" path="res://popochiu/rooms/jurassic_park_03/props/choise/Jurasic-74.png" id="29_y2iei"]
+[ext_resource type="Texture2D" uid="uid://ca57s62cx4l0i" path="res://popochiu/rooms/jurassic_park_03/props/goat/Jurasic-75_a.png" id="30_s8w8d"]
+[ext_resource type="Texture2D" uid="uid://dpjbswbs65sp7" path="res://popochiu/rooms/jurassic_park_03/props/apple/Jurasic-76.png" id="31_lw62d"]
+
+[node name="RoomJurassicPark03" type="Node2D"]
+script = ExtResource("1_vosj4")
+script_name = "JurassicPark03"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Props"]
+libraries = {
+"": ExtResource("2_3v0nm")
+}
+
+[node name="Bg" parent="Props" instance=ExtResource("2_a4dh7")]
+position = Vector2(403, 259)
+texture = ExtResource("3_mmjnd")
+
+[node name="Ian" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(389, 321)
+texture = ExtResource("6_oyhjk")
+script_name = "Ian"
+description = "Ian"
+clickable = false
+cursor = 1
+
+[node name="Arm" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(359, 319)
+texture = ExtResource("7_46htv")
+script_name = "Arm"
+description = "Arm"
+clickable = false
+cursor = 1
+
+[node name="BaselineHelper" parent="Props/Arm" index="0"]
+visible = false
+
+[node name="WalkToHelper" parent="Props/Arm" index="1"]
+visible = false
+
+[node name="Sprite2D" parent="Props/Arm" index="2"]
+position = Vector2(6, 106)
+texture = ExtResource("7_46htv")
+
+[node name="Light" parent="Props/Arm" instance=ExtResource("4_3mqi5")]
+show_behind_parent = true
+position = Vector2(33.9999, 183)
+rotation = 1.37948
+texture = ExtResource("8_tfr26")
+script_name = "Light"
+description = "Light"
+clickable = false
+cursor = 1
+
+[node name="Robbert" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(513, 323)
+texture = ExtResource("9_knddi")
+script_name = "Robbert"
+description = "Robbert"
+clickable = false
+cursor = 1
+
+[node name="Trex" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(239, 270)
+texture = ExtResource("9_7euvc")
+script_name = "Trex"
+description = "Trex"
+clickable = false
+cursor = 1
+
+[node name="Rex_arm_1" parent="Props/Trex" instance=ExtResource("4_3mqi5")]
+position = Vector2(102, 19)
+texture = ExtResource("10_an5m2")
+script_name = "Rex_arm_1"
+description = "Rex Arm 1"
+clickable = false
+cursor = 1
+
+[node name="BaselineHelper" parent="Props/Trex/Rex_arm_1" index="0"]
+visible = false
+
+[node name="WalkToHelper" parent="Props/Trex/Rex_arm_1" index="1"]
+visible = false
+
+[node name="Sprite2D" parent="Props/Trex/Rex_arm_1" index="2"]
+position = Vector2(0, 40)
+texture = ExtResource("10_an5m2")
+
+[node name="Rex_arm_2" parent="Props/Trex" instance=ExtResource("4_3mqi5")]
+position = Vector2(51, 37)
+texture = ExtResource("11_4gcoj")
+script_name = "Rex_arm_2"
+description = "Rex Arm 2"
+clickable = false
+cursor = 1
+
+[node name="BaselineHelper" parent="Props/Trex/Rex_arm_2" index="0"]
+visible = false
+
+[node name="WalkToHelper" parent="Props/Trex/Rex_arm_2" index="1"]
+visible = false
+
+[node name="Sprite2D" parent="Props/Trex/Rex_arm_2" index="2"]
+position = Vector2(0, 36)
+texture = ExtResource("11_4gcoj")
+
+[node name="Rex_head_2" parent="Props/Trex" instance=ExtResource("4_3mqi5")]
+position = Vector2(207, -68)
+texture = ExtResource("14_8tv0f")
+script_name = "Rex_head_2"
+description = "Rex Head 2"
+clickable = false
+cursor = 1
+
+[node name="BaselineHelper" parent="Props/Trex/Rex_head_2" index="0"]
+visible = false
+
+[node name="WalkToHelper" parent="Props/Trex/Rex_head_2" index="1"]
+visible = false
+
+[node name="Sprite2D" parent="Props/Trex/Rex_head_2" index="2"]
+position = Vector2(72, 48)
+texture = ExtResource("14_8tv0f")
+
+[node name="Rex_head1" parent="Props/Trex" instance=ExtResource("4_3mqi5")]
+position = Vector2(210, -129)
+texture = ExtResource("10_tmsa1")
+script_name = "Rex_head1"
+description = "Rex Head 1"
+clickable = false
+cursor = 1
+
+[node name="BaselineHelper" parent="Props/Trex/Rex_head1" index="0"]
+visible = false
+
+[node name="WalkToHelper" parent="Props/Trex/Rex_head1" index="1"]
+visible = false
+
+[node name="Sprite2D" parent="Props/Trex/Rex_head1" index="2"]
+position = Vector2(80, 0)
+texture = ExtResource("10_tmsa1")
+
+[node name="Fire" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(414, 483)
+scale = Vector2(0.482, 0.482)
+texture = ExtResource("15_5v6jn")
+script_name = "Fire"
+description = "Fire"
+clickable = false
+cursor = 1
+
+[node name="BaselineHelper" parent="Props/Fire" index="0"]
+visible = false
+
+[node name="WalkToHelper" parent="Props/Fire" index="1"]
+visible = false
+
+[node name="Sprite2D" parent="Props/Fire" index="2"]
+position = Vector2(0, -165.975)
+texture = ExtResource("15_5v6jn")
+
+[node name="Kid" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(417, 351)
+texture = ExtResource("15_lh54w")
+script_name = "Kid"
+description = "Kid"
+clickable = false
+cursor = 1
+
+[node name="Judge" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(410, 280)
+texture = ExtResource("17_djllb")
+script_name = "Judge"
+description = "Judge"
+clickable = false
+cursor = 1
+
+[node name="Computer" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(411, 270)
+texture = ExtResource("18_7mx4q")
+script_name = "Computer"
+description = "Computer"
+clickable = false
+cursor = 1
+
+[node name="Elicopter" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(37, 102)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("20_srl1j")
+script_name = "Elicopter"
+description = "Elicopter"
+clickable = false
+cursor = 1
+
+[node name="Front" parent="Props" instance=ExtResource("21_68egq")]
+visible = false
+position = Vector2(209, 341)
+texture = ExtResource("22_p6fpi")
+
+[node name="Back" parent="Props/Front" instance=ExtResource("23_muqp7")]
+position = Vector2(399, -3)
+texture = ExtResource("24_pknpn")
+
+[node name="Gif" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(410, 262)
+texture = ExtResource("24_a7ouu")
+script_name = "Gif"
+description = "Gif"
+clickable = false
+cursor = 1
+
+[node name="BaselineHelper" parent="Props/Gif" index="0"]
+visible = false
+
+[node name="WalkToHelper" parent="Props/Gif" index="1"]
+visible = false
+
+[node name="Sprite2D" parent="Props/Gif" index="2"]
+position = Vector2(-27, 0)
+texture = ExtResource("24_a7ouu")
+
+[node name="Gif_arm" parent="Props/Gif" instance=ExtResource("4_3mqi5")]
+position = Vector2(51, 5)
+texture = ExtResource("26_y1yah")
+script_name = "Gif_arm"
+description = "Gif Arm"
+clickable = false
+cursor = 1
+
+[node name="BaselineHelper" parent="Props/Gif/Gif_arm" index="0"]
+visible = false
+
+[node name="WalkToHelper" parent="Props/Gif/Gif_arm" index="1"]
+visible = false
+
+[node name="Sprite2D" parent="Props/Gif/Gif_arm" index="2"]
+position = Vector2(10, -59)
+texture = ExtResource("26_y1yah")
+
+[node name="Wimpy" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(389, 262)
+texture = ExtResource("27_10tmc")
+script_name = "Wimpy"
+description = "Wimpy"
+clickable = false
+cursor = 1
+
+[node name="Kid_on" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(376, 254)
+texture = ExtResource("28_qg5yy")
+script_name = "Kid_on"
+description = "Kid On"
+clickable = false
+cursor = 1
+
+[node name="Choise" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(407, 270)
+texture = ExtResource("29_y2iei")
+script_name = "Choise"
+description = "Choise"
+clickable = false
+cursor = 1
+
+[node name="Goat" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(411, 270)
+texture = ExtResource("30_s8w8d")
+script_name = "Goat"
+description = "Goat"
+clickable = false
+cursor = 1
+
+[node name="Apple" parent="Props" instance=ExtResource("4_3mqi5")]
+visible = false
+position = Vector2(397, 270)
+texture = ExtResource("31_lw62d")
+script_name = "Apple"
+description = "Apple"
+clickable = false
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterNarrator *" parent="Characters" instance=ExtResource("4_x3rg1")]
+
+[node name="CharacterJudge *" parent="Characters" instance=ExtResource("18_xgx65")]
+
+[node name="CharacterAttorney *" parent="Characters" instance=ExtResource("19_sw2jq")]
+
+[editable path="Props/Arm"]
+[editable path="Props/Trex/Rex_arm_1"]
+[editable path="Props/Trex/Rex_arm_2"]
+[editable path="Props/Trex/Rex_head_2"]
+[editable path="Props/Trex/Rex_head1"]
+[editable path="Props/Fire"]
+[editable path="Props/Gif"]
+[editable path="Props/Gif/Gif_arm"]
