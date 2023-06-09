@@ -124,7 +124,7 @@ func _on_room_transition_finished() -> void:
 				get_prop("Popochiu").queue_change_frame(1),
 				"...",
 				"PopochiuKing: Oñiiiiiiiiiii!!!",
-				"PopochiuKing: Dad Mufasa says we can all leave here together",
+				"PopochiuKing: Dad Mufasa says we can all live here together.",
 			])
 	
 	Globals.lion_king_seq += 1

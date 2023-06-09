@@ -43,7 +43,7 @@ func _on_room_transition_finished() -> void:
 		Globals.Branch.SIMBA:
 			await C.Narrator.say('( All animals bawl in euphoria )')
 		Globals.Branch.POPOCHIU_KING:
-			await C.Rafiki.say('This... thing will inherit the throne')
+			await C.Rafiki.say('This... little and cute thing will inherit the throne')
 			await C.PopochiuKing.say('Hiya all my little friends')
 			await C.PopochiuKing.say("I'm hungry!!!")
 			await C.Narrator.say('( All animals bawl in euphoria )')

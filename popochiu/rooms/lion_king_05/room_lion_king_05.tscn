@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://wslqe4adc8jd"]
+[gd_scene load_steps=17 format=3 uid="uid://wslqe4adc8jd"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_05/room_lion_king_05.gd" id="1_osfkh"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_rlbup"]
@@ -10,13 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bqdbw210mo60a" path="res://popochiu/rooms/lion_king_05/props/simba_03/simba_03.png" id="9_w53cw"]
 [ext_resource type="Texture2D" uid="uid://dpqu0jvmv48on" path="res://popochiu/rooms/lion_king_05/props/popochius/popochius_05.png" id="10_5bt8k"]
 [ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="10_sq5ej"]
-[ext_resource type="Script" path="res://popochiu/characters/simba/character_simba.gd" id="11_b3wbr"]
 [ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="12_crqcs"]
-[ext_resource type="Script" path="res://popochiu/characters/narrator/character_narrator.gd" id="13_223q5"]
 [ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="14_dim00"]
-[ext_resource type="Script" path="res://popochiu/characters/popochiu_king/character_popochiu_king.gd" id="15_or62a"]
 [ext_resource type="PackedScene" uid="uid://cvs2u8nqu83lc" path="res://popochiu/characters/mufasa/character_mufasa.tscn" id="16_0rw8p"]
-[ext_resource type="Script" path="res://popochiu/characters/mufasa/character_mufasa.gd" id="17_oyroe"]
 
 [sub_resource type="Animation" id="Animation_jadot"]
 length = 0.001
@@ -287,40 +283,17 @@ cursor = 1
 
 [node name="Characters" type="Node2D" parent="."]
 
-[node name="CharacterSimba *" type="Area2D" parent="Characters" instance=ExtResource("10_sq5ej")]
+[node name="CharacterSimba *" parent="Characters" instance=ExtResource("10_sq5ej")]
 position = Vector2(480, 270)
-script = ExtResource("11_b3wbr")
-can_move = false
-script_name = "Simba"
-description = "Simba"
-clickable = false
-cursor = 8
-always_on_top = true
 
-[node name="CharacterNarrator *" type="Area2D" parent="Characters" instance=ExtResource("12_crqcs")]
+[node name="CharacterNarrator *" parent="Characters" instance=ExtResource("12_crqcs")]
 position = Vector2(480, 270)
-script = ExtResource("13_223q5")
-script_name = "Narrator"
-description = "Narrator"
-cursor = 8
 
-[node name="CharacterPopochiuKing *" type="Area2D" parent="Characters" instance=ExtResource("14_dim00")]
-y_sort_enabled = true
+[node name="CharacterPopochiuKing *" parent="Characters" instance=ExtResource("14_dim00")]
 position = Vector2(480, 270)
-script = ExtResource("15_or62a")
-can_move = false
-script_name = "PopochiuKing"
-description = "Popochiu"
-clickable = false
-cursor = 8
-always_on_top = true
 
-[node name="CharacterMufasa *" type="Area2D" parent="Characters" instance=ExtResource("16_0rw8p")]
+[node name="CharacterMufasa *" parent="Characters" instance=ExtResource("16_0rw8p")]
 position = Vector2(480, 270)
-script = ExtResource("17_oyroe")
-script_name = "Mufasa"
-description = "Mufasa"
-cursor = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

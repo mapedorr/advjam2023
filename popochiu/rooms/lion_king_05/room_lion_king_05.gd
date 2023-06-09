@@ -98,22 +98,14 @@ affection to all of ya.",
 			var response: PopochiuDialogOption = await D.show_inline_dialog(
 				"How will this mess be resolved?",
 				[
-					"Mufasa starts eating Popochius",
 					"Popochius take control",
-					"The Popochius reduce the rate of hugs and assist the animals"
+					"Help each other",
+					"Mufasa starts eating Popochius",
 				]
 			)
 			
 			match response.id:
 				'0':
-					await E.queue([
-						"Mufasa: You know what?",
-						"PopochiuKing: What?",
-						"Mufasa: [shake]FUCK YOU ALL!!![/shake]",
-						"Mufasa: I'm going to start a Popochius diet",
-						"PopochiuKing[1]: Wait! What!?"
-					])
-				'1':
 					await E.queue([
 						"PopochiuKing: Ok ok ok, dad Mufasa...",
 						"PopochiuKing: I'll talk with my epatius about this.",
@@ -121,7 +113,9 @@ affection to all of ya.",
 minds to it, we can be very hardworking.",
 						"Simba[2]: What do I have to do to get a damn hug?"
 					])
-				'2':
+					
+					Globals.lion_king_ending = Globals.Ending.POPOCHIU_KING_A
+				'1':
 					await E.queue([
 						"PopochiuKing: I guess you're right...",
 						"PopochiuKing: The kingdom has declined a bit since our arrival.",
@@ -129,18 +123,28 @@ minds to it, we can be very hardworking.",
 						"PopochiuKing: I promise that we will work together \
 to make everyone proud again of the Pride Lands.",
 					])
+					
+					Globals.lion_king_ending = Globals.Ending.POPOCHIU_KING_B
+				'2':
+					await E.queue([
+						"Mufasa: You know what?",
+						"PopochiuKing: What?",
+						"Mufasa: [shake]FUCK YOU ALL!!![/shake]",
+						"Mufasa: I'm going to start a Popochius diet",
+						"PopochiuKing[1]: Wait! What!?"
+					])
+					
+					Globals.lion_king_ending = Globals.Ending.POPOCHIU_KING_C
 	
 	Globals.lion_king_seq += 1
 	G.change_channel_requested.emit()
-	
-	# But King Mufasa never suspected that the hard work of the Popochius would mean that they would end up destroying him and all the animals in the kingdom.
 
 
 # What happens before Popochiu unloads the room.
 # At this point, the screen is black, processing is disabled and all characters
 # have been removed from the $Characters node.
 func _on_room_exited() -> void:
-	pass
+	Globals.current_music.stop()
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░
