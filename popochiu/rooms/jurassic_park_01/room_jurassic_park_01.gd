@@ -24,10 +24,12 @@ func _on_room_entered() -> void:
 func _on_room_transition_finished() -> void:
 	_animator.play('01')
 	await  _animator.animation_finished
+	if not is_inside_tree(): return
 	E.queue(['Narrator[3]: A hundred million years ago...'])
 	
 	_animator.play('02')
 	await  _animator.animation_finished
+	if not is_inside_tree(): return
 	C.Grandpa.show()
 	
 	var response: PopochiuDialogOption = await D.show_inline_dialog(

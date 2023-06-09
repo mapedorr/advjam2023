@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://drs5466skm2au"]
+[gd_scene load_steps=10 format=3 uid="uid://drs5466skm2au"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/jurassic_park_02/room_jurassic_park_02.gd" id="1_w7msw"]
 [ext_resource type="PackedScene" uid="uid://ce33jyqtjex3m" path="res://popochiu/rooms/jurassic_park_01/props/bg/prop_bg.tscn" id="2_nbty4"]
 [ext_resource type="Texture2D" uid="uid://wmrb7obtaivw" path="res://popochiu/rooms/jurassic_park_01/props/bg/sprites/Bg.png" id="3_nrngr"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="4_b2814"]
-[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="5_a7vxc"]
 [ext_resource type="Texture2D" uid="uid://bhta3x3uxi3wd" path="res://popochiu/rooms/jurassic_park_02/props/adn/Jurasic-adn.png" id="6_p34ah"]
 [ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="7_5pd4w"]
 
@@ -63,9 +62,9 @@ libraries = {
 position = Vector2(403, 259)
 texture = ExtResource("3_nrngr")
 
-[node name="Adn" type="Area2D" parent="Props" instance=ExtResource("4_b2814")]
+[node name="Adn" parent="Props" instance=ExtResource("4_b2814")]
+visible = false
 position = Vector2(735, 270)
-script = ExtResource("5_a7vxc")
 texture = ExtResource("6_p34ah")
 script_name = "Adn"
 description = "Adn"

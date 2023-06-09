@@ -215,6 +215,7 @@ func say(dialog: String) -> void:
 	C.character_spoke.emit(self, dialog)
 	
 	await G.continue_clicked
+	if not is_inside_tree(): return
 	
 	emotion = ''
 	idle()
