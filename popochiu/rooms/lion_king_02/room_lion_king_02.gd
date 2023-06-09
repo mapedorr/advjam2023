@@ -43,12 +43,20 @@ func _on_room_transition_finished() -> void:
 		Globals.Branch.SIMBA:
 			await C.Narrator.say('( All animals bawl in euphoria )')
 		Globals.Branch.POPOCHIU_KING:
-			await C.Rafiki.say('This... thing will inherit the throne')
+			await C.Rafiki.say('This... little and cute thing will inherit the throne')
 			await C.PopochiuKing.say('Hiya all my little friends')
 			await C.PopochiuKing.say("I'm hungry!!!")
 			await C.Narrator.say('( All animals bawl in euphoria )')
 	
 	Globals.lion_king_seq += 1
+	
+	['Rafiki', 'Coco', 'Simba', 'Popochiu'].all(disable_prop)
+	Globals.current_music.stop()
+	A.sfx_lion_king_boom.play()
+	get_prop('Title').enable()
+	
+	await E.wait(3.0)
+	
 	G.change_channel_requested.emit()
 
 

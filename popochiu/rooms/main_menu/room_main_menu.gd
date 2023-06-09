@@ -14,14 +14,24 @@ var state: Data = load('res://popochiu/rooms/main_menu/room_main_menu.tres')
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	pass
+	if state.visited_times:
+		Globals.intro_triggered.emit()
 
 
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
-	# You can use await E.queue([]) to excecute a queue of instructions
-	pass
+	if state.visited_times:
+		await E.queue([
+			"...",
+			Globals.queue_say_in_reality("The adventure jam has started."),
+			Globals.queue_say_in_reality("And I have no idea of what to do..."),
+			Globals.queue_say_in_reality("Every year is the same"),
+			Globals.queue_say_in_reality(". . . . . ."),
+			Globals.queue_say_in_reality("Maybe some channel surfing could give me ideas"),
+		])
+		
+		Globals.intro_finished.emit()
 
 
 # What happens before Popochiu unloads the room.

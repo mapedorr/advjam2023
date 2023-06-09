@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8ovjsrqfgubh"]
 
-[ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic_14h.ttf" id="1_5mnjc"]
+[ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic.ttf" id="1_5mnjc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gv2i1"]
 content_margin_left = 2.0

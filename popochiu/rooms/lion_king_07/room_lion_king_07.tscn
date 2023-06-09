@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckfoaytkl2mu1"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/lion_king_07/room_lion_king_07.gd" id="1_l8kcv"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_mnc7d"]
+[ext_resource type="Texture2D" uid="uid://cimkubs7r2dt8" path="res://popochiu/rooms/_shared/sprites/lion_king_bg.png" id="4_b3ekx"]
+[ext_resource type="Texture2D" uid="uid://4h16xo1vvsnm" path="res://popochiu/rooms/lion_king_07/props/simba_ending_a/simba_ending_a.png" id="5_bm07y"]
+[ext_resource type="Texture2D" uid="uid://dkjhq6kxhvobg" path="res://popochiu/rooms/lion_king_07/props/simba_ending_b/simba_ending_b.png" id="6_ri237"]
+[ext_resource type="Texture2D" uid="uid://cijbv1befdv0e" path="res://popochiu/rooms/_shared/sprites/the_lion_king.png" id="7_x6lsn"]
+[ext_resource type="Texture2D" uid="uid://bsihxivnoapkr" path="res://popochiu/rooms/_shared/sprites/the_shame_lands.png" id="8_3onju"]
+
+[node name="RoomLionKing07" type="Node2D"]
+script = ExtResource("1_l8kcv")
+script_name = "LionKing07"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" parent="Props" instance=ExtResource("2_mnc7d")]
+position = Vector2(480, 270)
+texture = ExtResource("4_b3ekx")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+cursor = 1
+
+[node name="SimbaEndingA" parent="Props" instance=ExtResource("2_mnc7d")]
+visible = false
+position = Vector2(402, 262)
+texture = ExtResource("5_bm07y")
+script_name = "SimbaEndingA"
+description = "Simba Ending A"
+clickable = false
+cursor = 1
+
+[node name="SimbaEndingB" parent="Props" instance=ExtResource("2_mnc7d")]
+visible = false
+position = Vector2(403, 262)
+texture = ExtResource("6_ri237")
+script_name = "SimbaEndingB"
+description = "Simba Ending B"
+clickable = false
+cursor = 1
+
+[node name="TheLionKing" parent="Props" instance=ExtResource("2_mnc7d")]
+visible = false
+position = Vector2(412, 250)
+texture = ExtResource("7_x6lsn")
+script_name = "TheLionKing"
+description = "The Lion King"
+clickable = false
+cursor = 1
+
+[node name="TheShameLands" parent="Props" instance=ExtResource("2_mnc7d")]
+visible = false
+position = Vector2(409, 249)
+texture = ExtResource("8_3onju")
+script_name = "TheShameLands"
+description = "The Shame Lands"
+clickable = false
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]

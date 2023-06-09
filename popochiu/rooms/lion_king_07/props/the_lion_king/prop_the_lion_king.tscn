@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnne7k5emcop8"]
+
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="1_vw7e1"]
+
+[node name="TheLionKing" type="Area2D"]
+script = ExtResource("1_vw7e1")
+script_name = "TheLionKing"
+description = "The Lion King"
+clickable = false
+cursor = 1
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

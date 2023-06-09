@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://blff1h5ew4i61"]
+[gd_scene load_steps=24 format=3 uid="uid://blff1h5ew4i61"]
 
 [ext_resource type="Script" path="res://popochiu/tv_interface/tv_interface.gd" id="1_ib485"]
 [ext_resource type="Texture2D" uid="uid://bbu0kr43f0mc2" path="res://popochiu/tv_interface/sprites/tv_frame.png" id="1_wrljh"]
+[ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic.ttf" id="2_m6hga"]
 [ext_resource type="Texture2D" uid="uid://cedk6vwta2bjw" path="res://popochiu/tv_interface/sprites/btn_power.png" id="3_3q7x8"]
 [ext_resource type="Texture2D" uid="uid://bgaakce1qaiy6" path="res://popochiu/tv_interface/sprites/btn_channel.png" id="3_qujcl"]
 [ext_resource type="PackedScene" uid="uid://36pnd0m8pp5n" path="res://popochiu/tv_interface/dialog_menu/dialog_menu.tscn" id="4_p310v"]
@@ -9,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bwq0ayd5g8mj5" path="res://popochiu/tv_interface/sprites/btn_knob.png" id="5_sg7kw"]
 [ext_resource type="Texture2D" uid="uid://8vjyqdvsbdrw" path="res://popochiu/tv_interface/sprites/btn_knob_indicator.png" id="6_oluwl"]
 [ext_resource type="Texture2D" uid="uid://yxlj0vq2bb3s" path="res://popochiu/tv_interface/sprites/btn_select.png" id="7_k7os0"]
-[ext_resource type="FontFile" uid="uid://bsot1hsmsofmo" path="res://popochiu/tv_interface/fonts/tape_basic_14h.ttf" id="8_3cdhn"]
+[ext_resource type="FontFile" uid="uid://bd8w6vepcte81" path="res://popochiu/tv_interface/fonts/memo.ttf" id="11_7vbeo"]
+[ext_resource type="Texture2D" uid="uid://bs2l6y0vke1i2" path="res://popochiu/tv_interface/sprites/tv_user_manual.png" id="11_s7yj6"]
+[ext_resource type="FontFile" uid="uid://di5kyjnj81jt6" path="res://popochiu/tv_interface/fonts/iosevka_slab_regular.ttf" id="12_ufcj8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p1m2a"]
 outline_size = 12
@@ -17,6 +20,9 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 12
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmu0v"]
+bg_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3xxl"]
 atlas = ExtResource("3_3q7x8")
@@ -33,6 +39,205 @@ region = Rect2(0, 0, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4q3p3"]
 atlas = ExtResource("7_k7os0")
 region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="Animation" id="Animation_suwg2"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UserManual:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(573, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UserManual:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-521, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UserManual:size:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(553, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UserManual:size:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(374, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:mouse_filter")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("UserManual/OpenButton:mouse_filter")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_0s78c"]
+resource_name = "first_use"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UserManual:size:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(553, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.8)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UserManual:size:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(374, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.8)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UserManual:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(7, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.8)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UserManual:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(562, -0.25, 0, 0.25, 0, 186, -0.7, -92, 0.25, 0),
+"times": PackedFloat32Array(0, 0.8)
+}
+
+[sub_resource type="Animation" id="Animation_e1ylv"]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UserManual:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(7, -0.25, 0, 0.25, 0, -518, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UserManual:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(182, -0.25, 0, 0.25, 0, 469, -0.5, 299, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UserManual/OpenButton:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0dcb"]
+_data = {
+"RESET": SubResource("Animation_suwg2"),
+"first_use": SubResource("Animation_0s78c"),
+"hide": SubResource("Animation_e1ylv")
+}
 
 [node name="TVInterface" type="CanvasLayer"]
 layer = 9
@@ -63,7 +268,7 @@ offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_fonts/font = ExtResource("8_3cdhn")
+theme_override_fonts/font = ExtResource("2_m6hga")
 text = "???"
 label_settings = SubResource("LabelSettings_p1m2a")
 horizontal_alignment = 1
@@ -81,7 +286,8 @@ offset_right = 175.0
 offset_bottom = -109.0
 grow_vertical = 0
 
-[node name="LblTemp" type="Label" parent="MainContainer"]
+[node name="RtlDialog" type="RichTextLabel" parent="MainContainer"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -94,11 +300,40 @@ offset_right = 174.0
 offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("8_3cdhn")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/outline_size = 12
+theme_override_fonts/normal_font = ExtResource("2_m6hga")
+bbcode_enabled = true
 text = "---"
-label_settings = SubResource("LabelSettings_p1m2a")
-horizontal_alignment = 1
-autowrap_mode = 3
+fit_content = true
+
+[node name="BlackContainer" type="PanelContainer" parent="MainContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 123.0
+offset_top = 48.0
+offset_right = 675.0
+offset_bottom = 476.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pmu0v")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/BlackContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="RtlBlackSpeaker" type="RichTextLabel" parent="MainContainer/BlackContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center]I am the black speaker[/center]"
+fit_content = true
 
 [node name="TVLayer" type="CanvasLayer" parent="."]
 layer = 11
@@ -108,14 +343,6 @@ offset_right = 960.0
 offset_bottom = 540.0
 mouse_filter = 2
 texture = ExtResource("1_wrljh")
-
-[node name="BtnContinue" type="TextureButton" parent="TVLayer"]
-unique_name_in_owner = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="BtnPower" type="TextureButton" parent="TVLayer" groups=["tv_button"]]
 unique_name_in_owner = true
@@ -190,8 +417,163 @@ grow_vertical = 0
 texture_normal = SubResource("AtlasTexture_66baw")
 texture_pressed = SubResource("AtlasTexture_4q3p3")
 
-[connection signal="pressed" from="TVLayer/BtnContinue" to="." method="_on_btn_continue_pressed"]
+[node name="BtnContinue" type="TextureButton" parent="TVLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UserManualContainer" type="LinkButton" parent="TVLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UserManual" type="TextureRect" parent="TVLayer/UserManualContainer"]
+layout_mode = 2
+offset_left = -521.0
+offset_top = 573.0
+offset_right = 32.0
+offset_bottom = 947.0
+texture = ExtResource("11_s7yj6")
+metadata/_edit_group_ = true
+
+[node name="UserManual" type="Label" parent="TVLayer/UserManualContainer/UserManual"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 70.0
+offset_right = 338.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0.176471, 0.117647, 0.184314, 1)
+theme_override_fonts/font = ExtResource("12_ufcj8")
+theme_override_font_sizes/font_size = 18
+text = "User Manual"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ChannelKnob" type="Label" parent="TVLayer/UserManualContainer/UserManual"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 111.0
+offset_right = 535.0
+offset_bottom = 159.0
+theme_override_colors/font_color = Color(0.176471, 0.117647, 0.184314, 1)
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("12_ufcj8")
+theme_override_font_sizes/font_size = 18
+text = "Use this knob to change the channel"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PowerButton" type="Label" parent="TVLayer/UserManualContainer/UserManual"]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 249.0
+offset_right = 531.0
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(0.176471, 0.117647, 0.184314, 1)
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("12_ufcj8")
+theme_override_font_sizes/font_size = 18
+text = "Use this button to turn on/off the device"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SelectButton" type="Label" parent="TVLayer/UserManualContainer/UserManual"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 294.0
+offset_right = 209.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(0.176471, 0.117647, 0.184314, 1)
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("12_ufcj8")
+theme_override_font_sizes/font_size = 18
+text = "Use this button to select an option"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="OptionsKnob" type="Label" parent="TVLayer/UserManualContainer/UserManual"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 122.0
+offset_right = 209.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0.176471, 0.117647, 0.184314, 1)
+theme_override_constants/line_spacing = -4
+theme_override_fonts/font = ExtResource("12_ufcj8")
+theme_override_font_sizes/font_size = 18
+text = "Use this knob to scroll throw options"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="OpenButton" type="LinkButton" parent="TVLayer/UserManualContainer/UserManual"]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 1.0
+offset_right = 551.0
+offset_bottom = 33.0
+mouse_filter = 2
+
+[node name="UserManualAnimationPlayer" type="AnimationPlayer" parent="TVLayer/UserManualContainer"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_k0dcb")
+}
+
+[node name="RealityLayer" type="CanvasLayer" parent="."]
+layer = 12
+visible = false
+
+[node name="RealityBlack" type="ColorRect" parent="RealityLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RtlRealityDialog" type="RichTextLabel" parent="RealityLayer"]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 185.0
+offset_top = -42.0
+offset_right = -185.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/outline_size = 12
+theme_override_fonts/normal_font = ExtResource("11_7vbeo")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]I'm the one who's watching the screen[/center]"
+fit_content = true
+
 [connection signal="toggled" from="TVLayer/BtnPower" to="." method="_on_btn_power_toggled"]
 [connection signal="pressed" from="TVLayer/BtnChannel" to="." method="_on_btn_channel_pressed"]
 [connection signal="pressed" from="TVLayer/BtnChoice" to="." method="_on_btn_choice_pressed"]
 [connection signal="pressed" from="TVLayer/BtnSelect" to="." method="_on_btn_select_pressed"]
+[connection signal="pressed" from="TVLayer/BtnContinue" to="." method="_on_btn_continue_pressed"]
+[connection signal="pressed" from="TVLayer/UserManualContainer" to="." method="_on_user_manual_container_pressed"]
+[connection signal="pressed" from="TVLayer/UserManualContainer/UserManual/OpenButton" to="." method="_on_open_button_pressed"]

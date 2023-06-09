@@ -1,0 +1,285 @@
+[gd_scene load_steps=18 format=3 uid="uid://bc7u2r50ly2sj"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/lion_king_06/room_lion_king_06.gd" id="1_udnss"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_ki527"]
+[ext_resource type="Texture2D" uid="uid://cimkubs7r2dt8" path="res://popochiu/rooms/_shared/sprites/lion_king_bg.png" id="4_cpl4q"]
+[ext_resource type="Texture2D" uid="uid://ljy6x4ds24dl" path="res://popochiu/rooms/lion_king_06/props/simba/simba.png" id="5_t81o2"]
+[ext_resource type="Texture2D" uid="uid://doiba0c1jeclt" path="res://popochiu/rooms/lion_king_06/props/popochiu_ending_a/popochiu_ending_a.png" id="6_elwme"]
+[ext_resource type="Texture2D" uid="uid://bqudmpn040uum" path="res://popochiu/rooms/lion_king_06/props/popochiu_ending_c/popochiu_ending_c.png" id="7_4uy1u"]
+[ext_resource type="Texture2D" uid="uid://dgmq6ue3svq75" path="res://popochiu/rooms/lion_king_06/props/kingdom/kingdom_06.png" id="7_80yk1"]
+[ext_resource type="Texture2D" uid="uid://b1vq6khepynh" path="res://popochiu/rooms/lion_king_06/props/popochiu_king/popochiu_king_06.png" id="7_u688m"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="9_bkqwb"]
+[ext_resource type="Texture2D" uid="uid://b1l0lru1ueksk" path="res://popochiu/rooms/_shared/sprites/the_popolion.png" id="10_hq2um"]
+[ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="10_qnrb1"]
+[ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="12_ya1re"]
+[ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="14_inff4"]
+[ext_resource type="PackedScene" uid="uid://c1cobvmqtvm8q" path="res://popochiu/characters/scar/character_scar.tscn" id="16_dwltk"]
+
+[sub_resource type="Animation" id="Animation_f33g4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Props/PopochiuEndingB/PopochiuKing:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-90, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Props/PopochiuEndingB/PopochiuKing:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(342, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Props/PopochiuEndingB/Kingdom:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-80, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Props/PopochiuEndingB/Kingdom:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Props/PopochiuEndingB/Kingdom:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Props/PopochiuEndingB/Kingdom:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Props/PopochiuEndingB/Kingdom:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_utdmg"]
+resource_name = "ending_b"
+length = 8.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Props/PopochiuEndingB/PopochiuKing:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-90, -0.25, 0, 0.25, 0, -90, -0.25, 0, 0.25, 0, -90, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 7)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Props/PopochiuEndingB/PopochiuKing:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(342, -0.25, 0, 0.25, 0, 342, -0.25, 0, 0.25, 0, 101, -3.9, -1, 0.25, 0),
+"times": PackedFloat32Array(0, 3, 7)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Props/PopochiuEndingB/Kingdom:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-80, -0.25, 0, 0.25, 0, -80, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 7)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Props/PopochiuEndingB/Kingdom:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-11, -0.25, 0, 0.25, 0, 307, -0.2, -306, 0.25, 0),
+"times": PackedFloat32Array(0, 7)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Props/PopochiuEndingB/Kingdom:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 7)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Props/PopochiuEndingB/Kingdom:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 7)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Props/PopochiuEndingB/Kingdom:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5, 7)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nbcjy"]
+_data = {
+"RESET": SubResource("Animation_f33g4"),
+"ending_b": SubResource("Animation_utdmg")
+}
+
+[node name="RoomLionKing06" type="Node2D"]
+script = ExtResource("1_udnss")
+script_name = "LionKing06"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" parent="Props" instance=ExtResource("2_ki527")]
+position = Vector2(480, 270)
+texture = ExtResource("4_cpl4q")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+cursor = 1
+
+[node name="Simba" parent="Props" instance=ExtResource("2_ki527")]
+visible = false
+position = Vector2(375, 242)
+texture = ExtResource("5_t81o2")
+script_name = "Simba"
+description = "Simba"
+clickable = false
+cursor = 1
+
+[node name="PopochiuEndingA" parent="Props" instance=ExtResource("2_ki527")]
+visible = false
+position = Vector2(402, 262)
+texture = ExtResource("6_elwme")
+script_name = "PopochiuEndingA"
+description = "Popochiu Ending A"
+clickable = false
+cursor = 1
+
+[node name="PopochiuEndingB" parent="Props" instance=ExtResource("2_ki527")]
+visible = false
+position = Vector2(480, 270)
+script_name = "PopochiuEndingB"
+description = "Popochiu Ending B"
+clickable = false
+cursor = 1
+
+[node name="PopochiuKing" parent="Props/PopochiuEndingB" instance=ExtResource("2_ki527")]
+position = Vector2(-90, 342)
+texture = ExtResource("7_u688m")
+script_name = "PopochiuKing"
+description = "Popochiu King"
+clickable = false
+cursor = 1
+
+[node name="Kingdom" parent="Props/PopochiuEndingB" instance=ExtResource("2_ki527")]
+position = Vector2(-80, -11)
+texture = ExtResource("7_80yk1")
+script_name = "Kingdom"
+description = "Kingdom"
+clickable = false
+cursor = 1
+
+[node name="PopochiuEndingC" parent="Props" instance=ExtResource("2_ki527")]
+visible = false
+position = Vector2(426, 248)
+texture = ExtResource("7_4uy1u")
+script_name = "PopochiuEndingC"
+description = "Popochiu Ending C"
+clickable = false
+cursor = 1
+
+[node name="ThePopolion" type="Area2D" parent="Props" instance=ExtResource("2_ki527")]
+visible = false
+position = Vector2(401, 254)
+script = ExtResource("9_bkqwb")
+texture = ExtResource("10_hq2um")
+script_name = "ThePopolion"
+description = "The Popolion"
+clickable = false
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterNarrator *" parent="Characters" instance=ExtResource("10_qnrb1")]
+position = Vector2(480, 270)
+
+[node name="CharacterSimba *" parent="Characters" instance=ExtResource("12_ya1re")]
+position = Vector2(480, 270)
+
+[node name="CharacterPopochiuKing *" parent="Characters" instance=ExtResource("14_inff4")]
+position = Vector2(480, 270)
+
+[node name="CharacterScar *" parent="Characters" instance=ExtResource("16_dwltk")]
+position = Vector2(480, 270)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nbcjy")
+}

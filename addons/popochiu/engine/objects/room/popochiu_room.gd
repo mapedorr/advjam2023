@@ -159,6 +159,16 @@ func clean_characters() -> void:
 			c.queue_free()
 
 
+func enable_prop(prop: String) -> bool:
+	get_prop(prop).enable()
+	return true
+
+
+func disable_prop(prop: String) -> bool:
+	get_prop(prop).disable()
+	return true
+
+
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ SET & GET ░░░░
 func get_marker(marker_name: String) -> Vector2:
 	var marker: Marker2D = get_node_or_null('Markers/' + marker_name)
