@@ -24,6 +24,11 @@ enum Ending {
 	POPOCHIU_KING_A,
 	POPOCHIU_KING_B,
 	POPOCHIU_KING_C,
+	DINO_A,
+	DINO_B,
+	DINO_C,
+	POPO_A,
+	POPO_B
 }
 
 var branch_name := '' : get = get_branch_name
@@ -56,6 +61,7 @@ var lion_king_branch := 0
 var lion_king_ending := -1
 var jurassic_park_seq := 1
 var jurassic_park_branch := 0
+var jurassic_park_ending := -1
 var current_music : AudioCueMusic = null
 
 var _channels_to_visit := []

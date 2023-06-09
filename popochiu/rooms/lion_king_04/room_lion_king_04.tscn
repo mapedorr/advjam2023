@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ugsk5vf01m6m"]
+[gd_scene load_steps=22 format=3 uid="uid://ugsk5vf01m6m"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_04/room_lion_king_04.gd" id="1_nv0ro"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_v7y6l"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://c1cobvmqtvm8q" path="res://popochiu/characters/scar/character_scar.tscn" id="9_q856p"]
 [ext_resource type="Texture2D" uid="uid://cqukss8o6vjhg" path="res://popochiu/characters/scar/sprites/scar_04.png" id="10_5alcd"]
 [ext_resource type="Texture2D" uid="uid://f07orvi7h4i6" path="res://popochiu/rooms/lion_king_04/props/popochius/popochius_04.png" id="10_xt6aq"]
-[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="11_jaxo3"]
 [ext_resource type="Texture2D" uid="uid://b270751461sy4" path="res://popochiu/rooms/_shared/sprites/the_king_rafiki.png" id="12_0gcyd"]
 [ext_resource type="Texture2D" uid="uid://b4ks6kmowai1f" path="res://popochiu/rooms/_shared/sprites/the_cocoventures.png" id="13_fxlvy"]
 [ext_resource type="PackedScene" uid="uid://cy5kjnl3uyxvw" path="res://popochiu/characters/rafiki/character_rafiki.tscn" id="15_g6uyx"]
@@ -187,22 +186,20 @@ description = "Popochiu"
 clickable = false
 cursor = 1
 
-[node name="TheKingRafiki" type="Area2D" parent="Props" instance=ExtResource("2_v7y6l")]
+[node name="TheKingRafiki" parent="Props" instance=ExtResource("2_v7y6l")]
 visible = false
 position = Vector2(406, 252)
 scale = Vector2(0.879999, 0.879999)
-script = ExtResource("11_jaxo3")
 texture = ExtResource("12_0gcyd")
 script_name = "TheKingRafiki"
 description = "The King Rafiki"
 clickable = false
 cursor = 1
 
-[node name="TheCocoventures" type="Area2D" parent="Props" instance=ExtResource("2_v7y6l")]
+[node name="TheCocoventures" parent="Props" instance=ExtResource("2_v7y6l")]
 visible = false
 position = Vector2(413, 255)
 scale = Vector2(0.639999, 0.639999)
-script = ExtResource("11_jaxo3")
 texture = ExtResource("13_fxlvy")
 script_name = "TheCocoventures"
 description = "The Cocoventures"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bikm4bolsw2ms"]
+
+[ext_resource type="Script" path="res://popochiu/characters/attorney/character_attorney_state.gd" id="1_m41ij"]
+
+[resource]
+resource_name = "Attorney"
+script = ExtResource("1_m41ij")
+script_name = "Attorney"
+scene = "res://popochiu/characters/attorney/character_attorney.tscn"

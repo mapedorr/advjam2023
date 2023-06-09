@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d2t1px6q0ko8"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/jurassic_park_03/room_jurassic_park_03_state.gd" id="1_e7lcw"]
+
+[resource]
+resource_name = "JurassicPark03"
+script = ExtResource("1_e7lcw")
+script_name = "JurassicPark03"
+scene = "res://popochiu/rooms/jurassic_park_03/room_jurassic_park_03.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

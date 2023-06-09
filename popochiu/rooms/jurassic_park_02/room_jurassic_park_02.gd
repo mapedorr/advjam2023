@@ -21,14 +21,31 @@ func _on_room_entered() -> void:
 # is visible.
 func _on_room_transition_finished() -> void:
 	_animator.play('01')
+	
 	match Globals.jurassic_park_branch:
 		Globals.Branch.POPOCHIUS:
-			E.queue(['Narrator[3]: The DNA of Popochiu was used'])
+			await C.Narrator.say('The DNA of Popochiu was used')
+			
+			_animator.play('Egg_2')
+			await C.Narrator.say('To create a stupid park')
+			
+			_animator.play('Run_2')
+			await C.Narrator.say('But one day they almost escaped')
+			
 		Globals.Branch.DINOSAURS:
-			E.queue(['Narrator[3]: The DNA of Dinosaur was used'])
+			await C.Narrator.say('The DNA of Dinosaur was used')
+			
+			_animator.play('Egg_1')
+			await C.Narrator.say('To create a stupid park')
+			
+			_animator.play('Run_1')
+			await C.Narrator.say('But one day they all ran away')
 	
-	await E.queue(['Narrator[3]: To create a stupid park'])
-
+	_animator.play('End')
+	await C.Narrator.say('They created chaos and destruction')
+	
+	Globals.jurassic_park_seq += 1
+	G.change_channel_requested.emit()
 
 # What happens before Popochiu unloads the room.
 # At this point, the screen is black, processing is disabled and all characters
