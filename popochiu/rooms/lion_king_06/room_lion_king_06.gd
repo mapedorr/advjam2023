@@ -77,7 +77,11 @@ and amusement parks.",
 died from depression."
 					])
 					
-					# TODO: Mostrar el título de la pelícua modificado?
+					get_prop("PopochiuEndingA").disable()
+					get_prop("ThePopochius").enable()
+					
+					Globals.current_music.stop()
+					A.sfx_lion_king_boom.play()
 				Globals.Ending.POPOCHIU_KING_B:
 					await G.display("The Popochius and the animals began to coexist peacefully.")
 					
@@ -94,19 +98,24 @@ died from depression."
 					
 					get_prop("PopochiuEndingB").disable()
 					get_prop("ThePopolion").enable()
+					
 					Globals.current_music.stop()
 					A.sfx_lion_king_boom.play()
-					
-					await E.wait(3.0)
 				Globals.Ending.POPOCHIU_KING_C:
 					await G.display("King Mufasa ate one of the Popochius in an \
 attempt to intimidate them, but he didn't expect them to be so delicious, tender, and addictive.")
 					
 					await E.wait(5.0)
-					# TODO: Mostrar el título de la pelícua modificado?
+					
+					get_prop("PopochiuEndingC").disable()
+					get_prop("TheFeast").enable()
+					
+					Globals.current_music.stop()
+					A.sfx_lion_king_boom.play()
 			
-			# TODO: ¿Guardar algo para que vuelva a iniciar la historia?
-			Globals.lion_king_seq += 1
+			await E.wait(3.0)
+			
+			Globals.restart_lion_king()
 			G.change_channel_requested.emit()
 			
 			return

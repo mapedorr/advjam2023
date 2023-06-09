@@ -62,7 +62,7 @@ func _on_room_transition_finished() -> void:
 	await E.wait(3.0)
 	
 	# TODO: ¿Guardar algo para que vuelva a iniciar la historia?
-	Globals.lion_king_seq += 1
+	Globals.restart_lion_king()
 	G.change_channel_requested.emit()
 
 

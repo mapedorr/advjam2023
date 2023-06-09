@@ -22,12 +22,12 @@ func _on_room_entered() -> void:
 			# Aquí termina la historia del coco
 			Globals.current_music = A.mx_lionking_sc04_coco
 			
-			G.display("")
-			
 			match Globals.lion_king_ending:
 				Globals.Ending.COCO_A:
+					G.display("")
 					get_prop('CocoEndingA').enable()
 				Globals.Ending.COCO_B:
+					G.display("")
 					get_prop('CocoEndingB').enable()
 				Globals.Ending.COCO_C:
 					get_prop('CocoEndingC').enable()
@@ -67,7 +67,11 @@ func _on_room_transition_finished() -> void:
 						"Rafiki: I will start the preparations... the whole world will be ours.",
 					])
 					
-					# TODO: Mostrar el título de la pelícua modificado?
+					get_prop("CocoEndingA").disable()
+					get_prop("TheKingRafiki").enable()
+					
+					Globals.current_music.stop()
+					A.sfx_lion_king_boom.play()
 				Globals.Ending.COCO_B:
 					await E.queue([
 						G.queue_display("And so, little by little, Rafiki eliminated, one by one, all the animals of the kingdom."),
@@ -91,10 +95,15 @@ func _on_room_transition_finished() -> void:
 						"Coco: ..."
 					])
 					
-					# TODO: Mostrar el título de la pelícua modificado?
+					get_prop("CocoEndingC").disable()
+					get_prop("TheCocoventures").enable()
+					
+					Globals.current_music.stop()
+					A.sfx_lion_king_boom.play()
 			
-			# TODO: ¿Guardar algo para que vuelva a iniciar la historia?
-			Globals.lion_king_seq += 1
+			await E.wait(3.0)
+			
+			Globals.restart_lion_king()
 			G.change_channel_requested.emit()
 			
 			return

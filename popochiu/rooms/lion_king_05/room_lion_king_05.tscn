@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://wslqe4adc8jd"]
+[gd_scene load_steps=19 format=3 uid="uid://wslqe4adc8jd"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_05/room_lion_king_05.gd" id="1_osfkh"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_rlbup"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://d30hdennpnf6n" path="res://popochiu/rooms/lion_king_05/props/simba_02/simba_02.png" id="8_xsfem"]
 [ext_resource type="Texture2D" uid="uid://bqdbw210mo60a" path="res://popochiu/rooms/lion_king_05/props/simba_03/simba_03.png" id="9_w53cw"]
 [ext_resource type="Texture2D" uid="uid://dpqu0jvmv48on" path="res://popochiu/rooms/lion_king_05/props/popochius/popochius_05.png" id="10_5bt8k"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="10_7yahi"]
 [ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="10_sq5ej"]
+[ext_resource type="Texture2D" uid="uid://bvkkmycsrbb18" path="res://popochiu/rooms/_shared/sprites/the_conquerors.png" id="11_tvy4g"]
 [ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="12_crqcs"]
 [ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="14_dim00"]
 [ext_resource type="PackedScene" uid="uid://cvs2u8nqu83lc" path="res://popochiu/characters/mufasa/character_mufasa.tscn" id="16_0rw8p"]
@@ -272,6 +274,17 @@ position = Vector2(403, 265)
 texture = ExtResource("10_5bt8k")
 script_name = "Popochius"
 description = "Popochius"
+clickable = false
+cursor = 1
+
+[node name="TheConquerors" type="Area2D" parent="Props" instance=ExtResource("2_rlbup")]
+visible = false
+position = Vector2(402, 268)
+scale = Vector2(0.84, 0.84)
+script = ExtResource("10_7yahi")
+texture = ExtResource("11_tvy4g")
+script_name = "TheConquerors"
+description = "The Conquerors"
 clickable = false
 cursor = 1
 

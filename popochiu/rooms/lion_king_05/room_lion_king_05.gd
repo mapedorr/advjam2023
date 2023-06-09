@@ -56,10 +56,16 @@ and they are surrounding the enemy.",
 					"Mufasa: Soon we will take control of Whispering Wastelands."
 				])
 				
-				# TODO: Mostrar el título de la pelícua modificado?
+				get_prop("SimbaEnding5a").disable()
+				get_prop("TheConquerors").enable()
+				
+				Globals.current_music.stop()
+				A.sfx_lion_king_boom.play()
+				
+				await E.wait(3.0)
 				
 				# TODO: ¿Guardar algo para que vuelva a iniciar la historia?
-				Globals.lion_king_seq += 2 # Para saltarse el acto 6
+				Globals.restart_lion_king()
 				G.change_channel_requested.emit()
 				
 				return

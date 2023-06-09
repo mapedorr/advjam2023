@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bc7u2r50ly2sj"]
+[gd_scene load_steps=20 format=3 uid="uid://bc7u2r50ly2sj"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/lion_king_06/room_lion_king_06.gd" id="1_udnss"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_ki527"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="9_bkqwb"]
 [ext_resource type="Texture2D" uid="uid://b1l0lru1ueksk" path="res://popochiu/rooms/_shared/sprites/the_popolion.png" id="10_hq2um"]
 [ext_resource type="PackedScene" uid="uid://d3ewrcucttuc5" path="res://popochiu/characters/narrator/character_narrator.tscn" id="10_qnrb1"]
+[ext_resource type="Texture2D" uid="uid://bpyfcpo62u0tt" path="res://popochiu/rooms/_shared/sprites/the_feast.png" id="11_yxr3h"]
+[ext_resource type="Texture2D" uid="uid://cxo43f35r6wgx" path="res://popochiu/rooms/_shared/sprites/the_popochius.png" id="12_hm3eq"]
 [ext_resource type="PackedScene" uid="uid://cgm51kysqejc7" path="res://popochiu/characters/simba/character_simba.tscn" id="12_ya1re"]
 [ext_resource type="PackedScene" uid="uid://djj86f0ablpkt" path="res://popochiu/characters/popochiu_king/character_popochiu_king.tscn" id="14_inff4"]
 [ext_resource type="PackedScene" uid="uid://c1cobvmqtvm8q" path="res://popochiu/characters/scar/character_scar.tscn" id="16_dwltk"]
@@ -249,13 +251,32 @@ description = "Popochiu Ending C"
 clickable = false
 cursor = 1
 
-[node name="ThePopolion" type="Area2D" parent="Props" instance=ExtResource("2_ki527")]
+[node name="ThePopolion" parent="Props" instance=ExtResource("2_ki527")]
 visible = false
 position = Vector2(401, 254)
-script = ExtResource("9_bkqwb")
 texture = ExtResource("10_hq2um")
 script_name = "ThePopolion"
 description = "The Popolion"
+clickable = false
+cursor = 1
+
+[node name="TheFeast" type="Area2D" parent="Props" instance=ExtResource("2_ki527")]
+visible = false
+position = Vector2(397, 263)
+script = ExtResource("9_bkqwb")
+texture = ExtResource("11_yxr3h")
+script_name = "TheFeast"
+description = "The Feast"
+clickable = false
+cursor = 1
+
+[node name="ThePopochius" type="Area2D" parent="Props" instance=ExtResource("2_ki527")]
+visible = false
+position = Vector2(401, 253)
+script = ExtResource("9_bkqwb")
+texture = ExtResource("12_hm3eq")
+script_name = "ThePopochius"
+description = "The Popochius"
 clickable = false
 cursor = 1
 

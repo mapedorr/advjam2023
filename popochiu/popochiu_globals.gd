@@ -122,3 +122,9 @@ func say_in_reality(msg: String) -> void:
 	reality_said.emit(msg)
 	
 	await G.continue_clicked
+
+
+func restart_lion_king() -> void:
+	Globals.lion_king_seq = 1
+	Globals.lion_king_branch = 0
+	Globals.lion_king_ending = -1
