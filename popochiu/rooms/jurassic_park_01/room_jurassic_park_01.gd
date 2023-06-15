@@ -26,8 +26,8 @@ func _on_room_transition_finished() -> void:
 	await  _animator.animation_finished
 	
 	_animator.play('02')
-	await C.Narrator.say('A hundred million years ago...')
 	C.Grandpa.show()
+	await C.Narrator.say('A hundred million years ago...')
 	
 	var response: PopochiuDialogOption = await D.show_inline_dialog(
 		'A damned mosquito bit...',

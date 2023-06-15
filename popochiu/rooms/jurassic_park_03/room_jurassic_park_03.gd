@@ -16,6 +16,12 @@ var state: Data = load('res://popochiu/rooms/jurassic_park_03/room_jurassic_park
 func _on_room_entered() -> void:
 	$Characters.y_sort_enabled = false
 	$Props.y_sort_enabled = false
+	
+	match Globals.jurassic_park_branch:
+		Globals.Branch.DINOSAURS:
+			_animator.play('RESET')
+		Globals.Branch.POPOCHIUS:
+			_animator.play('Wimpy')
 
 
 # What happens when the room changing transition finishes. At this point the room
@@ -24,9 +30,9 @@ func _on_room_transition_finished() -> void:
 	match Globals.jurassic_park_branch:
 		Globals.Branch.DINOSAURS:
 			var response: PopochiuDialogOption = await D.show_inline_dialog(
-				'Quick!, I will distract the T-rex towards my right.',
+				'I will distract the T-rex!',
 				[
-					'No, to your left', 'Yes, do it now!'
+					'The sexy Dr.Ian throw a bengal next to Robert', 'The sexy Dr.Ian throw a bengal next to the kids'
 				]
 			)
 			
@@ -36,23 +42,25 @@ func _on_room_transition_finished() -> void:
 					await  _animator.animation_finished
 					
 					_animator.play("Eat")
-					await C.Narrator.say('F***! bad luck Robert')
+					await C.Narrator.say('F***! Bad luck Robert')
 					
 					_animator.play('Computer_on')
 					var response_2: PopochiuDialogOption = await D.show_inline_dialog(
-						'I can do it!',
+						'I will try to reboot the system so we can escape on a helicopter',
 						[
-							'Explore for the answer', 'Unplug for reboot'
+							'Click click click for reboot', 'Unplug for reboot'
 						]
 					)
 					match response.id:
 						'0': 
+							await C.Narrator.say("It worked! I'm traumatized but we are save now")
 							Globals.jurassic_park_ending = Globals.Ending.DINO_A
 							Globals.progress_movie(Globals.Branch.DINOSAURS)
 							
 						'1': 
 							_animator.play('Computer_off')
-							await C.Narrator.say('No idea what I am doing')
+							await E.queue([
+								"Kid: No idea what I'm doing"])
 							Globals.jurassic_park_ending = Globals.Ending.DINO_B
 							Globals.progress_movie(Globals.Branch.DINOSAURS)
 					
@@ -61,26 +69,30 @@ func _on_room_transition_finished() -> void:
 					await  _animator.animation_finished
 					
 					_animator.play("Burn")
-					await C.Narrator.say('The kids are dead now')
+					await E.queue([
+						'[shake]Dr.Ian: No! What I have done?[shake]',
+						"Dr.Ian: Dr. Sattler won't find me attractive"])
+					await C.Narrator.say('Dumb but sexy Dr.Ian burned the kids')
+					await C.Narrator.say('Now the Park has legal problems')
 					
 					Globals.jurassic_park_ending = Globals.Ending.DINO_C
 					Globals.progress_movie(Globals.Branch.DINOSAURS)
 		
 		Globals.Branch.POPOCHIUS:
 			_animator.play('Wimpy')
-			await C.Narrator.say('These Popochius were huge but extremely wimpy')
-			
-			_animator.play('gif')
-			await C.Narrator.say('Ah Ah Ah! All words are admitted!')
+			await C.Narrator.say('Popochius were huge but too cute to spook')
 			
 			_animator.play('Hit')
-			await C.Narrator.say('They were so nice they were boring')
+			await C.Narrator.say('They were so nice that kids were bored in the park')
+			
+			_animator.play('gif')
+			await C.Narrator.say("Ah Ah Ah! You didn't say the magic word")
 			
 			_animator.play('Choise')
 			var response: PopochiuDialogOption = await D.show_inline_dialog(
-					'Even feeding them was boring.',
+					'Even feeding them was boring ...',
 					[
-						'give an apple', 'give a goat'
+						'Give an apple to a Popochiu', 'Give a goat to a Popochiu'
 					]
 				)
 				
@@ -88,11 +100,26 @@ func _on_room_transition_finished() -> void:
 				'0':
 					_animator.play('Apple')
 					await C.Narrator.say('They like apples')
+					await E.queue([
+						"Popochiu: I loooooove it.",
+						"[shake]Popochiu: I loooooove it.[shake]",
+						"Popochiu: I loooooove it."])
+					
+					await C.Narrator.say('Popochiu kissed the apple')
+					await C.Narrator.say('And then Popochiu eated it with his cute little mouth')
 					Globals.jurassic_park_ending = Globals.Ending.POPO_A
 					Globals.progress_movie(Globals.Branch.POPOCHIUS)
 				'1':
 					_animator.play('Goat')
 					await C.Narrator.say('They like goats')
+					await E.queue([
+						"Popochiu: I loooooove you.",
+						"[shake]Popochiu: I loooooove you.[shake]",
+						"Popochiu: I loooooove you, goat.",
+						"Popochiu: I will called you gooooooat"])
+					
+					await C.Narrator.say('Popochiu kissed the goat')
+					await C.Narrator.say('And then Popochiu hug the goat with his cute little arms')
 					Globals.jurassic_park_ending = Globals.Ending.POPO_B
 					Globals.progress_movie(Globals.Branch.POPOCHIUS)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://drs5466skm2au"]
+[gd_scene load_steps=35 format=3 uid="uid://drs5466skm2au"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/jurassic_park_02/room_jurassic_park_02.gd" id="1_w7msw"]
 [ext_resource type="Texture2D" uid="uid://37ywyv73eb3o" path="res://popochiu/rooms/jurassic_park_02/props/glass/Jurasic-45.png" id="2_cfjrm"]
@@ -17,9 +17,15 @@
 [ext_resource type="Texture2D" uid="uid://320qkw40wguh" path="res://popochiu/rooms/jurassic_park_02/props/egg/Egg.png" id="7_kt51p"]
 [ext_resource type="Texture2D" uid="uid://cqvlvdj68ohtn" path="res://popochiu/rooms/jurassic_park_01/props/dinosaur/Jurasic-28.png" id="7_lfdht"]
 [ext_resource type="PackedScene" uid="uid://0j80bf51snpv" path="res://popochiu/rooms/jurassic_park_01/props/popochiu/prop_popochiu.tscn" id="8_k6j7s"]
+[ext_resource type="Texture2D" uid="uid://da1jwthfd82od" path="res://popochiu/rooms/jurassic_park_02/props/dennis/Dennis_2.png" id="10_0xyjc"]
 [ext_resource type="Texture2D" uid="uid://dyx8wsm2j8lcp" path="res://popochiu/rooms/jurassic_park_01/props/popochiu/popo_1.png" id="10_nvgur"]
+[ext_resource type="Texture2D" uid="uid://c21wvgf504f2" path="res://popochiu/rooms/jurassic_park_02/props/dennis/Dennis_3.png" id="11_60ntt"]
+[ext_resource type="Texture2D" uid="uid://0x4tjvdvuwa4" path="res://popochiu/rooms/jurassic_park_01/props/dinosaur/Jurasic-29.png" id="12_mu2yb"]
+[ext_resource type="Texture2D" uid="uid://dn4dmln3kwl37" path="res://popochiu/rooms/jurassic_park_01/props/dinosaur/Jurasic-30 2.png" id="13_ugh5e"]
 [ext_resource type="Texture2D" uid="uid://c3lrebygm22w4" path="res://popochiu/rooms/jurassic_park_02/props/front/front_door.png" id="13_ve2ae"]
 [ext_resource type="Texture2D" uid="uid://crc6efbtb380e" path="res://popochiu/rooms/jurassic_park_02/props/dennis/Dennis_1.png" id="14_kc4uc"]
+[ext_resource type="Texture2D" uid="uid://dt5rvl2ghglk8" path="res://popochiu/rooms/jurassic_park_01/props/popochiu/popo_2.png" id="15_fjc80"]
+[ext_resource type="Texture2D" uid="uid://bfmg1moc3ordr" path="res://popochiu/rooms/jurassic_park_01/props/popochiu/popo_3.png" id="16_pf57g"]
 
 [sub_resource type="Animation" id="Animation_tuf2y"]
 resource_name = "01"
@@ -651,6 +657,42 @@ tracks/14/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Dennis:texture")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_kc4uc")]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Dinosaur:texture")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_lfdht")]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Popochiu:texture")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_nvgur")]
+}
 
 [sub_resource type="Animation" id="Animation_e136r"]
 resource_name = "Run_1"
@@ -773,7 +815,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0, 3.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(20, 345), Vector2(753, 345)]
+"values": [Vector2(20, 345), Vector2(753, 373)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -786,6 +828,30 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Dennis:texture")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8, 1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_kc4uc"), ExtResource("14_kc4uc"), ExtResource("10_0xyjc"), ExtResource("11_60ntt"), ExtResource("10_0xyjc"), ExtResource("14_kc4uc"), ExtResource("11_60ntt"), ExtResource("14_kc4uc"), ExtResource("10_0xyjc"), ExtResource("11_60ntt"), ExtResource("10_0xyjc"), ExtResource("14_kc4uc"), ExtResource("10_0xyjc"), ExtResource("11_60ntt"), ExtResource("10_0xyjc"), ExtResource("11_60ntt"), ExtResource("10_0xyjc"), ExtResource("11_60ntt"), ExtResource("10_0xyjc"), ExtResource("11_60ntt"), ExtResource("10_0xyjc"), ExtResource("11_60ntt"), ExtResource("10_0xyjc"), ExtResource("11_60ntt")]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Dinosaur:texture")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_lfdht"), ExtResource("7_lfdht"), ExtResource("12_mu2yb"), ExtResource("13_ugh5e"), ExtResource("12_mu2yb"), ExtResource("7_lfdht"), ExtResource("12_mu2yb"), ExtResource("13_ugh5e"), ExtResource("12_mu2yb"), ExtResource("7_lfdht"), ExtResource("12_mu2yb"), ExtResource("13_ugh5e"), ExtResource("12_mu2yb"), ExtResource("7_lfdht"), ExtResource("12_mu2yb"), ExtResource("13_ugh5e"), ExtResource("12_mu2yb"), ExtResource("7_lfdht"), ExtResource("12_mu2yb"), ExtResource("13_ugh5e"), ExtResource("12_mu2yb"), ExtResource("7_lfdht"), ExtResource("12_mu2yb"), ExtResource("13_ugh5e"), ExtResource("12_mu2yb"), ExtResource("7_lfdht"), ExtResource("12_mu2yb"), ExtResource("13_ugh5e"), ExtResource("12_mu2yb"), ExtResource("7_lfdht"), ExtResource("12_mu2yb"), ExtResource("13_ugh5e"), ExtResource("12_mu2yb"), ExtResource("7_lfdht"), ExtResource("12_mu2yb"), ExtResource("13_ugh5e"), ExtResource("12_mu2yb"), ExtResource("7_lfdht")]
 }
 
 [sub_resource type="Animation" id="Animation_k7dfm"]
@@ -910,6 +976,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Popochiu:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_nvgur"), ExtResource("10_nvgur"), ExtResource("15_fjc80"), ExtResource("16_pf57g"), ExtResource("15_fjc80"), ExtResource("10_nvgur"), ExtResource("16_pf57g"), ExtResource("15_fjc80"), ExtResource("10_nvgur"), ExtResource("15_fjc80"), ExtResource("16_pf57g"), ExtResource("15_fjc80"), ExtResource("10_nvgur"), ExtResource("16_pf57g"), ExtResource("15_fjc80"), ExtResource("10_nvgur"), ExtResource("15_fjc80"), ExtResource("10_nvgur"), ExtResource("16_pf57g"), ExtResource("15_fjc80"), ExtResource("10_nvgur")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_736ih"]

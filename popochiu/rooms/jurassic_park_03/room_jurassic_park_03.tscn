@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bxgvch808roox"]
+[gd_scene load_steps=37 format=3 uid="uid://bxgvch808roox"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/jurassic_park_03/room_jurassic_park_03.gd" id="1_vosj4"]
 [ext_resource type="AnimationLibrary" uid="uid://2klrsnj78rob" path="res://popochiu/rooms/jurassic_park_03/Animations.tres" id="2_3v0nm"]
@@ -33,6 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://dtgyjwckak2x4" path="res://popochiu/rooms/jurassic_park_03/props/choise/Jurasic-74.png" id="29_y2iei"]
 [ext_resource type="Texture2D" uid="uid://ca57s62cx4l0i" path="res://popochiu/rooms/jurassic_park_03/props/goat/Jurasic-75_a.png" id="30_s8w8d"]
 [ext_resource type="Texture2D" uid="uid://dpjbswbs65sp7" path="res://popochiu/rooms/jurassic_park_03/props/apple/Jurasic-76.png" id="31_lw62d"]
+[ext_resource type="PackedScene" uid="uid://c4x3stirihcod" path="res://popochiu/characters/popochiu/character_popochiu.tscn" id="34_imcnt"]
+[ext_resource type="PackedScene" uid="uid://gevgysc3jigp" path="res://popochiu/characters/kid/character_kid.tscn" id="35_06ljn"]
+[ext_resource type="PackedScene" uid="uid://bra1esdu5q3wh" path="res://popochiu/characters/dr.ian/character_dr.ian.tscn" id="36_qkgfq"]
 
 [node name="RoomJurassicPark03" type="Node2D"]
 script = ExtResource("1_vosj4")
@@ -52,7 +55,6 @@ position = Vector2(403, 259)
 texture = ExtResource("3_mmjnd")
 
 [node name="Ian" parent="Props" instance=ExtResource("4_3mqi5")]
-visible = false
 position = Vector2(389, 321)
 texture = ExtResource("6_oyhjk")
 script_name = "Ian"
@@ -61,8 +63,8 @@ clickable = false
 cursor = 1
 
 [node name="Arm" parent="Props" instance=ExtResource("4_3mqi5")]
-visible = false
 position = Vector2(359, 319)
+rotation = -2.96706
 texture = ExtResource("7_46htv")
 script_name = "Arm"
 description = "Arm"
@@ -219,7 +221,7 @@ cursor = 1
 
 [node name="Computer" parent="Props" instance=ExtResource("4_3mqi5")]
 visible = false
-position = Vector2(411, 270)
+position = Vector2(411, 249)
 texture = ExtResource("18_7mx4q")
 script_name = "Computer"
 description = "Computer"
@@ -284,7 +286,8 @@ texture = ExtResource("26_y1yah")
 
 [node name="Wimpy" parent="Props" instance=ExtResource("4_3mqi5")]
 visible = false
-position = Vector2(389, 262)
+position = Vector2(363, 271)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("27_10tmc")
 script_name = "Wimpy"
 description = "Wimpy"
@@ -302,7 +305,8 @@ cursor = 1
 
 [node name="Choise" parent="Props" instance=ExtResource("4_3mqi5")]
 visible = false
-position = Vector2(407, 270)
+position = Vector2(391, 270)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("29_y2iei")
 script_name = "Choise"
 description = "Choise"
@@ -340,6 +344,12 @@ cursor = 1
 [node name="CharacterJudge *" parent="Characters" instance=ExtResource("18_xgx65")]
 
 [node name="CharacterAttorney *" parent="Characters" instance=ExtResource("19_sw2jq")]
+
+[node name="CharacterPopochiu *" parent="Characters" instance=ExtResource("34_imcnt")]
+
+[node name="CharacterKid *" parent="Characters" instance=ExtResource("35_06ljn")]
+
+[node name="CharacterDrIan *" parent="Characters" instance=ExtResource("36_qkgfq")]
 
 [editable path="Props/Arm"]
 [editable path="Props/Trex/Rex_arm_1"]
