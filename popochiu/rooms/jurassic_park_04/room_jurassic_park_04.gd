@@ -101,27 +101,27 @@ func _on_room_exited() -> void:
 func random_line(actor : String) -> String:
 	var dialog := ''
 	var lawyer_lines := [
-		'Lawyer: My client Mr. John Hammond? has been accused',
-		'Lawyer: But he has been wrongly accused. He is innocent',
-		'Lawyer: Sure. But before we proceed I would like to request you to move the date for the hearing',
-		'Lawyer: Sure my lord. I have already dispatched one copy to the concerned entity',
-		'Lawyer: Thank you my lord for your consideration',
-		'Lawyer: Yes my lord. This is a murder case',
-		'Lawyer: I object my lord. They just had a trivial dinosaur issue',
-		'Lawyer: No! That’s absolutely not true',
-		'Lawyer: Oh please! John Hammond does not belongs in prison'
+		'My client Mr. John Hammond? has been accused',
+		'But he has been wrongly accused. He is innocent',
+		'Sure. But before we proceed I would like to request you to move the date for the hearing',
+		'Sure my lord. I have already dispatched one copy to the concerned entity',
+		'Thank you my lord for your consideration',
+		'Yes my lord. This is a murder case',
+		'I object my lord. They just had a trivial dinosaur issue',
+		'No! That’s absolutely not true',
+		'Oh please! John Hammond does not belongs in prison'
 		
 	]
 	
 	var judge_lines := [
-		'The court: I belive your case was going to be going to trial this Monday but the following Monday',
-		'The court: Well I will decide that',
-		'The court: For that you need to submit a written request to me and to the opponent’s lawyer',
-		'The court: After receiving the approval from the lawyer I will be decide upon the next date of hearing',
-		'The court: Does the lawyer have something to say on the behalf of his client?',
-		'The court: You have the constitutional right to be a dumbass',
-		"The court: Okay, I'm going to refer you to the district attorney's office",
-		'The court: Order! Order! Both the lawyers settle down and maintain the decorum of court'
+		'I belive your case was going to be going to trial this Monday but the following Monday',
+		'Well I will decide that',
+		'For that you need to submit a written request to me and to the opponent’s lawyer',
+		'After receiving the approval from the lawyer I will be decide upon the next date of hearing',
+		'Does the lawyer have something to say on the behalf of his client?',
+		'You have the constitutional right to be a dumbass',
+		"Okay, I'm going to refer you to the district attorney's office",
+		'Order! Order! Both the lawyers settle down and maintain the decorum of court'
 	] 
 	
 	var line = judge_lines if actor == 'Judge' else lawyer_lines
