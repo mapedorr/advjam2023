@@ -70,8 +70,8 @@ func _on_room_transition_finished() -> void:
 					
 					_animator.play("Burn")
 					await E.queue([
-						'[shake]Dr.Ian: No! What I have done?[shake]',
-						"Dr.Ian: Dr. Sattler won't find me attractive"])
+						'DrIan: [shake]No! What I have done?[/shake]',
+						"DrIan: Dr. Sattler won't find me attractive"])
 					await C.Narrator.say('Dumb but sexy Dr.Ian burned the kids')
 					await C.Narrator.say('Now the Park has legal problems')
 					
@@ -102,7 +102,7 @@ func _on_room_transition_finished() -> void:
 					await C.Narrator.say('They like apples')
 					await E.queue([
 						"Popochiu: I loooooove it.",
-						"[shake]Popochiu: I loooooove it.[shake]",
+						"Popochiu: [shake]I loooooove it.[/shake]",
 						"Popochiu: I loooooove it."])
 					
 					await C.Narrator.say('Popochiu kissed the apple')
@@ -114,7 +114,7 @@ func _on_room_transition_finished() -> void:
 					await C.Narrator.say('They like goats')
 					await E.queue([
 						"Popochiu: I loooooove you.",
-						"[shake]Popochiu: I loooooove you.[shake]",
+						"Popochiu: [shake]I loooooove you.[/shake]",
 						"Popochiu: I loooooove you, goat.",
 						"Popochiu: I will called you gooooooat"])
 					

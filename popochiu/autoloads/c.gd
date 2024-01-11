@@ -13,6 +13,8 @@ const PCGrandpa := preload('res://popochiu/characters/grandpa/character_grandpa.
 const PCJudge := preload('res://popochiu/characters/judge/character_judge.gd')
 const PCAttorney := preload('res://popochiu/characters/attorney/character_attorney.gd')
 const PCKid := preload('res://popochiu/characters/kid/character_kid.gd')
+const PCDrIan := preload('res://popochiu/characters/dr_ian/character_dr_ian.gd')
+const PCLawyer := preload('res://popochiu/characters/lawyer/character_lawyer.gd')
 # ---- classes
 
 # nodes ----
@@ -27,6 +29,8 @@ var Grandpa: PCGrandpa : get = get_Grandpa
 var Judge: PCJudge : get = get_Judge
 var Attorney: PCAttorney : get = get_Attorney
 var Kid: PCKid : get = get_Kid
+var DrIan: PCDrIan : get = get_DrIan
+var Lawyer: PCLawyer : get = get_Lawyer
 # ---- nodes
 
 # functions ----
@@ -41,5 +45,7 @@ func get_Grandpa() -> PCGrandpa: return super.get_runtime_character('Grandpa')
 func get_Judge() -> PCJudge: return super.get_runtime_character('Judge')
 func get_Attorney() -> PCAttorney: return super.get_runtime_character('Attorney')
 func get_Kid() -> PCKid: return super.get_runtime_character('Kid')
+func get_DrIan() -> PCDrIan: return super.get_runtime_character('Dr_Ian')
+func get_Lawyer() -> PCLawyer: return super.get_runtime_character('Lawyer')
 # ---- functions
 
