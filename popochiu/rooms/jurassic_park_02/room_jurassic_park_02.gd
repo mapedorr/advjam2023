@@ -15,6 +15,7 @@ var state: Data = load('res://popochiu/rooms/jurassic_park_02/room_jurassic_park
 # tree but it is not visible
 func _on_room_entered() -> void:
 	$Props.y_sort_enabled = false
+	_animator.play("RESET")
 
 
 # What happens when the room changing transition finishes. At this point the room

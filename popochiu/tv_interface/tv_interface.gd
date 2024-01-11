@@ -43,15 +43,14 @@ func _ready() -> void:
 func _show_character_text(c: PopochiuCharacter, m: String) -> void:
 	var text := '[center]%s[/center]'
 	
-	match c:
-		C.Narrator:
-			rtl_dialog.text = text % m
-		C.Coco:
-			rtl_dialog.text = text % (
-				'%s: [shake rate=20.0 level=10.0]%s[/shake]' % [c.description, m]
-			)
-		_:
-			rtl_dialog.text = text % ('%s: %s' % [c.description, m])
+	if c == C.Narrator:
+		rtl_dialog.text = text % m
+	elif "LionKing" in R.current.script_name and c == C.Coco:
+		rtl_dialog.text = text % (
+			'%s: [shake rate=20.0 level=10.0]%s[/shake]' % [c.description, m]
+		)
+	else:
+		rtl_dialog.text = text % ('%s: %s' % [c.description, m])
 	
 	btn_continue.show()
 	

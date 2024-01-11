@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cx753rquo56hj"]
+
+[ext_resource type="Script" path="res://popochiu/characters/kid/character_kid_state.gd" id="1_ltws2"]
+
+[resource]
+resource_name = "Kid"
+script = ExtResource("1_ltws2")
+script_name = "Kid"
+scene = "res://popochiu/characters/kid/character_kid.tscn"

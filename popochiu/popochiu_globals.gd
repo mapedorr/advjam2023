@@ -134,3 +134,9 @@ func restart_lion_king() -> void:
 	Globals.lion_king_seq = 1
 	Globals.lion_king_branch = 0
 	Globals.lion_king_ending = -1
+
+
+func restart_jurassic_park() -> void:
+	Globals.jurassic_park_seq = 1
+	Globals.jurassic_park_branch = 0
+	Globals.jurassic_park_ending = -1

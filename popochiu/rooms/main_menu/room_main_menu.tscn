@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://m1vpp55bo7e7"]
+[gd_scene load_steps=4 format=3 uid="uid://deheflr3o4ef6"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/main_menu/room_main_menu.gd" id="1_wfeov"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_b8n6x"]

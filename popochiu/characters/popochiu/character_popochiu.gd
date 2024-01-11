@@ -4,9 +4,9 @@ extends PopochiuCharacter
 # Use await E.queue([]) if you want to pause the excecution of
 # the function until the sequence of events finishes.
 
-const Data := preload('character_lawyer_state.gd')
+const Data := preload('character_popochiu_state.gd')
 
-var state: Data = load('res://popochiu/characters/lawyer/character_lawyer.tres')
+var state: Data = load('res://popochiu/characters/popochiu/character_popochiu.tres')
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ VIRTUAL ░░░░

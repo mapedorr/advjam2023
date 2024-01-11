@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bksvvgyktg5js"]
+[gd_scene load_steps=29 format=3 uid="uid://bksvvgyktg5js"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/jurassic_park_04/room_jurassic_park_04.gd" id="1_weveu"]
 [ext_resource type="PackedScene" uid="uid://cijiiixi8ogv3" path="res://popochiu/rooms/jurassic_park_02/props/front/prop_front.tscn" id="2_f1cxs"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://oglqssegsrv3" path="res://popochiu/rooms/jurassic_park_03/props/elicopter/Jurasic-66.png" id="12_5jioe"]
 [ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="17_d8c45"]
 [ext_resource type="Texture2D" uid="uid://bt05a6g1y0seo" path="res://popochiu/rooms/jurassic_park_04/props/friends/Jurasic-75.png" id="19_27n1n"]
+[ext_resource type="PackedScene" uid="uid://dt3i5yhahk57n" path="res://popochiu/characters/lawyer/character_lawyer.tscn" id="20_k4jpp"]
 [ext_resource type="Texture2D" uid="uid://cwkw1mkpjd53x" path="res://popochiu/rooms/jurassic_park_04/props/lovers/Jurasic-77.png" id="20_vib6h"]
 [ext_resource type="Texture2D" uid="uid://45byp2ikru4a" path="res://popochiu/rooms/jurassic_park_04/props/closed/Jurasic-67.png" id="21_bn4j0"]
 
@@ -841,5 +842,8 @@ texture = ExtResource("8_5d8tr")
 [node name="Markers" type="Node2D" parent="."]
 
 [node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterLawyer *" parent="Characters" instance=ExtResource("20_k4jpp")]
+position = Vector2(480, 270)
 
 [editable path="Props/Gif/Gif_arm"]
