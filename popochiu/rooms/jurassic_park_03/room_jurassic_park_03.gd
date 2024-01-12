@@ -48,12 +48,14 @@ func _on_room_transition_finished() -> void:
 					var response_2: PopochiuDialogOption = await D.show_inline_dialog(
 						'I will try to reboot the system so we can escape on a helicopter',
 						[
-							'Click click click for reboot', 'Unplug for reboot'
+							'Click, click, click, for reboot', 'Unplug for reboot'
 						]
 					)
-					match response.id:
+					print(response_2.id)
+					match response_2.id:
 						'0': 
-							await C.Narrator.say("It worked! I'm traumatized but we are save now")
+							await E.queue([
+								"Kid: It worked! I'm traumatized but we are save now"])
 							Globals.jurassic_park_ending = Globals.Ending.DINO_A
 							Globals.progress_movie(Globals.Branch.DINOSAURS)
 							
@@ -71,9 +73,9 @@ func _on_room_transition_finished() -> void:
 					_animator.play("Burn")
 					await E.queue([
 						'DrIan: [shake]No! What I have done?[/shake]',
-						"DrIan: Dr. Sattler won't find me attractive"])
+						'DrIan: Dr. Sattler will no longer find me attractive.'])
 					await C.Narrator.say('Dumb but sexy Dr.Ian burned the kids')
-					await C.Narrator.say('Now the Park has legal problems')
+					await C.Narrator.say('And now the Park has legal problems')
 					
 					Globals.jurassic_park_ending = Globals.Ending.DINO_C
 					Globals.progress_movie(Globals.Branch.DINOSAURS)
@@ -84,9 +86,6 @@ func _on_room_transition_finished() -> void:
 			
 			_animator.play('Hit')
 			await C.Narrator.say('They were so nice that kids were bored in the park')
-			
-			_animator.play('gif')
-			await C.Narrator.say("Ah Ah Ah! You didn't say the magic word")
 			
 			_animator.play('Choise')
 			var response: PopochiuDialogOption = await D.show_inline_dialog(
@@ -120,6 +119,13 @@ func _on_room_transition_finished() -> void:
 					
 					await C.Narrator.say('Popochiu kissed the goat')
 					await C.Narrator.say('And then Popochiu hug the goat with his cute little arms')
+					
+					_animator.play('gif')
+					await C.Narrator.say("It was not what people wanted to see")
+					await C.Narrator.say("They wanted to see blood,")
+					await C.Narrator.say("they wanted to see lust,")
+					await C.Narrator.say("and above all they wanted midgets")
+					
 					Globals.jurassic_park_ending = Globals.Ending.POPO_B
 					Globals.progress_movie(Globals.Branch.POPOCHIUS)
 

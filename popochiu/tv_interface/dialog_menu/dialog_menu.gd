@@ -52,6 +52,7 @@ func focus_next_option() -> void:
 	_focus_idx = fposmod(_focus_idx + 1, current_options.size())
 	_focus_btn = options_container.get_child(_focus_idx) as Button
 	
+	if _focus_btn == null: return
 	_focus_btn.grab_focus()
 
 

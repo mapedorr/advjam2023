@@ -67,17 +67,20 @@ func _on_room_transition_finished() -> void:
 					await C.Narrator.say('They loved each other')
 					await E.queue([
 						"Popochiu: I loooooove you.",
-						"Popochiu: I loooooove you.",
+						"Popochiu: [shake]I loooooove you.[/shake]",
 						"Popochiu: I loooooove you,"])
 					
 					_animator.play('Lovers')
 					await C.Narrator.say('They loved each other so much that ...')
+					await C.Narrator.say("They could't avoid enjoying each other")
+					await C.Narrator.say('Then jesus sent another asteroid to wipe out all the lust in the park')
 					
 					Globals.restart_jurassic_park()
 					G.change_channel_requested.emit()
 				
 				Globals.Ending.POPO_B:
 					_animator.play('closed')
+					
 					await C.Narrator.say('Nobody wanted to visit the park')
 					await C.Narrator.say('And Popochius lived happily with the goats')
 					
