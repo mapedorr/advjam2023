@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://cukmasf1r3obt"]
+
+[ext_resource type="AudioStream" uid="uid://duetfvr7o7p2v" path="res://popochiu/rooms/_audio/vo_player_05.ogg" id="1_b2sv1"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_yu3sv"]
+
+[resource]
+resource_name = "vo_player_05"
+script = ExtResource("2_yu3sv")
+audio = ExtResource("1_b2sv1")
+loop = false
+is_2d = false
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"

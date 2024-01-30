@@ -142,6 +142,21 @@ func _show_reality_dialog(msg: String) -> void:
 		$RealityLayer.show()
 		reality_black.hide()
 	
+	var current_sound : String
+	var sounds = [
+		'vo_player_01',
+		'vo_player_02',
+		'vo_player_03',
+		'vo_player_04',
+		'vo_player_05',
+		'vo_player_06']
+	
+	randomize()
+	sounds.shuffle()
+	current_sound = sounds[0]
+	A[current_sound].play()
+	sounds.remove_at(0)
+	
 	btn_continue.show()
 	rtl_reality_dialog.text = "[center]%s[/center]" % msg
 
