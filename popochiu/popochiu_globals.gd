@@ -97,7 +97,7 @@ func get_branch_name() -> String:
 	return str(Branch.keys()[lion_king_branch]).to_pascal_case()
 
 
-func change_channel(was_off := false) -> void:
+func change_channel(dir : int, was_off := false) -> void:
 	if _channels_to_visit.is_empty():
 		_channels_to_visit = channels.keys()
 		
@@ -108,7 +108,7 @@ func change_channel(was_off := false) -> void:
 	
 	# Ordered channel change
 	if not was_off:
-		_channel_idx = fposmod(_channel_idx + 1, _channels_to_visit.size())
+		_channel_idx = fposmod(_channel_idx + dir, _channels_to_visit.size())
 	
 	var channel_key: String = _channels_to_visit[_channel_idx]
 	var channel: Dictionary = channels[channel_key]
