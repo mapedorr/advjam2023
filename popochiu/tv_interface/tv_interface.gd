@@ -1,8 +1,10 @@
 extends CanvasLayer
 
+enum Direction {LEFT, RIGHT}
+
 const ROTATION := 360.0 / 5.0
-enum direction {LEFT, RIGHT}
-var current_dir := direction.LEFT
+
+var current_dir := Direction.LEFT
 
 @onready var btn_power: TextureButton = %BtnPower
 @onready var btn_channels: Control = %ChannelButtons
@@ -89,14 +91,14 @@ func _on_btn_power_toggled(button_pressed: bool) -> void:
 
 
 func _on_btn_channel_pressed() -> void:
-	var value := 1 if current_dir == direction.LEFT else -1
+	var value := 1 if current_dir == Direction.LEFT else -1
 	_turn_channel_knob(value)
 	D.dialog_closed.emit()
 	Globals.change_channel(value)
 
 
-func _turn_channel_knob(direction: int) -> void:
-	btn_channels.rotation_degrees += ROTATION * direction
+func _turn_channel_knob(knob_direction: int) -> void:
+	btn_channels.rotation_degrees += ROTATION * knob_direction
 
 
 func _on_btn_choice_pressed() -> void:
@@ -178,11 +180,11 @@ func _on_open_button_pressed() -> void:
 
 func _on_btn_channel_left_pressed():
 	if not btn_power.button_pressed: return
-	current_dir = direction.LEFT
+	current_dir = Direction.LEFT
 	_on_btn_channel_pressed()
 
 
 func _on_btn_channel_right_pressed():
 	if not btn_power.button_pressed: return
-	current_dir = direction.RIGHT
+	current_dir = Direction.RIGHT
 	_on_btn_channel_pressed()

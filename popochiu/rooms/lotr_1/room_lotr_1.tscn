@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://3w0emxnqk3bp"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/lotr_1/room_lotr_1.gd" id="1_5bbxp"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_muv6l"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="3_q4rjv"]
+[ext_resource type="Texture2D" uid="uid://xyt0xmrdn77j" path="res://popochiu/rooms/lotr_1/props/bg/lotr_1_bg.png" id="4_jfnhr"]
+
+[node name="RoomLOTR1" type="Node2D"]
+script = ExtResource("1_5bbxp")
+script_name = "LOTR1"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" type="Area2D" parent="Props" instance=ExtResource("2_muv6l")]
+position = Vector2(480, 270)
+script = ExtResource("3_q4rjv")
+texture = ExtResource("4_jfnhr")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]

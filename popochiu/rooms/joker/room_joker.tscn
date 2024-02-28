@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://beiu84r1uywek"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/joker/room_joker.gd" id="1_a1q0r"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_jvf2o"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="3_vw32j"]
+[ext_resource type="Texture2D" uid="uid://b33yv4getlgdi" path="res://popochiu/rooms/joker/props/bg/joker_bg.png" id="4_dgqco"]
+
+[node name="RoomJoker" type="Node2D"]
+script = ExtResource("1_a1q0r")
+script_name = "Joker"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" type="Area2D" parent="Props" instance=ExtResource("2_jvf2o")]
+position = Vector2(480, 270)
+script = ExtResource("3_vw32j")
+texture = ExtResource("4_dgqco")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]

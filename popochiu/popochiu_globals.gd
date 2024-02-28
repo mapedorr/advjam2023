@@ -33,26 +33,26 @@ enum Ending {
 
 var branch_name := '' : get = get_branch_name
 var channels := {
-	lion_king = {
+	"123" = {
 		scene = 'LionKing',
 		code = '123',
 		story = true,
 	},
-	titanic = {
-		scene = 'Titanic',
+	"789" = {
+		scene = "",
 		code = '789',
 	},
-	terminator_2 = {
-		scene = 'Terminator2',
+	"147" = {
+		scene = "",
 		code = '147',
 	},
-	jurassic_park = {
+	"456" = {
 		scene = 'JurassicPark',
 		code = '456',
 		story = true,
 	},
-	matrix = {
-		scene = 'Matrix',
+	"258" = {
+		scene = "",
 		code = '258',
 	},
 }
@@ -66,6 +66,11 @@ var current_music : AudioCueMusic = null
 
 var _channels_to_visit := []
 var _channel_idx := 0
+var _shown_simple_movies := []
+
+@onready var simple_movies := [
+	R.Terminator2, R.Matrix, R.Titanic, R.Joker, R.Arrival, R.KillBill, R.LOTR1
+].map(func (room: PopochiuRoom): return room.script_name)
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ READY ░░░░
@@ -100,7 +105,7 @@ func get_branch_name() -> String:
 func change_channel(dir : int, was_off := false) -> void:
 	if _channels_to_visit.is_empty():
 		_channels_to_visit = channels.keys()
-		
+	
 	# --- Random channel change ------------------------------------------------
 #	var channel_key: String = _channels_to_visit.pick_random()
 #	_channels_to_visit.erase(channel_key)
@@ -112,10 +117,28 @@ func change_channel(dir : int, was_off := false) -> void:
 	
 	var channel_key: String = _channels_to_visit[_channel_idx]
 	var channel: Dictionary = channels[channel_key]
-	var channel_name: String = channel.scene
+	var channel_name := ""
+	
+	if (channel.scene as String).is_empty():
+		# Elegir una película al azar para más placer
+		
+		if simple_movies.size() == 1:
+			channel_name = simple_movies.pop_front()
+			simple_movies = _shown_simple_movies.duplicate()
+			_shown_simple_movies.clear()
+		else:
+			channel_name = simple_movies.pick_random()
+			simple_movies.erase(channel_name)
+		
+		_shown_simple_movies.append(channel_name)
+	else:
+		channel_name = channel.scene
 	
 	if channel.has('story'):
-		channel_name = '%s%02d' % [channel.scene, get(channel_key + '_seq')]
+		channel_name = '%s%02d' % [
+			channel.scene,
+			get((channel.scene as String).to_snake_case() + '_seq')
+		]
 	
 	E.goto_room(channel_name, !was_off)
 

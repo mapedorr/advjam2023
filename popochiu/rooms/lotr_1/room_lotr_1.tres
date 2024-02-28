@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bnvxr0neosne1"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/lotr_1/room_lotr_1_state.gd" id="1_vhje8"]
+
+[resource]
+resource_name = "LOTR1"
+script = ExtResource("1_vhje8")
+script_name = "LOTR1"
+scene = "res://popochiu/rooms/lotr_1/room_lotr_1.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

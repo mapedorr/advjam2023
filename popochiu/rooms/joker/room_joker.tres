@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dcr7t81ulyusb"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/joker/room_joker_state.gd" id="1_6osnn"]
+
+[resource]
+resource_name = "Joker"
+script = ExtResource("1_6osnn")
+script_name = "Joker"
+scene = "res://popochiu/rooms/joker/room_joker.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

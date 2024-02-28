@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cid0kysbq36o1"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/arrival/room_arrival.gd" id="1_swatu"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_65bjs"]
+[ext_resource type="Texture2D" uid="uid://burmxfe8korn3" path="res://popochiu/rooms/arrival/props/bg/arrival_bg.png" id="4_053or"]
+
+[node name="RoomArrival" type="Node2D"]
+script = ExtResource("1_swatu")
+script_name = "Arrival"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" parent="Props" instance=ExtResource("2_65bjs")]
+position = Vector2(480, 270)
+texture = ExtResource("4_053or")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
