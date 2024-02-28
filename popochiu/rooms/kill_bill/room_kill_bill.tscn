@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0jn3bbf77n1y"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/kill_bill/room_kill_bill.gd" id="1_k08p5"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_cytqu"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="3_tn8dx"]
+[ext_resource type="Texture2D" uid="uid://dhs0aacr7tkhy" path="res://popochiu/rooms/kill_bill/props/bg/kill_bill_bg.png" id="4_muess"]
+
+[node name="RoomKillBill" type="Node2D"]
+script = ExtResource("1_k08p5")
+script_name = "KillBill"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" type="Area2D" parent="Props" instance=ExtResource("2_cytqu")]
+position = Vector2(480, 270)
+script = ExtResource("3_tn8dx")
+texture = ExtResource("4_muess")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]

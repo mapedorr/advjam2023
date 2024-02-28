@@ -1,9 +1,13 @@
 extends CanvasLayer
 
+enum Direction {LEFT, RIGHT}
+
 const ROTATION := 360.0 / 5.0
 
+var current_dir := Direction.LEFT
+
 @onready var btn_power: TextureButton = %BtnPower
-@onready var btn_channel_indicator: TextureRect = %BtnChannelIndicator
+@onready var btn_channels: Control = %ChannelButtons
 @onready var btn_choice_indicator: TextureRect = %BtnChoiceIndicator
 @onready var rtl_dialog: RichTextLabel = %RtlDialog
 @onready var dialog_menu_title: Label = %DialogMenuTitle
@@ -76,7 +80,7 @@ func _on_btn_power_toggled(button_pressed: bool) -> void:
 	if button_pressed:
 		A.sfx_tv_on.play()
 		A.sfx_tv_lp.play()
-		Globals.change_channel(true)
+		Globals.change_channel(1, true)
 		G.turned_on.emit()
 	else:
 		A.sfx_tv_lp.stop()
@@ -87,15 +91,14 @@ func _on_btn_power_toggled(button_pressed: bool) -> void:
 
 
 func _on_btn_channel_pressed() -> void:
-	if not btn_power.button_pressed: return
-	
-	_turn_channel_knob()
+	var value := 1 if current_dir == Direction.LEFT else -1
+	_turn_channel_knob(value)
 	D.dialog_closed.emit()
-	Globals.change_channel()
+	Globals.change_channel(value)
 
 
-func _turn_channel_knob() -> void:
-	btn_channel_indicator.rotation_degrees += ROTATION
+func _turn_channel_knob(knob_direction: int) -> void:
+	btn_channels.rotation_degrees += ROTATION * knob_direction
 
 
 func _on_btn_choice_pressed() -> void:
@@ -108,7 +111,6 @@ func _on_btn_choice_pressed() -> void:
 
 
 func _on_btn_select_pressed() -> void:
-	
 	D.option_selection_requested.emit()
 #	TODO: hacer que sea un número random y un sonido de selección
 	A.sfx_tv_switch_03.play()
@@ -142,6 +144,21 @@ func _show_reality_dialog(msg: String) -> void:
 		$RealityLayer.show()
 		reality_black.hide()
 	
+	var current_sound : String
+	var sounds = [
+		'vo_player_01',
+		'vo_player_02',
+		'vo_player_03',
+		'vo_player_04',
+		'vo_player_05',
+		'vo_player_06']
+	
+	randomize()
+	sounds.shuffle()
+	current_sound = sounds[0]
+	A[current_sound].play()
+	sounds.remove_at(0)
+	
 	btn_continue.show()
 	rtl_reality_dialog.text = "[center]%s[/center]" % msg
 
@@ -159,3 +176,15 @@ func _on_user_manual_container_pressed() -> void:
 
 func _on_open_button_pressed() -> void:
 	user_manual_animation_player.play_backwards("hide")
+
+
+func _on_btn_channel_left_pressed():
+	if not btn_power.button_pressed: return
+	current_dir = Direction.LEFT
+	_on_btn_channel_pressed()
+
+
+func _on_btn_channel_right_pressed():
+	if not btn_power.button_pressed: return
+	current_dir = Direction.RIGHT
+	_on_btn_channel_pressed()

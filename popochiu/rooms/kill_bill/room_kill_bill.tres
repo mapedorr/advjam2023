@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://5seagiq7i6e3"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/kill_bill/room_kill_bill_state.gd" id="1_r1ks2"]
+
+[resource]
+resource_name = "KillBill"
+script = ExtResource("1_r1ks2")
+script_name = "KillBill"
+scene = "res://popochiu/rooms/kill_bill/room_kill_bill.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0
